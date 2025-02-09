@@ -1,0 +1,98 @@
+[
+    {
+      "name": "K. M. ACHUTARAO",
+      "position": "Professor, Centre for Atmospheric Sciences, IIT Delhi",
+      "image": "images/team/KrishnaAchutaRao.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Swadhin BEHERA",
+      "position": "Director, Application Laboratory, JAMSTEC, Japan",
+      "image": "images/team/swadhin_behera.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "N. BHATNAGAR",
+      "position": "Dean (R & D), IIT Delhi",
+      "image": "images/team/nareshb.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "S. K. DASH",
+      "position": "Former Professor, Centre for Atmospheric Sciences, IIT Delhi",
+      "image": "images/team/skdash.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "John FASULLO",
+      "position": "Scientist, National Center for Atmospheric Research, USA",
+      "image": "images/team/john.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Serge GUILLAS",
+      "position": "Professor, University College London",
+      "image": "images/team/Gullies.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Ibrahim HOTEIT",
+      "position": "Professor, King Abdullah University of Science and Technology, Saudi Arabia",
+      "image": "images/team/hoteit.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "In-Sik KANG",
+      "position": "Director, Indian Ocean Operational Research Center, SIO, China & CECCR, KAU",
+      "image": "images/team/kang.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Sukumar MISHRA",
+      "position": "Director, IIT Dhanbad",
+      "image": "images/team/sukumar.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Susheela NEGI",
+      "position": "Scientist F, Climate, Energy and Sustainable Technology (CEST) Division, Department of Science & Technology",
+      "image": "images/team/Negi.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Balaji RAJGOPALAN",
+      "position": "Professor, Department of Civil, Environmental and Architectural Engineering, CU, Boulder, USA",
+      "image": "images/team/balajirajagopalan.png",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "S. BAIDYA ROY",
+      "position": "Head, Centre for Atmospheric Sciences, IIT Delhi",
+      "image": "images/team/baidya_roy.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Sandeep SAHANY",
+      "position": "Head, Climate Modeling and Prediction, CCRS, Singapore",
+      "image": "images/team/sandeep.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Kalachand SAIN",
+      "position": "Former Director, Wadia Institute of Himalayan Geology",
+      "image": "images/team/Kalachand.png",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Frank SELTEN",
+      "position": "Scientist, KNMI, Netherlands",
+      "image": "images/team/frank.jpg",
+      "profileLink": "https://example.com"
+    },
+    {
+      "name": "Joe TRIBBIA",
+      "position": "Senior Scientist, National Center for Atmospheric Research, USA",
+      "image": "images/team/tribbia.jpg",
+      "profileLink": "https://example.com"
+    }
+  ]
