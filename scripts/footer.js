@@ -30,6 +30,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const carouselTimeout = 3000; // 3 seconds
+  const carousel = document.querySelector(".splide");
+
+  setTimeout(() => {
+    if (!carousel.classList.contains("splide--initialized")) {
+      // Hide the carousel and show a fallback image
+      carousel.style.display = "none";
+      const fallbackImage = document.createElement("img");
+      fallbackImage.src = "images/bg_img/fallback.jpg";
+      fallbackImage.alt = "Fallback Image";
+      fallbackImage.style.width = "100%";
+      fallbackImage.style.height = "100vh";
+      fallbackImage.style.objectFit = "cover";
+      document.querySelector(".min-h-screen").prepend(fallbackImage);
+    }
+  }, carouselTimeout);
+});
+
 
 // footer
 const contact_us_footer = [
