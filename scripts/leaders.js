@@ -1,18 +1,18 @@
-fetch('scripts/member.json')
+fetch('scripts/leadership_members.json') // Path to your JSON file
   .then(response => response.json())
   .then(members => {
-    const advisorContainer = document.getElementById('advisor');
+    const leadershipContainer = document.getElementById('leadership');
 
     // Create the header
     const header = document.createElement('h1');
     header.classList.add('font-bold', 'text-4xl', 'text-center', 'mt-6', 'mb-3');
-    header.textContent = 'Advisors';
-    advisorContainer.appendChild(header);
+    header.textContent = 'LEADERSHIP';
+    leadershipContainer.appendChild(header);
 
     // Create the divider line
     const divider = document.createElement('div');
     divider.classList.add('w-[20%]', 'h-[1px]', 'bg-zinc-300', 'mb-6', 'mx-auto');
-    advisorContainer.appendChild(divider);
+    leadershipContainer.appendChild(divider);
 
     // Create a flex container for centering
     const wrapper = document.createElement('div');
@@ -49,7 +49,7 @@ fetch('scripts/member.json')
       
       const memberImage = document.createElement('img');
       memberImage.classList.add('w-24', 'h-24', 'mx-auto', 'rounded-full', 'object-cover', 'shadow-md');
-      memberImage.src = member.image;
+      memberImage.src = member.img; // Use 'img' from JSON
       memberImage.alt = member.name;
       
       const name = document.createElement('h2');
@@ -58,7 +58,7 @@ fetch('scripts/member.json')
       
       const position = document.createElement('h4');
       position.classList.add('text-sm', 'font-light', 'mt-3');
-      position.textContent = member.position;
+      position.textContent = member.designation; // Use 'designation' from JSON
       
       const profileLink = document.createElement('a');
       profileLink.href = member.profileLink;
@@ -77,6 +77,6 @@ fetch('scripts/member.json')
 
     // Wrap the grid inside a flexbox container
     wrapper.appendChild(grid);
-    advisorContainer.appendChild(wrapper);
+    leadershipContainer.appendChild(wrapper);
   })
-  .catch(error => console.error('Error loading member data:', error));
+  .catch(error => console.error('Error loading leadership data:', error));

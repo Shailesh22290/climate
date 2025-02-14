@@ -4,6 +4,32 @@
   font-family: 'Inter';
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section, div[id] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible, div[id].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 #news-container{
   overflow: hidden;
 }
@@ -45,8 +71,54 @@
  
   /* highlight */
   .card{
-    background-color: #47b2e4;
+    background-color: #82c9ffa3;
    
   }
+
+  .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.card {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+}
  
-  
+  .dropdown_mobile_view_container {
+    transition: top 0.5s ease-in-out;
+  }
+
+
+
+/* Ensure the dropdown menu is positioned in the top-right corner */
+.dropdown_mobile_view_container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9); /* Example background */
+  transform: translateY(-100%); /* Initially hidden above the viewport */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+  z-index: 9999; /* Ensure it appears above other content */
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+  padding-top: 60px; /* Add padding to account for the nav bar height */
+}
+
+/* Class to show the dropdown menu */
+.dropdown_mobile_view_container.open {
+  transform: translateY(0); /* Move into the viewport */
+}
+
+/* Close button styling */
+.dropdown_mobile_view_container .fa-xmark {
+  position: fixed; /* Fixed positioning to keep it in the top-right corner */
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  cursor: pointer;
+  z-index: 10000; /* Ensure it appears above the dropdown menu */
+  color: white; /* Ensure the icon is visible */
+}
+
+

@@ -35,7 +35,7 @@ carouselData.forEach((item) => {
             <img src="${item.images[0]}" class="w-full h-auto rounded-md object-cover">
         </div>
         <div class="w-2/3 text-center ">
-            <h2 class="font-bold text-xl mb-2 ">${item.title}</h2>
+            <h2 class="font-bold text-xl mb-2 text-black">${item.title}</h2>
             <p class="text-gray-700 mb-3 text-gray">${item.description}</p>
         </div>
     `;
