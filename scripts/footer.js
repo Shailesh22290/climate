@@ -52,7 +52,7 @@ const contactHTML = contact_us_footer
 
 footer.innerHTML += `
   <div
-    class="w-full relative bg-zinc-900 grid grid-cols-1 md:grid-cols-4 p-8 md:p-24 gap-6 text-white"
+    class="w-full relative bg-[#030917] grid grid-cols-1 md:grid-cols-4 p-8 md:p-24 gap-6 text-white"
   >
     ${contactHTML}
     

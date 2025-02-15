@@ -25,7 +25,7 @@ fetch('scripts/member.json')
       'grid-cols-1', 
       'sm:grid-cols-2', 
       'md:grid-cols-3', 
-      'lg:grid-cols-5', 
+      'lg:grid-cols-4', 
       'gap-6', 
       'text-center',
       'w-fit', // Ensures only the required width is used
@@ -40,24 +40,28 @@ fetch('scripts/member.json')
         'rounded-xl', 
         'p-4', 
         'text-center', 
-        "w-64", // Fixed width
+        "w-72", // Fixed width
         "h-72", // Fixed height
+        'flex', 
+        'flex-col', 
+        'justify-between', // Distributes space evenly
+        'items-center', // Centers items horizontally
         'transition-transform',
         'duration-300',
         'hover:shadow-2xl'
       );
       
       const memberImage = document.createElement('img');
-      memberImage.classList.add('w-24', 'h-24', 'mx-auto', 'rounded-full', 'object-cover', 'shadow-md');
+      memberImage.classList.add('w-28', 'h-28', 'mx-auto', 'rounded-full', 'object-cover', 'shadow-md');
       memberImage.src = member.image;
       memberImage.alt = member.name;
       
       const name = document.createElement('h2');
-      name.classList.add('text-lg', 'font-semibold', 'mt-3');
+      name.classList.add('text-l', 'font-semibold', 'mt-3');
       name.textContent = member.name;
       
       const position = document.createElement('h4');
-      position.classList.add('text-sm', 'font-light', 'mt-3');
+      position.classList.add('text-sm', 'font-light', 'mt-2');
       position.textContent = member.position;
       
       const profileLink = document.createElement('a');

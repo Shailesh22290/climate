@@ -19,7 +19,7 @@ nav {
 
 /* Navbar Background Color Change on Scroll */
 .nav-scrolled {
-  background-color: #47b2e4!important;
+  background-color: #030917!important;
   backdrop-filter: blur(10px);
 }
 
