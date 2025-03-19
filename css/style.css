@@ -68,7 +68,17 @@ html {
     transition: top 0.5s ease-in-out;
   }
 
+/* Dropdown Menu Styles */
+.dropdown_mobile_view_container {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
 
+.dropdown_mobile_view_container.open {
+  visibility: visible;
+  opacity: 1;
+}
 
 /* Ensure the dropdown menu is positioned in the top-right corner */
 .dropdown_mobile_view_container {

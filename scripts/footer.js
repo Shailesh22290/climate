@@ -58,7 +58,7 @@ footer.innerHTML += `
     
     <!-- Google Map Section -->
     <div class="md:col-span-2">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14019.049674019243!2d77.190669!3d28.54686!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1df42fe25b85%3A0xdb9bc41b24e9f864!2sDST%20CoE%20for%20Climate%20Information!5e0!3m2!1sen!2sin!4v1738538847139!5m2!1sen!2sin" width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14019.049674019243!2d77.190669!3d28.54686!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1df42fe25b85%3A0xdb9bc41b24e9f864!2sDST%20CoE%20for%20Climate%20Information!5e0!3m2!1sen!2sin!4v1738538847139!5m2!1sen!2sin" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="md:absolute w-full py-4 opacity-[0.6] bottom-0 border-t border-white/50 md:col-span-4">
