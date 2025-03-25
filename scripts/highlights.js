@@ -43,7 +43,7 @@ carouselData.forEach((item) => {
         <div class="w-2/3 text-center">
             <h2 class="font-bold text-xl mb-2 text-black">${item.title}</h2>
             <p class="text-gray-700 mb-3">${item.description}</p>
-            <a href="${item.link}" target="_blank" class="text-blue-500 underline">${item.citation}</a>
+            <a href="${item.link}" target="_blank" class="text-blue-500">${item.citation}</a>
         </div>
     `;
     
