@@ -55,7 +55,7 @@ window.addEventListener("scroll", function () {
   navbar.classList.toggle("nav-scrolled", window.scrollY > 180);
 });
 
-// Smooth scrolling for anchor links
+// Smooth scrolling for anchor links with offset
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("a[href^='#']").forEach(anchor => {
     anchor.addEventListener("click", function (e) {
@@ -64,9 +64,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetElement = document.getElementById(targetId);
       
       if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
+        const offset = 70; // Offset value (30px above the target)
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth"
         });
       }
     });
