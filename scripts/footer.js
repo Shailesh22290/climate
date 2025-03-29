@@ -9,7 +9,42 @@
       });
     });
   });
+//header
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Splide carousel
+  const splide = new Splide('.splide', {
+    type: 'fade', // Smooth fade transition between slides
+    rewind: true, // Loop back to start after last slide
+    autoplay: true, // Auto-rotate slides
+    interval: 5000, // 5 seconds per slide
+    speed: 1000, // Transition speed in ms
+    pauseOnHover: false,
+    pauseOnFocus: false,
+  }).mount();
+
+  // Get all text content elements
+  const textContents = document.querySelectorAll('.text-content');
+  
+  // Show first text content by default
+  textContents[0].classList.add('opacity-100');
+  
+  // On slide change, update text content
+  splide.on('move', function(newIndex) {
+    // Hide all text contents
+    textContents.forEach(content => {
+      content.classList.remove('opacity-100');
+      content.classList.add('opacity-0');
+    });
+    
+    // Show the text content for the current slide
+    const currentContent = document.querySelector(`.text-content[data-slide="${newIndex}"]`);
+    if (currentContent) {
+      currentContent.classList.remove('opacity-0');
+      currentContent.classList.add('opacity-100');
+    }
+  });
+});
 
 // footer
 const contact_us_footer = [
