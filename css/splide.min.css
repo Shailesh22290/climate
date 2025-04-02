@@ -126,6 +126,7 @@
   display: block;
 }
 .splide__arrow {
+  display:none !important;
   -ms-flex-align: center;
   align-items: center;
   background: #ccc;

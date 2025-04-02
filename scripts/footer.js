@@ -46,6 +46,47 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize the carousel
+  const splide = new Splide('.splide', {
+    type: 'fade',
+    rewind: true,
+    pagination: false,
+    arrows: false,
+    autoplay: true,
+    interval: 5000,
+    speed: 1000,
+  }).mount();
+
+  // Get all text content elements
+  const textContents = document.querySelectorAll('.text-content');
+  
+  // Function to update text content visibility
+  function updateTextContent(index) {
+    textContents.forEach((content, i) => {
+      content.classList.toggle('opacity-0', i !== index);
+      content.classList.toggle('opacity-100', i === index);
+    });
+  }
+  
+  // Update text content when slide changes
+  splide.on('move', function(newIndex) {
+    updateTextContent(newIndex);
+  });
+  
+  // Set initial text content
+  updateTextContent(splide.index);
+  
+  // Add click handlers for navigation buttons
+  document.querySelector('.carousel-nav.prev').addEventListener('click', function() {
+    splide.go('<');
+  });
+  
+  document.querySelector('.carousel-nav.next').addEventListener('click', function() {
+    splide.go('>');
+  });
+});
+
 // footer
 const contact_us_footer = [
   {
@@ -53,10 +94,10 @@ const contact_us_footer = [
     content: `DST Centre of Excellence for Climate Information, Room No. 414, Block VI, IIT Delhi`,
     phone: "+91-11-2659-1390",
     email: "skm@iitd.ac.in",
-    twitter: "https://x.com/",
-    facebook: "https://www.facebook.com/",
-    linkedin: "#",
-    youtube: "#",
+    // twitter: "https://x.com/",
+    // facebook: "https://www.facebook.com/",
+    // linkedin: "#",
+    // youtube: "#",
   
   },
 ];
@@ -98,7 +139,7 @@ footer.innerHTML += `
 
     <div class="md:absolute w-full py-4 opacity-[0.6] bottom-0 border-t border-white/50 md:col-span-4">
       <p class="text-center text-sm">
-        © 2024 DST Centre of Excellence for Climate Information, IIT Delhi | All&nbsp;Rights&nbsp;Reserved
+        © 2025 DST Centre of Excellence for Climate Information, IIT Delhi | All&nbsp;Rights&nbsp;Reserved
       </p>
       <div class="flex justify-between items-center">
         <div class="visitors-counter md:pl-6 text-left flex items-center">
