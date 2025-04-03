@@ -111,25 +111,3 @@ html {
   color: white; /* Ensure the icon is visible */
 }
 
-
-/* for index research section */
-
-/* Add this to your CSS file */
-.transform-gpu {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* Optimize GIF rendering */
-img[src$=".gif"] {
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor;
-}
-
-/* Reduce composite layers */
-.bg-white {
-  isolation: isolate;
-}
