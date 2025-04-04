@@ -11,12 +11,7 @@
       "image": "images/team/swadhin_behera.jpg",
       "profileLink": "https://www.jamstec.go.jp/apl/j/members/behera/"
     },
-    {
-      "name": "N. BHATNAGAR",
-      "position": "Dean (R & D), IIT Delhi",
-      "image": "images/team/nareshb.jpg",
-      "profileLink": "https://mech.iitd.ac.in/content/bhatnagar-naresh"
-    },
+   
     {
       "name": "S. K. DASH",
       "position": "Former Professor, Centre for Atmospheric Sciences, IIT Delhi",
@@ -96,3 +91,5 @@
       "profileLink": "https://staff.ucar.edu/users/tribbia"
     }
   ]
+
+ 
