@@ -56,8 +56,7 @@ window.addEventListener("scroll", function () {
 });
 document.addEventListener("DOMContentLoaded", () => {
   const OFFSET = 70; // Offset in pixels
-  const baseSpeed = 0.5; // milliseconds per pixel
-const DURATION = Math.min(2500, Math.abs(distance) * baseSpeed);
+  const DURATION = 200; // Duration in milliseconds
 
   document.querySelectorAll("a[href^='#']").forEach(anchor => {
     anchor.addEventListener("click", event => {

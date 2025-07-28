@@ -27,13 +27,13 @@
         "name": "Prof. Saroj K. MISHRA",
         "designation": "Centre for Atmospheric Sciences, IIT Delhi",
         "img": "images/people/saroj.png",
-        "profileLink": "../../skm-website/index.html"
+        "profileLink": "skm"
     },
     {
         "name": "Prof. Prashant PALKAR",
         "designation": "Department of Mechanical Engineering, IIT Delhi",
         "img": "images/team/prashant.jpg",
-        "profileLink": "https://mech.iitd.ac.in/content/prashant-palkar"
+        "profileLink": "https://mech.iitd.ac.in/faculty-profile/207"
     },
     {
         "name": "Prof. Bijaya K. PANIGRAHI",
@@ -42,7 +42,7 @@
         "profileLink": "http://ctech.iitd.ac.in/bkpanigrahi.html"
     },
     {
-        "name": "Dr. Maithali SHARAN",
+        "name": "Prof. Maithali SHARAN",
         "designation": "INSA Senior Scientist",
         "img": "images/team/mathilis.jpg",
         "profileLink": "http://web.iitd.ac.in/~mathilis/"

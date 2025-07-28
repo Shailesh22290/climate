@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
 const contact_us_footer = [
   {
     title: "CONTACT US",
-    content: `DST Centre of Excellence for Climate Information, Room No. 414, Block VI, IIT Delhi`,
-    phone: "+91-11-2659-1390",
+    content: `DST Centre of Excellence for Climate Information, Block VI, IIT Delhi`,
+    phone: "+91-11-2659-6053",
     email: "skm@iitd.ac.in",
     // twitter: "https://x.com/",
     // facebook: "https://www.facebook.com/",
@@ -168,5 +168,3 @@ window.addEventListener("scroll", () => {
 scrollToTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
-

@@ -1,11 +1,5 @@
 [
     {
-      "name": "K. M. ACHUTARAO",
-      "position": "Professor, Centre for Atmospheric Sciences, IIT Delhi",
-      "image": "images/team/KrishnaAchutaRao.jpg",
-      "profileLink": "https://web.iitd.ac.in/~akrishna/"
-    },
-    {
       "name": "Swadhin BEHERA",
       "position": "Director, Application Laboratory, JAMSTEC, Japan",
       "image": "images/team/swadhin_behera.jpg",
@@ -14,67 +8,67 @@
    
     {
       "name": "S. K. DASH",
-      "position": "Former Professor, Centre for Atmospheric Sciences, IIT Delhi",
+      "position": "Former Professor, IIT Delhi, India",
       "image": "images/team/skdash.jpg",
       "profileLink": "http://web.iitd.ac.in/~skdash/"
     },
     {
       "name": "John FASULLO",
-      "position": "Scientist, National Center for Atmospheric Research, USA",
+      "position": "Scientist, NCAR, USA",
       "image": "images/team/fasullo_john.jpg",
       "profileLink": "https://www2.cgd.ucar.edu/staff/fasullo/"
     },
     {
       "name": "Serge GUILLAS",
-      "position": "Professor, University College London",
+      "position": "Professor, UCL, UK",
       "image": "images/team/Gullies.jpg",
       "profileLink": "http://www.homepages.ucl.ac.uk/~ucaksgu/"
     },
     {
       "name": "Ibrahim HOTEIT",
-      "position": "Professor, King Abdullah University of Science and Technology, Saudi Arabia",
+      "position": "Professor, KAUST, Saudi Arabia",
       "image": "images/team/hoteit.jpg",
       "profileLink": "https://www.kaust.edu.sa/en/study/faculty/ibrahim-hoteit"
     },
     {
       "name": "In-Sik KANG",
-      "position": "Director, Indian Ocean Operational Research Center, SIO, China & CECCR, KAU",
+      "position": "Emeritus Professor, Seoul National University, South Korea ",
       "image": "images/team/kang.jpg",
       "profileLink": "https://soo.sjtu.edu.cn/"
     },
     {
       "name": "Sukumar MISHRA",
-      "position": "Director, IIT Dhanbad",
+      "position": "Director, IIT Dhanbad, India",
       "image": "images/team/sukumar.jpg",
       "profileLink": "https://abudhabi.iitd.ac.in/smishra"
     },
     {
       "name": "Susheela NEGI",
-      "position": "Scientist F, Climate, Energy and Sustainable Technology (CEST) Division, Department of Science & Technology",
+      "position": "Scientist, DST, India",
       "image": "images/team/Negi.jpg",
       "profileLink": "https://dst.gov.in/whoswho/dr-susheela-negi"
     },
     {
       "name": "Balaji RAJGOPALAN",
-      "position": "Professor, Department of Civil, Environmental and Architectural Engineering, CU, Boulder, USA",
+      "position": "Professor, University of Colorado Boulder, USA",
       "image": "images/team/balajirajagopalan.png",
       "profileLink": "https://www.colorado.edu/even/people/rajagopalan-balaji"
     },
     {
       "name": "S. BAIDYA ROY",
-      "position": "Head, Centre for Atmospheric Sciences, IIT Delhi",
+      "position": "Professor, IIT Delhi, India",
       "image": "images/team/baidya_roy.jpg",
       "profileLink": "https://cas.iitd.ac.in/hod-profile/1"
     },
     {
       "name": "Sandeep SAHANY",
-      "position": "Head, Climate Modeling and Prediction, CCRS, Singapore",
+      "position": "Scientist, CCRS, Singapore",
       "image": "images/team/sandeep.jpg",
       "profileLink": "http://ccrs.weather.gov.sg/sandeep-sahany/"
     },
     {
       "name": "Kalachand SAIN",
-      "position": "Former Director, Wadia Institute of Himalayan Geology",
+      "position": "Former Director, WIHG, India",
       "image": "images/team/Kalachand.png",
       "profileLink": "https://dcecm.iitd.ac.in/#"
     },
@@ -86,7 +80,7 @@
     },
     {
       "name": "Joe TRIBBIA",
-      "position": "Senior Scientist, National Center for Atmospheric Research, USA",
+      "position": "Scientist, NCAR, USA",
       "image": "images/team/tribbia.jpg",
       "profileLink": "https://staff.ucar.edu/users/tribbia"
     }

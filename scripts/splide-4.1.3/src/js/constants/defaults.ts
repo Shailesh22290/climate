@@ -18,7 +18,7 @@ export const DEFAULTS: Options = {
   arrows            : true,
   pagination        : true,
   paginationKeyboard: true,
-  interval          : 10000,
+  interval          : 5000,
   pauseOnHover      : true,
   pauseOnFocus      : true,
   resetProgress     : true,

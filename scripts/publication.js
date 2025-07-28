@@ -1,4 +1,13 @@
 const publications = [
+
+
+    {
+        title: "Optimizing WRF-Hydro Calibration in the Himalayan Basin: Precipitation Influence and Parameter Sensitivity Analysis",
+        authors: "Dixit, A.,  S Sahany, S. K. Mishra, F Lehner",
+        year: "2025",
+        journal: "Journal of Hydrometeorology",
+        link: "https://journals.ametsoc.org/view/journals/hydr/26/3/JHM-D-24-0096.1.xml"
+    },// 
     {
         title: "Implications of CMIP6 Models‐Based Climate Biases and Runoff Sensitivity on Runoff Projection Uncertainties Over Central India",
         authors: "Tyagi, S., S. Sahany, D. Saraswat, S. K. Mishra, A. Dubey, D. Niyogi",
