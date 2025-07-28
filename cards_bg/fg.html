@@ -1,0 +1,1047 @@
+!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <!-- Basic page needs -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saroj Kanta Mishra</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Inline CSS -->
+    <style>
+        @font-face {
+            font-family: 'CenturyStd-BoldCondensed';
+            src: url('FONTS/CenturyStd-BoldCondensed.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'EloquiaDisplayExtraBold';
+            src: url('FONTS/Eloquia/Typekiln - EloquiaDisplay-ExtraBold.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'CenturyStd-BoldCondensed', sans-serif;
+            color: #030303;
+            background: url('images/El Capitan-crop2.jpg') no-repeat center center fixed;
+            background-size: cover; /* Changed to 'cover' to better fill the screen */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Hides horizontal overflow */
+        }
+
+        .s-header {
+            font-family: 'CenturyStd-BoldCondensed';
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.915);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: background 0.3s ease;
+            /* padding: 10px 0; */
+        }
+
+        .s-header.scrolled {
+            background: rgb(255, 255, 255);
+        }
+
+        .s-header__nav ul li a {
+            font-family: 'CenturyStd-BoldCondensed';
+            color: #030303;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .s-header__nav ul li a:hover {
+            color: #068f93;
+        }
+
+        .s-header__branding {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin-top: 8px;
+        }
+
+        .site-logo {
+            max-height: 70px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .s-header__nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .s-header__nav ul li {
+            margin: 0 10px;
+        }
+
+        .s-header__nav ul li a,
+        .s-header__branding .site-title,
+        .s-header__menu-toggle span {
+            font-weight: bold;
+        }
+
+        #page {
+            max-width: 1200px; /* Adjust to desired max width */
+            margin: 0 auto; /* Center the page content */
+            padding: 0 20px; /* Optional padding */
+        }
+
+        #home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #181219;
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .home-photo {
+            margin-top: -1%;
+            margin-bottom: -40px;
+        }
+
+        .home-photo img {
+            max-width: 30%; /* Set max width to 30% */
+            height: auto;
+            border-radius: 5%;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 0px;
+            padding: 10px;
+        }
+
+        .banner-text h1, .banner-text p {
+            color: rgb(65, 63, 63);
+            font-family: 'CenturyStd-BoldCondensed', sans-serif;
+            font-weight: bold;
+            font-size: 40px;
+            margin-bottom: -15px;
+            margin-top : -10px; /* Change space between photo and Banner*/
+        }
+
+        .banner-text p a {
+            display: block;
+            margin-bottom: -35px; /* This changes the space between the 3 texts */
+            color: rgb(65, 63, 63);
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .banner-text p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body id="top">
+    <!-- Preloader -->
+    <!-- <div id="preloader">
+        <div id="loader" class="line"></div>
+    </div> -->
+
+    <!-- Page wrap -->
+    <div id="page" class="s-pagewrap">
+        <!-- Site header -->
+        <header id="masthead" class="s-header">
+            <div class="s-header__block">
+                <div class="s-header__branding">
+                    <a href="https://home.iitd.ac.in/" rel="home">
+                        <img src="images/Logo_IITD.png" alt="Logo" class="site-logo">
+                    </a>
+                    <p class="site-title">
+                        <a href="index.html" rel="home"></a>
+                    </p>
+                </div>
+                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+            </div>
+            <div class="row s-header__nav-wrap">
+                <nav class="s-header__nav" style="padding: 0; display: flex;">
+                    <ul style="flex-wrap: wrap; justify-content: space-between;">
+                        <li class="current"><a href="#home" class="smoothscroll">Home</a></li>
+                        <li><a href="#about" class="smoothscroll">About</a></li>
+                        <li><a href="#research" class="smoothscroll">Research</a></li>
+                        <li><a href="#teaching" class="smoothscroll">Teaching</a></li>
+                        <li><a href="http://dcecm.iitd.ac.in/" target="_blank">CoE</a></li>
+                        <li><a href="#contact" class="smoothscroll">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Intro section -->
+        <section id="home">
+            <div class="home-photo">
+                <img src="images/IMG-20240708-WA0002.jpg">
+            </div>
+            <div class="row banner">
+                <div class="banner-text">
+                    <h1 class="custom-font">Saroj Kanta Mishra</h1>
+                    <p>
+                        <a href="http://cas.iitd.ac.in/" target="_blank">Professor, Centre for Atmospheric Sciences</a><br>
+                        <a href="http://dcecm.iitd.ac.in/" target="_blank">Principal Investigator, DST Centre of Excellence for Climate Information</a><br>
+                        <a href="http://www.iitd.ac.in/" target="_blank">Indian Institute of Technology Delhi<br> INDIA</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!--************************************** About section***************************** -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        @font-face {
+            font-family: 'CenturyStd-BookCondensed';
+            src: url('FONTS/Century-BookCondensed.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'CenturyStd-BookCondensed', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #about {
+            padding-top: 1%;
+            padding-bottom: 1%;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        .about-title {
+            text-align: center;
+            margin-top: 2%;
+            margin-bottom: 1%;
+        }
+
+        .about-title h1 {
+            color: #08578b;
+            font-size: 50px;
+        }
+
+        .about-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-container table, th, td {
+            border: 0px solid #ddd; /* Set the border thickness to 2px */
+            font-family: 'CenturyStd-BookCondensed';
+            text-align: justify;
+            vertical-align: top;
+            padding-bottom: 5px;
+            font-size: 23px;
+            font-weight: normal;
+            padding-left: 10%;
+            margin-bottom: 3%   /* CHANGE HERE TO ADD SPACE BETWEEN THE TABLES*/
+        }
+
+        .about-container th {
+            background-color: #f2f2f2;
+            font-weight: normal;
+        }
+
+        .about-container td:first-child {
+            padding-left: 0;
+            padding-right: 10px;
+            font-size: 23px;
+        }
+
+        .second-column {
+            padding-left: 0;
+        }
+
+        .hidden-content {
+            display: none;
+        }
+        .about-container {
+            margin-inline: 15%;
+        }
+
+        /* Ensure the table layout is fixed */
+        .about-container table {
+            /* table-layout: fixed; */
+            width: 100%; /* Make sure the table takes full width */
+        }
+
+        /* Remove default margin and padding of cells */
+        .about-container table td,
+        .about-container table th {
+            padding: 0px; /* Adjust as needed */
+            margin: 0; /* Remove any default margins */
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+
+
+
+/*Width adjustment for each row and column is updated in the (<td style="width: 20%;" style="color: black; font-size: 21px;"><strong>Education</strong></td>_ */
+
+    </style>
+</head>
+<body>
+<section id="about" style="padding-inline: 10%;">
+    <div class="about-title">
+        <h1>About</h1>
+    </div>
+    <div class="about-container">
+        <div class="about-container-Edu">
+            <table class="education-table">
+                <tr>
+                    <td style="width: 20%;" style="color: black; font-size: 23px;"><strong>Education</strong></td> 
+                    <td class="second-column" style="color: black; font-size: 21px;">Ph. D. (2008), <spam style="color: (65, 63, 63);">IISc Bangalore, INDIA.</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">B. E. (2001), <spam style="color: (65, 63, 63);">University College of Engineering, Burla, INDIA.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="about-container-Acad">
+            <table>
+
+
+                <tr>
+                    <td style="width: 20%;" style="color: black; font-size: 23px;"><strong>Experience </strong></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">Professor, Centre for Atmospheric Sciences, IIT Delhi, INDIA (2023-present)</td>
+                </tr>
+
+
+
+
+
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">Principal Investigator, DST CoE in Climate Modeling (2017-present)</td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">YES Foundation Chair Professor of Climate Modeling (2021-2024)</td>
+                </tr>
+
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">YES BANK Chair Professor of Climate Modeling (2019-2021)</td>
+                </tr>
+                
+
+
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">Associate Professor, Centre for Atmospheric Sciences, IIT Delhi, INDIA (2018-2023)</td>
+                </tr>
+
+                
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">Assistant Professor, Centre for Atmospheric Sciences, IIT Delhi, INDIA (2012-2018)</td>
+                </tr>
+
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">Assistant Professor, Department of Earth and Space Sciences,<spam style="color: (65, 63, 63);"> IIST, Thiruvananthapuram, INDIA (2011–2012)</td>
+                </tr>
+            </tr>
+
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">Research Faculty, <spam style="color: (65, 63, 63);">Department of Computer Science, University of Colorado Boulder, USA (2008–2011) <br> Visiting Scientist, <spam style="color: (65, 63, 63);">Institute for Mathematics Applied to Geosciences, NCAR, Boulder, USA (2008–2011)</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+       
+
+        <div class="about-container-Fund">
+            <table>
+                <tr>
+                    <td style="width: 11%; color: black; font-size: 23px;"><strong>Research Fundings</strong></td>
+                    <td class="second-column" style="width: 4%; color: black; font-size: 21px;">2024-2029</td>
+                    <td class="third-column" style="width: 40%; color: black; font-size: 21px;">PI, DST: DST Centre of Excellence for Climate Information (Phase II) at IIT Delhi</td>
+                </tr>
+
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="width: 4%; color: black; font-size: 21px;">2017-2024</td>
+                    <td class="third-column" style="width: 40%; color: black; font-size: 21px;">PI, DST: DST Centre of Excellence in Climate Modeling at IIT Delhi</td>
+                </tr>
+
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2022-2022</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">PI, DST: DST Climate Change programme Experts’ Meeting</td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2017-2022</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">Co-PI, DST: Climate Model Improvement and Climate Projections using Soft Computing, Machine <br> Learning, and Mathematical Optimisation Techniques</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2017-2022</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">Co-PI, DST: Towards the Development of an India Centric Climate Model: Convection, Clouds <br> and Gravity Wave Drag Parameterisations</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2018-2021</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">Co-PI, CERCA: Assessment and prediction of the air-quality using dynamically downscaled high <br> resolution data from numerical models</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2017-2020</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">PI, DST: Observed and Simulated Dependence of Bay of Bengal Rainfall on T & Q</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2014-2019</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">Co-PI, DST: For Improvement of S & T Infrastructure in CAS at IIT Delhi</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2015-2018</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">Co-PI, DST: Land Surface Atmosphere Feedbacks in Croplands</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2017-2017</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">PI, FICCI: Sir C. V. Raman International Fellowship for African Researchers</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2017-2017</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">PI, DST: Experts Meeting for DST Climate Change Programme</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2015-2016</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">Co-PI, OSPCB: Heat-Island Study in Angul-Talcher Area of Odisha</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2013-2016</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">PI, DST: Understanding the Response of Indian Monsoon to Variations in CO2 and Solar <br> Radiation Using Ocean-Atmosphere Modeling in a Geo-engineering Context</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2013-2015</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">PI, DST: Potential Linkage on the Monsoon Variability by Impacts of Eurasian Snow, and <br> Pacific & Indian Ocean</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2013-2015</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">PI, IIT Delhi: Configuration Dependence of Model Results: an Investigation with CAM</td>
+                </tr>
+                <tr>
+                    <td style="color: black; font-size: 21px;"></td>
+                    <td class="second-column" style="color: black; font-size: 21px;">2012-2013</td>
+                    <td class="third-column" style="color: black; font-size: 21px;">PI, IIT Delhi: Response of the Regional climate to the Geo-engineering of Solar Radiation</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
+
+
+
+   <!--/********************************************************* PUBLICATIONS ************************************************/-->
+
+        
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Research Section</title>
+       <style>
+           body {
+               font-family: 'CenturyStd-BoldCondensed', sans-serif;
+               margin-top: 50px;
+           }
+           #research {
+               text-align: center;
+               padding-top: 1%;
+               padding-bottom: 1%;
+               background-color: rgba(255, 255, 255, 0.8);
+               color: #333;
+               font-family: 'CenturyStd-BoldCondensed', sans-serif;
+           }
+           h1 {
+               text-align: center;
+               color: #08578b;
+               font-family: 'CenturyStd-BoldCondensed', sans-serif;
+               font-weight: bold;
+               font-size: 50px;
+           }
+           .description {
+               text-align: center;
+               font-size: 30px;
+               color: #333;
+               font-family: 'CenturyStd-BookCondensed', sans-serif;
+               margin-top: -10px
+           }
+           .publications-title {
+               text-align: center; /* Center the text */
+               font-size: 30px; /* Increased font size for the publications title */
+               font-weight: bold;
+               color: #08578b; /* Matching color for consistency */
+               display: inline-block; /* Allow width to fit content */
+               border-bottom: 2px solid #08578b; /* Border bottom */
+               padding-bottom: 0px; /* Space between text and border */
+               font-family: 'CenturyStd-BoldCondensed', sans-serif;
+               white-space: nowrap; /* Prevent line breaks */
+           }
+   
+           h2 {
+               text-align: center;
+               color: #08578b;
+               font-family: 'CenturyStd-BoldCondensed', sans-serif;
+               font-weight: bold;
+               margin-top: -10px;
+               margin-bottom: -5px;
+           }
+
+   
+           .cards-container {
+               display: flex;
+               justify-content: center;
+               margin: 40px 0;
+               padding-bottom: 1%;  /* Space between card and showmore*/
+               gap: 20px; /* Space between cards */
+               flex-wrap: wrap;
+               padding-inline: 20px;
+           }
+           .card {
+               display: flex;
+               align-items: center;
+               width: 200px; 
+               height: 300px;
+               background-color: #ffffff;
+               border: 1px solid #ddd;
+               border-radius: 8px;
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+               /* overflow: hidden; */
+               text-align: center;
+               /* padding-top: 12px; */
+               /* padding-bottom: -10px; */
+               transition: transform 0.3s ease, z-index 0.3s ease;
+           }
+           .card a {
+               display: block;
+               width: 100%;
+               height: 100%;
+           }
+           .card img {
+
+               object-fit: cover; /* Ensure image covers the card area */
+               display: block;
+           }
+           .card:hover {
+               transform: scale(1.1); /* Expand the card */
+               z-index: 1; /* Bring the card to the front */
+           }
+   
+           .publication {
+                text-align: center;
+                font-size: 30px;
+                color: #08578b;
+                font-family: 'CenturyStd-BoldCondensed', sans-serif;
+                margin-top:1%;
+                margin-bottom: -1%;
+            }
+            .Note {
+                text-align: center;
+                font-size: 18px;
+                color: #08578b;
+                font-family: 'CenturyStd-BoldCondensed', sans-serif;
+                margin-top:1.5%;
+                margin-bottom: 0%;
+            }
+            #research table {
+               width: 60%; /* Adjust table width as needed */
+               margin: 20px auto; /* Center the table */
+               border-collapse: collapse; /* Collapse borders */
+           }
+           #research th, #research td {
+               font-size: 18px; 
+               border: 0px solid #ddd; /* Border for table cells (Remove or add boders to table)*/
+               padding: 10px; /* Padding inside cells */
+               text-align: justify; /* Align text to the left */
+               font-family: 'CenturyStd-BoldCondensed', sans-serif;
+           }
+
+           #research th {
+               background-color: #f2f2f2; /* Header background color */
+               color: #333; /* Header text color */
+               font-family: 'CenturyStd-BoldCondensed', sans-serif;
+           }
+
+
+            .publication-table .hidden-row {
+                display: none;
+            }
+
+            .toggle-button {
+                text-align: center;
+                display: inline-block; /* Ensure it doesn't take the full width */
+                font-size: 22px; /* Increase font size for larger text */
+                color: #08578b; /* Change text color */
+                cursor: pointer; /* Change cursor to pointer on hover */
+                font-family: 'CenturyStd-BoldCondensed', sans-serif;
+                transition: transform 0.3s ease; /* Smooth transition for enlargement */
+            }
+
+            .toggle-button:hover {
+                color: rgb(65, 63, 63); /* Darken text color on hover */
+                transform: scale(1.1); /* Slightly enlarge button on hover */
+            }
+
+       </style>
+</head>
+<body>
+    <section id="research">
+        <h1>Research</h1>
+        <div class="description">
+            <p>Experties: Climate Analysis, Modeling, and Solution</p>
+        </div>
+        <h2 class="publications-title">Spotlight</h2>
+        <div class="cards-container">
+            <a href="https://iopscience.iop.org/article/10.1088/1748-9326/ac43e2" target="_blank">
+                <div class="card">
+                    <img style="padding-block: auto; padding-inline: 0; width:100%; margin-bottom: 0;" src="images/Paper-screenshots/Cirtificate.jpg">
+                </div>
+            </a>
+            <a href="https://www.nature.com/articles/s41598-023-44284-3" target="_blank">
+                <div class="card">
+                    <img style="padding-block: auto; padding-inline: 0; width:100%; margin-bottom: 0;" src="images/Paper-screenshots/Screenshot 2024-07-19 at 11.53.06 AM.png">
+                </div>
+            </a>
+            
+            <a href="https://www.nature.com/articles/s41558-023-01778-2" target="_blank">
+                <div class="card">
+                    <img style="padding-block: auto; padding-inline: 0; width:100%; margin-bottom: 0;" src="images/Paper-screenshots/Screenshot 2024-08-06 at 5.19.02 PM.png">
+                </div>
+            </a>
+
+            <a href="https://www.nature.com/articles/s41612-018-0049-1" target="_blank">
+                <div class="card">
+                    <img style="padding-block: auto; padding-inline: 0; width:100%; margin-bottom: 0;" src="images/Paper-screenshots/Screenshot 2024-08-06 at 5.23.52 PM.png">
+                </div>
+            </a>
+            <a href="https://www.nature.com/articles/s41612-024-00777-0" target="_blank">
+                <div class="card">
+                    <img style="padding-block: auto; padding-inline: 0; width:100%; margin-bottom: 0;" src="images/Paper-screenshots/Screenshot 2025-01-31 at 7.54.01 PM.png">
+                </div>
+            </a>
+            <a href="https://dcecm.iitd.ac.in/Impact_of_climate_change_on_indian_economy.pdf">
+                <div class="card">
+                    <img style="padding-block: auto; padding-inline: 0; width:100%; margin-bottom: 0;" src="images/Paper-screenshots/Screenshot 2024-08-05 at 12.25.19 PM.png">
+                </div>
+            </a>
+        </div>
+        <div class="publication">
+            Publications
+        </div>
+
+        <div class="Note">
+            <spam align= justify class="date"><spam class="info" style="color: firebrick; padding-inline: 10px;" style="text-align: center;"> Note: Co-authors denoted by maroon color worked with Dr. S. K. Mishra as students/research-associates at the time of publications.
+        </div>
+
+        
+            
+        <table class="publication-table">
+
+
+            <tr class="visible-row">
+                <td align= justify class="date"><spam class="info" style="color: firebrick;"> </font> Tyagi, S., <font color="black">S. Sahany, D. Saraswat,</font> <strong> S. K. Mishra, </strong> <font color="black"> A. Dubey, and D. Niyogi, </font> </strong>  2024:<font color="#003399"> <b> Implications of CMIP6 Models‐Based Climate Biases and Runoff Sensitivity on Runoff Projection Uncertainties Over Central India. </b></font> <font color="black"><i> International Journal of Climatology.</i><b></b></font></td>
+            </tr>
+  
+            <tr class="visible-row">
+                <td align= justify class="date"><spam class="info" style="color: firebrick;"> </font> Upadhyaya, P., </font> <strong> S. K. Mishra, </strong> <font color="black"> J. T. Fasullo, and In-Sik Kang, </font> </strong>  2024:<font color="#003399"> <b> Attributing the Recent Weakening of the South Asian Subtropical Westerlies. </b></font> <font color="black"><i> npj Climate and Atmospheric Science.</i><b></b> [Accepted]</font></td>
+            </tr>
+
+          </tr>   
+              
+            
+        </div>  
+        </table>
+    
+        <div class="toggle-button" onclick="toggleRows()">View More</div>
+    </section>
+
+    <script>
+        function toggleRows() {
+            const hiddenRows = document.querySelectorAll('.hidden-row');
+            hiddenRows.forEach(row => {
+                row.style.display = (row.style.display === 'none' || row.style.display === '') ? 'table-row' : 'none';
+            });
+            const toggleButton = document.querySelector('.toggle-button');
+            if (toggleButton.textContent === 'View More') {
+                toggleButton.textContent = 'View Less';
+            } else {
+                toggleButton.textContent = 'View More';
+                document.getElementById('research').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+</body>
+</html>
+
+   
+   
+   
+
+   
+   
+            
+   <!--/********************************************************* teaching ************************************************/-->
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Section</title>
+    <style>
+        body {
+            font-family: "Satoshi-Black", Sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #555;
+        }
+
+        #teaching {
+            padding-top: 1%;
+            padding-bottom: 2%;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            text-align: center;
+        }
+
+        .teaching-title {
+            margin-bottom: 30px;
+            color: #08578b;
+            font-size: 50px;
+            margin-bottom: 2%;
+        }
+
+        .teaching-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .teaching-card {
+            width: 550px;
+            height: 300px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, z-index 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            /* margin-left: 10% */
+        }
+
+
+
+
+        /* .teaching-card img {
+            width: 550px;
+            height: 300px;
+            object-fit: contain;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            
+        } */
+
+        .info-table {
+            width: 100%;
+            border: 0px solid #ccc;
+            border-collapse: collapse;
+            margin-top: 2%;
+        }
+
+        .info-table th, .info-table td {
+            border: 0px solid #ccc;
+            padding: 0px;
+            padding-right: 0px;
+            text-align: left;
+            font-family: 'CenturyStd-BookCondensed', sans-serif;
+            font-size: 20px;
+        }
+
+        .paragraph {
+            width: 70%;
+            text-align: justify;
+            font-family: 'CenturyStd-BookCondensed', sans-serif;
+            font-size: 20px;
+            margin-top: 3%;
+            margin-left: 15%;
+            color: black;
+        }
+
+        .photo-text-table {
+            width: 70%;
+            margin: 20px 0px;
+            border-collapse: collapse;
+            text-align: left;
+            margin-left : 19%;
+            
+        }
+
+        .photo-text-table td {
+            padding-top: 10px;
+            padding-bottom: 0px;
+            padding-right: 0px;
+            padding-left: 0px;
+            vertical-align: top;
+            font-family: 'CenturyStd-BookCondensed', sans-serif;
+            font-size: 20px;
+            border: none;
+            border: 0px solid #ccc;
+        }
+
+        .photo-text-table img {
+            width: 50px;
+            height: 75px;
+            object-fit: contain;
+            margin-bottom : 5%;
+            border: 0px solid #ccc;
+        }
+
+        .photo-text-table .text-column {
+            text-align : justify;
+            border: 0px solid #ccc;
+            padding-left : 30px; /* Space between book cover and text*/
+
+
+        }
+    </style>
+</head>
+<body>
+    <section id="teaching">
+        <div class="teaching-title">
+            <h1>Teaching</h1>
+        </div>
+        <div class="teaching-content" style="display:flex; flex-wrap: wrap; max-width: fit-content;">
+            <div class="teaching-card" style="background-image:url(images/Wbsite_fig.jpg);background-size: contain;background-repeat: no-repeat;">
+                <!-- <img src="images/Wbsite_fig.jpg"> -->
+            </div>
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <th><strong>Presently Offering:</strong></th>
+                        <td>The Earth’s Atmosphere: Physical Principles (ASL360).</td>
+                    </tr>
+                    <tr>
+                        <th><strong>Class Capacity:</strong></th>
+                        <td>49</td>
+                    </tr>
+                    <tr>
+                        <th><strong>Timing:</strong></th>
+                        <td>05:00 PM - 06:30 PM (MON & THURS)</td>
+                    </tr>
+                    <tr>
+                        <th><strong>Venue:</strong></th>
+                        <td>LH 313.2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="paragraph">
+            <strong>The Earth’s Atmosphere: Physical Principles (ASL360). </strong> <em>(3-0-0-3)</em>: This course is on the physical principles of the Earth’s atmosphere. The course will begin with the forces and energy governing the atmospheric flows and regulating the weather and climate of the planet. Physical processes such as atmospheric convection will be discussed in great detail. How the atmospheric flows transport mass, momentum, and energy in space will be described. The general features of the today’s atmosphere will be explained. Emphases will be given on the need and art of atmospheric modeling and future projection of the atmosphere for the next century. The course is very conceptual in nature with a strong research flavour, and will introduce undergraduate students to the art of research in context of the subject.
+        </div>
+        <div class="paragraph" style="font-size: 30px;">
+            <strong>References:</strong>
+        </div>
+        <table class="photo-text-table">
+            <tr>
+                <td><img src="images/Reference/Plumb and marshal_.jpg" </td>
+                <td class="text-column">Marshall, J., & Plumb, R. A. (2007). Atmosphere, ocean and climate dynamics: an introductory text. Academic Press.</td>
+            </tr>
+            <tr>
+                <td><img src="images/Reference/Denish2.jpg" </td>
+                <td class="text-column">Hartmann, D. L. (2015). Global physical climatology (Vol. 103). Newnes.</td>
+            </tr>
+            <tr>
+                <td><img src="images/Reference/David.jpg" </td>
+                <td class="text-column">Randall, D. (2015). An introduction to the global circulation of the atmosphere. Princeton University Press.</td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>
+
+   
+<!--************************************************CONTACTS************************************************-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 
+    <style>
+        body {
+            font-family: 'CenturyStd-BoldCondensed', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fa;
+            color: #ffffff;
+            scroll-behavior: smooth;
+            font-size: 24px; /* Ensure units are included */
+        }
+
+        #contact {
+            padding: 0;
+            padding-bottom: 7%;
+            text-align: center;
+        }
+
+        .contact-title h1 {
+            font-size: 30px; /* Ensure units are included */
+            color: #ffffff;
+            margin-bottom : -5px; /* Changed from margin-bottom: 10px; to margin: 0; */
+            padding-bottom: -10%;
+            font-weight: bold;
+        }
+        .contact-info {
+            color: rgb(255, 255, 255);
+        }
+        .contact-info .highlight {
+            color: #ffffff; /* Darker shade of blue */
+        }
+
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .contact-title h1 {
+                font-size: 18;
+            }
+
+            .contact-info {
+                /* width: 90%; */
+                padding: 0px;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="contact">
+        <div class="contact-title">
+            <h1><font color="black"> <strong>Contact</strong> </font></h1>
+        </div>
+        <div class="contact-info">
+            <div class="contact-info">
+                <strong style="color: rgb(65, 63, 63);">Prof. Saroj Kanta Mishra</strong><br>
+                <span style="color: rgb(65, 63, 63);">Room No. 414, Block VI</span><br>
+                <span style="color: rgb(65, 63, 63);">Indian Institute of Technology Delhi</span><br>
+                <span style="color: rgb(65, 63, 63);">Hauz Khas, New Delhi – 110 016, India</span><br>
+                <span style="color: black;"><strong>Phone:</strong></span> <span class="highlight" style="color: rgb(65, 63, 63);"><strong>+91 11 2659 1390</strong></span><br>
+                <span style="color: black;"><strong>Email:</strong></span> <a href="mailto:skm@iitd.ac.in" class="highlight" style="color: rgb(65, 63, 63);"><strong>skm@iitd.ac.in</strong></a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+<!---******************************************************END****************************************-->
+
+
+
+
+<!-- JavaScript -->
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script>
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('.s-header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+</body>
+</html>

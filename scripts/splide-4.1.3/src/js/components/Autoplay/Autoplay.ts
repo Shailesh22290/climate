@@ -158,7 +158,7 @@ export function Autoplay( Splide: Splide, Components: Components, options: Optio
     emit( EVENT_AUTOPLAY_PLAYING, rate );
   }
 
-  /**
+  /**z
    * Updates or restores the interval duration.
    *
    * @param index - An index to move to.

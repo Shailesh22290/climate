@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     rewind: true, // Loop back to start after last slide
     autoplay: true, // Auto-rotate slides
     interval: 5000, // 5 seconds per slide
-    speed: 1000, // Transition speed in ms
+    speed: 8000, // Transition speed in ms
     pauseOnHover: false,
     pauseOnFocus: false,
   }).mount();
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     arrows: false,
     autoplay: true,
     interval: 5000,
-    speed: 1000,
+    speed: 8000,
   }).mount();
 
   // Get all text content elements
@@ -168,3 +168,5 @@ window.addEventListener("scroll", () => {
 scrollToTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+

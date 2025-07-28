@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind and Meaning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .quote-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .quote-card:hover {
+            transform: translateY(-5px) rotateX(5deg);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .wisdom-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear forwards;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        /* Custom metallic colors */
+        .bg-gold {
+            background-color: #FFD700;
+            background-image: linear-gradient(to right, rgba(255,215,0,0.8), rgba(255,255,255,0.2), rgba(255,215,0,0.8));
+        }
+        .bg-silver {
+            background-color: #C0C0C0;
+            background-image: linear-gradient(to right, rgba(192,192,192,0.8), rgba(255,255,255,0.3), rgba(192,192,192,0.8));
+        }
+        .bg-bronze {
+            background-color: #CD7F32;
+            background-image: linear-gradient(to right, rgba(205,127,50,0.8), rgba(255,255,255,0.2), rgba(205,127,50,0.8));
+        }
+        .bg-platinum {
+            background-color: #E5E4E2;
+            background-image: linear-gradient(to right, rgba(229,228,226,0.8), rgba(255,255,255,0.3), rgba(229,228,226,0.8));
+        }
+        .text-gold { color: #D4AF37; }
+        .text-silver { color: #C0C0C0; }
+        .text-bronze { color: #CD7F32; }
+        .text-platinum { color: #E5E4E2; }
+        .hover-bg-gold:hover { background-color: #FFD700; }
+        .hover-bg-silver:hover { background-color: #C0C0C0; }
+        .hover-bg-bronze:hover { background-color: #CD7F32; }
+        .hover-bg-platinum:hover { background-color: #E5E4E2; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 overflow-hidden -z-10">
+        <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-gold opacity-20 floating" style="animation-delay: 0s;"></div>
+        <div class="absolute top-1/3 right-20 w-24 h-24 rounded-full bg-silver opacity-20 floating" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-20 h-20 rounded-full bg-bronze opacity-20 floating" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-12 h-12 rounded-full bg-platinum opacity-20 floating" style="animation-delay: 3s;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <h1 class="title-font text-5xl md:text-6xl font-bold mb-4 text-indigo-900">Mind & Meaning</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">An interactive journey through timeless wisdom</p>
+            
+            <div class="mt-8 relative h-2">
+                <svg viewBox="0 0 500 20" class="w-full h-full">
+                    <path d="M0,10 Q125,20 250,10 T500,10" stroke="#4f46e5" stroke-width="2" fill="none" class="wisdom-path"/>
+                </svg>
+            </div>
+        </header>
+
+        <!-- Latest Quote Section -->
+        <section id="latest-quote" class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-6 mb-12 shadow-md border border-gray-100">
+            <!-- Latest quote will be injected here by JavaScript -->
+        </section>
+
+       
+
+        <!-- Interactive Navigation -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <!-- <button onclick="filterQuotes('all')" class="category-btn px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 hover:bg-indigo-200 transition">All</button> -->
+            <button onclick="filterQuotes('god')" class="category-btn px-4 py-2 rounded-full bg-gold text-gold-800 hover:bg-amber-300 hover-bg-gold transition text-gray-900 font-medium">God & Spirituality</button>
+            <button onclick="filterQuotes('research')" class="category-btn px-4 py-2 rounded-full bg-silver text-gray-800 hover:bg-gray-300 hover-bg-silver transition font-medium">Research & Knowledge</button>
+            <button onclick="filterQuotes('life')" class="category-btn px-4 py-2 rounded-full bg-bronze text-gray-900 hover:bg-amber-700 hover-bg-bronze transition font-medium">Life & Time</button>
+            <button onclick="filterQuotes('society')" class="category-btn px-4 py-2 rounded-full bg-platinum text-gray-800 hover:bg-gray-400 hover-bg-platinum transition font-medium">Self & Society</button>
+        </div>
+        <!-- <div id="category-buttons" class="flex flex-wrap justify-center gap-2 my-4"></div> -->
+        <!-- <div id="quotes-container" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4"></div> -->
+
+        <!-- Quotes Container -->
+        <div id="quotes-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Quotes will be dynamically inserted here -->
+        </div>
+
+        <!-- Featured Quote Modal -->
+        <div id="featured-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+            <div class="bg-white rounded-xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div id="featured-content" class="space-y-4"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-500 text-sm">
+            <p>Wisdom is eternal, interpretation is personal.</p>
+            <p class="mt-2">Click on any quote to meditate on its meaning.</p>
+        </footer>
+    </div>
+    <script>
+     
+        // Quote data organized by categories
+        const quotes = {
+            god: [
+                {
+                    text: "Ramayana: Uphold righteousness and duty; good ultimately conquers evil.",
+                    source: "Ancient Wisdom"
+                },
+                {
+                    text: "Mahabharata: Uphold dharma through difficult choices; true victory lies in righteousness, not mere conquest.",
+                    source: "Ancient Wisdom"
+                },
+                {
+                    text: "Bhagavad Gita: Perform your duty selflessly, with devotion and wisdom, detached from outcomes.",
+                    source: "Ancient Wisdom"
+                },
+                {
+                    text: "Upanishads: Seek self-realization and understand the unity of the soul with ultimate reality.",
+                    source: "Ancient Wisdom"
+                },
+                {
+                    text: "It is not the Naraayani Sena, but Narayan who matters.",
+                    source: "Spiritual Insight"
+                },
+                {
+                    text: "Greatness is not rushed—Ram waited 14 years, the Pandavas 13. Heroes earn their moment through time.",
+                    source: "Divine Timing"
+                },
+                {
+                    text: "Arjun, the greatest warrior, paused often—not out of fear, but because greatness feels deeply.",
+                    source: "Spiritual Warrior"
+                },
+                {
+                    text: "Forgiveness is divine, but even Krishna stopped at 100—Shishupala learned that too late.",
+                    source: "Divine Justice"
+                },
+                {
+                    text: "Those who walk the path of dharma never walk alone—the cosmos walks with them.",
+                    source: "Cosmic Support"
+                },
+                {
+                    text: "Nature sets the stage for everything — we are just actors in its grand play.",
+                    source: "Divine Play"
+                },
+                {
+                    text: "When all else fails, higher truth prevails.",
+                    source: "Eternal Truth"
+                }
+            ],
+            life: [
+                {
+                    text: "You live in your mind every moment — keep it clean and pure.",
+                    source: "Mental Hygiene"
+                },
+                {
+                    text: "Time is the actual currency; all else are mere tokens.",
+                    source: "Time's Value"
+                },
+                {
+                    text: "Life grants you limited time; how you use it is your choice.",
+                    source: "Life's Choice"
+                },
+                {
+                    text: "Time listens longer and reveals all truths.",
+                    source: "Time's Wisdom"
+                },
+                {
+                    text: "When you live with goodness, the universe aligns to support you — even trials turn to gifts.",
+                    source: "Cosmic Alignment"
+                },
+                {
+                    text: "The main role is never easy, but that's where the real story is made.",
+                    source: "Life's Challenge"
+                },
+                {
+                    text: "Not everything deserves your time — choose only what serves your path.",
+                    source: "Selective Focus"
+                },
+                {
+                    text: "Truth triumphs—never get perturbed by temporary falsehoods.",
+                    source: "Eternal Truth"
+                },
+                {
+                    text: "Focus on the war, not every battle—Pandavas won only 5 out of 18, yet they won the war.",
+                    source: "Strategic Perspective"
+                },
+                {
+                    text: "Even the unlettered can shine, when touched by grace and guided by perseverance.",
+                    source: "Potential Realized"
+                }
+            ],
+            society: [
+                {
+                    text: "Gazing at the sky is better than many things.",
+                    source: "Simple Pleasures"
+                },
+                {
+                    text: "Two hands hold only so much — be selective in what you carry.",
+                    source: "Selective Burden"
+                },
+                {
+                    text: "Raise your voice only when your heart speaks.",
+                    source: "Authentic Expression"
+                },
+                {
+                    text: "Feel the vibes — they never lie.",
+                    source: "Intuitive Knowing"
+                },
+                {
+                    text: "Start every day as a fresh new beginning.",
+                    source: "Daily Renewal"
+                },
+                {
+                    text: "Just as you bathe to cleanse your body, cleanse your mind every day, as often as you can, to wash away the dirt of thoughts.",
+                    source: "Mental Cleansing"
+                },
+                {
+                    text: "Whatever you say or do, you first create it within yourself—so be mindful of what you nurture inside.",
+                    source: "Internal Creation"
+                },
+                {
+                    text: "It's not enough to grow—what matters is growing up.",
+                    source: "Mature Growth"
+                },
+                {
+                    text: "Everyone tries to keep the ball away from Messi—but when he gets it, magic happens.",
+                    source: "Potential Unleashed"
+                },
+                {
+                    text: "Champions are made by their attitude, not just their talent.",
+                    source: "Winning Mindset"
+                },
+                {
+                    text: "Messi doesn't go around blocking others — he lets his brilliance speak by scoring. That's what true greatness looks like.",
+                    source: "Authentic Greatness"
+                },
+                {
+                    text: "Champions are made before the match—in quiet hours of preparation.",
+                    source: "Preparation Wins"
+                },
+                {
+                    text: "A goal's worth is defined by the opposition you face. If everyone on the field plays for you, it's no longer a goal—it's a handout.",
+                    source: "Challenge Defines Value"
+                },
+                {
+                    text: "Choose whose recognition matters — most don't.",
+                    source: "Selective Validation"
+                },
+                {
+                    text: "Profession shapes both personality and perspective.",
+                    source: "Professional Influence"
+                },
+                {
+                    text: "To be a professor is to think deeply—that's where the real joy lies.",
+                    source: "Academic Joy"
+                },
+                {
+                    text: "Critical thinking and fearless expression define a true professor.",
+                    source: "Academic Integrity"
+                },
+                {
+                    text: "Whom you work with shapes not just your career, but your life.",
+                    source: "Professional Relationships"
+                },
+                {
+                    text: "We all get 24 hours; watch where someone invests their time — that reveals the truth of their life.",
+                    source: "Time Investment"
+                },
+                {
+                    text: "Be mindful of the company you keep—for in time, you become like them and live the life they live; ask yourself if that's what you want.",
+                    source: "Associations Matter"
+                },
+                {
+                    text: "Earn your wisdom through action—accomplish before you philosophize.",
+                    source: "Wisdom Through Action"
+                },
+                {
+                    text: "We work to live—not live to work.",
+                    source: "Work-Life Balance"
+                },
+                {
+                    text: "It's better to be quietly deserving than loudly questioned.",
+                    source: "Quiet Merit"
+                },
+                {
+                    text: "Overachievement can cost your soul—underachievement may still keep it whole.",
+                    source: "Soulful Balance"
+                },
+                {
+                    text: "You march toward your goal; let them keep marching around you.",
+                    source: "Focused Progress"
+                },
+                {
+                    text: "Degrees show education, not the heart or morals.",
+                    source: "Beyond Credentials"
+                },
+                {
+                    text: "You don't win battles by numbers—you win them by truth and character.",
+                    source: "Moral Victory"
+                },
+                {
+                    text: "If you need a gang to take on someone, you've already lost the battle of character.",
+                    source: "Individual Integrity"
+                },
+                {
+                    text: "Without credentials, having a position becomes a punishment of constant hardship.",
+                    source: "Credential Reality"
+                },
+                {
+                    text: "Show kindness to those who envy you; they are often hurting inside.",
+                    source: "Compassion for Envy"
+                },
+                {
+                    text: "The crown doesn't make the king; the king gives meaning to the crown.",
+                    source: "True Leadership"
+                },
+                {
+                    text: "If you have values, they're untouchable. If you lack them, they're unteachable.",
+                    source: "Core Values"
+                },
+                {
+                    text: "Sometimes you must lose to truly win—but never win at the cost of what truly matters.",
+                    source: "Strategic Sacrifice"
+                },
+                {
+                    text: "Don't be disturbed by lies or waste time proving them; truth reveals itself as falsehoods unfold.",
+                    source: "Truth's Victory"
+                },
+                {
+                    text: "Everyone grows, but few truly grow up.",
+                    source: "Mature Development"
+                },
+                {
+                    text: "What we choose reveals who we truly are.",
+                    source: "Choices Define"
+                },
+                {
+                    text: "Speak from the heart, not the throat—the former is felt, the latter merely heard.",
+                    source: "Authentic Communication"
+                },
+                {
+                    text: "If you truly deserved something and didn't get it, one day you'll understand—it wasn't meant for you, or it wasn't good for you.",
+                    source: "Divine Timing"
+                },
+                {
+                    text: "Be a master of many—this age belongs to the all-rounder.",
+                    source: "Versatile Excellence"
+                }
+            ],
+            research: [
+                {
+                    text: "Intellectual battles are the most thrilling sports—lasting years and decades, played 24/7.",
+                    source: "Academic Challenge"
+                },
+                {
+                    text: "Read more, write less—else it's noise, not knowledge, and a waste of time.",
+                    source: "Knowledge Acquisition"
+                },
+                {
+                    text: "At its core, research is pure passion and mental exercise.",
+                    source: "Research Essence"
+                },
+                {
+                    text: "Do not write so that people will read; write so that truth will be revealed.",
+                    source: "Authentic Writing"
+                },
+                {
+                    text: "Don't speak to impress—speak to express what must be said.",
+                    source: "Purposeful Speech"
+                },
+                {
+                    text: "Better to stand still with purpose than to rush in the wrong direction.",
+                    source: "Purposeful Pause"
+                },
+                {
+                    text: "Research means searching for the truth, so the most important quality of a researcher is how truthful they are.",
+                    source: "Research Integrity"
+                },
+                {
+                    text: "Your research topic slowly molds your way of thinking.",
+                    source: "Academic Influence"
+                },
+                {
+                    text: "The value lies in the content, not the style of speech.",
+                    source: "Substance Over Style"
+                },
+                {
+                    text: "Beauty lies in the eye of the beholder — not everyone can appreciate everything. An ironsmith cannot recognize a diamond.",
+                    source: "Subjective Appreciation"
+                },
+                {
+                    text: "Research is noble only when driven by truth—without it, it's just work.",
+                    source: "Noble Pursuit"
+                }
+            ]
+        };
+        
+       // Initialize with default category
+        let currentCategory = 'god';
+
+        // Add DOMContentLoaded handler
+        document.addEventListener('DOMContentLoaded', function() {
+            displayQuotes(currentCategory);
+            createCategoryButtons();
+            displayLatestQuoteCard();
+
+            // Animate title and subtitle
+            document.querySelector('h1').classList.add('animate__animated', 'animate__fadeInDown');
+            document.querySelector('header p').classList.add('animate__animated', 'animate__fadeIn', 'animate__delay-1s');
+        });
+
+        // // Create category buttons dynamically
+        // function createCategoryButtons() {
+        //     const categories = Object.keys(quotes);
+        //     const btnContainer = document.getElementById('category-buttons');
+        //     btnContainer.innerHTML = '';
+            
+        //     categories.forEach(cat => {
+        //         const btn = document.createElement('button');
+        //         btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+        //         btn.className = 'category-btn px-4 py-2 m-1 bg-opacity-80 rounded-lg transition';
+        //         btn.setAttribute('onclick', `filterQuotes('${cat}')`);
+        //         btnContainer.appendChild(btn);
+        //     });
+        // }
+
+        // Display quotes of selected category
+        function displayQuotes(category) {
+            currentCategory = category;
+            const container = document.getElementById('quotes-container');
+            container.innerHTML = '';
+
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('bg-opacity-80');
+            });
+
+            const activeBtn = document.querySelector(`button[onclick="filterQuotes('${category}')"]`);
+            activeBtn.classList.remove('bg-opacity-80');
+            activeBtn.classList.add('bg-indigo-600', 'text-white');
+
+            const quotesToShow = shuffleArray(quotes[category]);
+            quotesToShow.forEach((quote, index) => {
+                container.appendChild(createQuoteCard(quote, category, index));
+            });
+        }
+
+        // Create a quote card
+        function createQuoteCard(quote, category, index = 0) {
+            const card = document.createElement('div');
+            card.className = `quote-card rounded-xl p-6 shadow-md border cursor-pointer transition-all duration-300 hover:shadow-lg animate__animated animate__fadeIn`;
+            card.style.animationDelay = `${index * 0.05}s`;
+            card.onclick = () => showFeaturedQuote(quote);
+
+            const { bgClass, textClass, borderClass, bgImage } = getStyleClasses(category);
+            card.classList.add(bgClass, borderClass);
+            card.style.backgroundImage = `url('${bgImage}')`;
+            card.style.backgroundSize = 'cover';
+            card.style.backgroundPosition = 'center';
+
+            card.innerHTML = `
+                <div class="text-4xl text-white drop-shadow mb-4 opacity-80">“</div>
+                <p class="${textClass} mb-4 line-clamp-4 font-medium drop-shadow">${quote.text}</p>
+            `;
+
+            return card;
+        }
+
+        // Get class and image per category
+        function getStyleClasses(category) {
+            const styles = {
+                god: {
+                    bgClass: 'bg-gold',
+                    textClass: 'text-white',
+                    borderClass: 'border-amber-200',
+                    bgImage: 'images/bg-god.jpg'
+                },
+                research: {
+                    bgClass: 'bg-silver',
+                    textClass: 'text-white',
+                    borderClass: 'border-gray-300',
+                    bgImage: 'images/bg-research.jpg'
+                },
+                life: {
+                    bgClass: 'bg-bronze',
+                    textClass: 'text-white',
+                    borderClass: 'border-amber-800',
+                    bgImage: 'images/bg-life.jpg'
+                },
+                society: {
+                    bgClass: 'bg-platinum',
+                    textClass: 'text-white',
+                    borderClass: 'border-gray-400',
+                    bgImage: 'images/bg-society.jpg'
+                }
+            };
+            return styles[category];
+        }
+
+        // Show the latest added quote card above category cards
+        function displayLatestQuoteCard() {
+            const container = document.getElementById('latest-quote');
+            let latestQuote = null;
+            let category = '';
+
+            for (const key in quotes) {
+                const last = quotes[key][quotes[key].length - 1];
+                if (!latestQuote || new Date().getTime()) { // dummy timestamp fallback
+                    latestQuote = last;
+                    category = key;
+                }
+            }
+
+            if (latestQuote) {
+                container.innerHTML = '<h2 class="text-xl font-semibold mb-4">Latest Quote</h2>';
+                container.appendChild(createQuoteCard(latestQuote, category));
+            }
+        }
+
+        // Featured modal display
+        function showFeaturedQuote(quote) {
+            const modal = document.getElementById('featured-modal');
+            const content = document.getElementById('featured-content');
+
+            let category = Object.keys(quotes).find(key => quotes[key].includes(quote));
+            const { bgClass, textClass, bgImage } = getStyleClasses(category);
+
+            content.innerHTML = `
+                <div class="p-6 rounded-lg ${bgClass}" style="background-image:url('${bgImage}'); background-size:cover; background-position:center;">
+                    <div class="text-6xl text-white drop-shadow mb-6 text-center opacity-70">“</div>
+                    <p class="text-xl ${textClass} mb-6 leading-relaxed font-medium drop-shadow">${quote.text}</p>
+                    <div class="text-lg ${textClass} italic text-center opacity-90">— ${quote.source}</div>
+                    <div class="text-6xl text-white drop-shadow mt-6 text-center opacity-70">”</div>
+                </div>
+                <div class="text-center mt-6">
+                    <button onclick="closeModal()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                        Reflect & Continue
+                    </button>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('featured-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function filterQuotes(category) {
+            displayQuotes(category);
+            document.getElementById('quotes-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+    </script>
+</body>
+</html>

@@ -2082,7 +2082,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
     -webkit-text-fill-color : var(--color-1);
-    transition              : background-color 5000s ease-in-out 0s;
+    transition              : background-color 8000s ease-in-out 0s;
 }
 
 

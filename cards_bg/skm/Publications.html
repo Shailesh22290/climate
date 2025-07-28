@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Publication</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+
+
+        @font-face {
+            font-family: 'CenturyStd-BoldCondensed';
+            src: url('/Users/sundeep/Downloads/Augustine_1_0_0/FONTS/CenturyStd-BoldCondensed.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'EloquiaDisplayExtraBold';
+            src: url('/Users/sundeep/Downloads/Augustine_1_0_0/FONTS/Eloquia/Typekiln - EloquiaDisplay-ExtraBold.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'CenturyStd-BoldCondensed', sans-serif;
+            color: #333;
+            margin-bottom: 0px;
+            padding: 0;
+            background-size: 100% 100%;
+            height: 100vh;
+            overflow-y: scroll; /* Enable vertical scrolling */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+
+        .background {
+            background: url('/Users/sundeep/Downloads/Augustine_1_0_0/images/Yosemite 4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure the background is behind the overlay */
+        }
+
+        .overlay {
+            background-color: rgba(240, 240, 240, 0.8); /* Adjust opacity here */
+            width: 100%;
+            height: 100%; /* Make overlay fill the viewport */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px; /* Space for the publications */
+            box-sizing: border-box;
+            overflow: hidden; /* Prevent scrollbars on the overlay */
+        }
+
+        .publication-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px; /* Space below the title */
+        }
+
+        .table-container {
+            width: 80%;
+            max-width: 100%; /* Adjust table max-width as needed */
+            max-height: calc(100vh - 100px); /* Adjust height as needed */
+            overflow: hidden; /* Hide default scrollbar */
+            margin: 0 auto; /* Center the table container */
+            position: relative; /* Positioning context for scrollbar */
+        }
+
+        .table-wrapper {
+            height: 100%;
+            overflow-y: scroll; /* Enable vertical scrolling */
+            padding-right: 20px; /* Space for scrollbar */
+            box-sizing: content-box; /* Ensure padding does not affect the container's width */
+        }
+
+        /* Hide scrollbar for WebKit-based browsers */
+        .table-wrapper::-webkit-scrollbar {
+            width: px;
+        }
+
+        .table-wrapper::-webkit-scrollbar-thumb {
+            background-color: rgba(39, 17, 17, 0.5); /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Collapse borders */
+        }
+
+        table, th, td {
+            border: 0px solid #333; /* Border color and thickness */
+        }
+
+        th, td {
+            font-size: 18px; 
+            border: 0px solid #ddd; /* Border for table cells */
+            padding: 10px; /* Padding inside cells */
+            text-align: justify; /* Align text to the left */
+            font-family: 'CenturyStd-BoldCondensed', sans-serif;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Header background color */
+            color: #333; /* Header text color */
+        }
+    </style>
+</head>
+<body id="top">
+    <div class="background"></div>
+    <div class="overlay">
+        <div class="publication-title">
+            List of Publications
+        </div>
+
+        <div class="table-container">
+            <div class="table-wrapper">
+                <table>
+                    <p align= justify class="date"><spam class="info" style="color: firebrick;"> Note: Co-authors denoted by maroon color worked with Dr. S. K. Mishra as students/research-associates at the time of publications.</p>
+
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;"> </font> Namdev, P., <font color="black"> M. Sharan, and</font> <strong>  S. K. Mishra, </strong>  2024:<font color="#003399"> <b> On the Extent of Applicability of Various Non-Linear Similarity Functions for Computation of Surface Fluxes Under Stable Conditions in Numerical Models. </b></font> <font color="black"><i> Boundary Layer Meteorology.</i><b></b> [Impact Factor: 4.3]</font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Tyagi, S., <font color="black"> S. Sahany, D. Saraswat,</font> <strong> S. K. Mishra, </strong> <font color="black">A. Dubey, and  D. Niyogi, </font> 2024:<font color="#003399"> <b> Assessing Regional-Scale Heterogeneity in Blue-Green Water Availability under the 1.5° C Global Warming Scenario.</b></font> <font color="black"><i> Journal of Applied Meteorology and Climatology,</i><b> 63(4), 553-574. </b> DOI:10.1175/JAMC-D-23-0083.1. [Impact Factor: 3.0] </font></p>
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;"> </font> Namdev, P., <font color="black"> P. Srivastava, M. Sharan, and</font> <strong>  S. K. Mishra, </strong>  2023:<font color="#003399"> <b> An Update to WRF Surface Layer Parameterization over an Indian Region. </b></font> <font color="black"><i> Dynamics of Atmospheres and Oceans,</i><b> 105, 101414. </b> DOI:10.1016/j.dynatmoce.2023.101414.</b> [Impact Factor: 2.049]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;"> </font> Narang U., K. Juneja, P. Upadhyaya, P. Salunke,<font color="black"> T. Chakraborty, S. K. Behera,</font> <strong>  S. K. Mishra, </strong> <font color="black"> and A. D. Suresh, </font> 2023:<font color="#003399"> <b> Artificial intelligence predicts normal summer monsoon rainfall for India in 2023.</b></font> <font color="black"><i> Scientific Reports,</i><b> 14(1),1495.</b> DOI:10.1038/s41598-023-44284-3. [Impact Factor: 5.0]</font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;"> </font> Dixit A., <font color="black"> S. Sahany, and</font> <strong>  S. K. Mishra, </strong>  2023:<font color="#003399"> <b> Modeling the Climate Change Impact on Hydroclimate Fluxes over the Beas Basin using a High-Resolution Glacier-Atmosphere-Hydrology Coupled Setup.</b></font> <font color="black"><i> Journal of Hydrology,</i><b> 627, 130219.</b> DOI:10.1016/j.jhydrol.2023.130219. [Impact Factor: 6.708]</font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> <strong>  Mishra, S. K., </strong>   P. Upadhyaya, <font color="black"> J. T. Fasullo, <font color="firebrick"> N. P. Keshri, P. Salunke, <font color="black"> A. Ghosh,<font color="firebrick"> A. B. Sainudeen, <font color="black"> and In-Sik Kang, </font> 2023:<font color="#003399"> <b> A Need for Actionable Climate Projections Across the Global South.</b></font> <font color="black"><i> Nature Climate Change,</i><b> 13(9), 883-886. </b> DOI:10.1038/s41558-023-01778-2. [Impact Factor: 28.66] </font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;"> <font color="black"> Kumar, R.,</font> R. Pathak, <font color="black"> S. Sahany, and</font> <strong>  S. K. Mishra, </strong>  2023:<font color="#003399"> <b> Indian Summer Monsoon Simulations in Successive Generations of the NCAR Community Atmosphere Model.</b></font> <i><font color="black"> Theoretical and Applied Climatology, </i><b> 153(3), 977-992. </b> DOI:10.1007/s00704-023-04514-0. [Impact Factor: 3.4]</font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;">Dixit, A., <font color="black"> S. Sahany, </font> <strong>  S. K. Mishra, </strong> <font color="black"> M. D. S. Mesquita, </font> 2023:<font color="#003399"> <b> Seasonal Dependent Suitability of Physical Parametrizations to Simulate Precipitation over the Himalayan Headwater.</b></font> <i><font color="black"> Scientific Reports, </i><b> 13(1), 4756. </b> DOI:10.1038/s41598-023-31353-w. [Impact Factor: 5.0]</font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Salunke, P., N. Prasad, </font> <strong> S. K. Mishra, </strong> <font color="black"> S. K. Dash, </strong> </font> <font color="firebrick">2023:</font><font color="#003399"> <b> Future Projections of Seasonal Temperature and Precipitation for India.</b></font> <font color="black"><i> Frontiers in Climate,</i><b> 5, 1069994.</b> DOI:10.3389/fclim.2023.1069994. [Impact Factor: NA] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Namdev, P., <font color="black"> M. Sharan, </font> <strong> S. K. Mishra, </strong> </font> 2022:<font color="#003399"> <b> Impact of the Similarity Functions of Surface Layer Parameterization in a Climate Model over the Indian Region.</b></font> <font color="black"><i> Quarterly J. of Royal Meteorological Society,</i><b> 149(750), 152-170.</b> DOI:10.1002/qj.4400. [Impact Factor: 7.2] </font></p>
+                       
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Tyagi, S., <font color="black"> X. Zhang, D. Saraswat , S. Sahany, </font> <strong> S. K. Mishra, </strong> <font color="black"> and  D. Niyogi, </font> 2022:<font color="#003399"> <b> Flash Drought: Review of Concept, Prediction and the Potential for Machine Learning, Deep Learning Methods.</b></font> <font color="black"><i> Earth's Future,</i><b> 10(11), e2022EF002723. </b> DOI:10.1029/2022EF002723. [Impact Factor: 9.0] </font></p>
+                       
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Saini, A., <font color="black"> N. Sahu, </font> <strong> S. K. Mishra, </strong> <font color="black"> S. Jain, S. Behera, and S. K. Dash, </font> 2022:<font color="#003399"> <b> The Spatio-Temporal Onset Characteristics of Indian Summer Monsoon Rainfall and Their Relationship with Climate Indices.</b></font> <font color="black"><i> Atmosphere,</i><b> 13, 1581.</b> [Impact Factor: 3.1] </font></p>
+                       
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Parihar, R. S., P. K. Bal, A. Saini,<strong> S. K. Mishra, </strong> <font color="black"> and A. Thapliyal, </font> 2022:<font color="#003399"> <b> Potential Future Malaria Transmission due to Climate Change in Odisha, India.</b></font> <font color="black"><i> Scientific Reports.</i><b> 12(1), 9048.</b> DOI:10.1038/s41598-022-13166-5. [Impact Factor: 5.0] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Tewari, K., <strong> S. K. Mishra, </strong> </font><font color="black"> <font color="firebrick"> P. Salunke,<font color="black"> H. Ozawa, and A. Dewan, </font> 2022:<font color="#003399"> <b> Potential Effects of the Projected Antarctic Sea-Ice Loss on the Climate System.</b></font> <font color="black"><i> Climate Dynamics,</i><b> 60(1-2), 589-601.</b> DOI:10.1007/s00382-022-06320-2. [Impact Factor: 4.9] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Zebaze S., R. Pathak,<font color="black"> A. J. K. Mbienda, W. M. Pokam, </font><font color="firebrick"> P. Salunke, A. Anand,<font color="#003399"> <font color="black"> D. A. Vondou, A. Lenouo, and </font>  <font color="firebrick"> <strong> S. K. Mishra, </strong> 2022:<font color="#003399"> <b> An Investigation into the Role of Synoptic Conditions on Central African Precipitation Variability.</b></font> <font color="black"><i> Acta Geophysica,</i><b> 70(2), 943-962.</b> DOI:10.1007/s11600-022-00754-2. [Impact Factor: 2.3] </font></p>
+                       
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Tewari, K., <strong> S. K. Mishra, </strong> </font><font color="black"> <font color="firebrick"> P. Salunke,<font color="black"> and A. Dewan, </font> 2022:<font color="#003399"> <b> Future Projections of Temperature and Precipitation for Antarctica.</b></font> <font color="black"><i> Environmental Research Letters,</i><b> 17, 014029.</b> DOI:10.1088/1748-9326/ac43e2. [Impact Factor: 6.9] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Mishra, S.,<font color="black"> B. N. Mahapatra, S. S. Sahoo, A. Rout, and <spam class="info" style="color:firebrick;"><strong> S. K. Mishra, </strong> 2021:<font color="#003399"> <font color="#003399"> <b> Energy and entropy generation analysis of hydrological cycle in tropical regions.</b></font> <font color="black"><i>International Journal of Exergy (IJEX),</i> <b>35(3), 327-341.</b> DOI:10.1504/IJEX.2021.115899. [Impact Factor: 1.5] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Tewari, K., <strong> S. K. Mishra, </strong> </font><font color="black">J. Fasullo, and A. Dewan, </font> <font color="firebrick">2021:</font><font color="#003399"> <b> Impact of the Antarctic Topography on Meridional Energy Transport and its Consequential Effect in the Monsoon Circulation.</b></font> <font color="black"><i> Quarterly J. of Royal Meteorological Society,</i> <b> 147(739), 3286-3296.</b> DOI:10.1002/qj.4128. [Impact Factor: 7.2] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Pathak, R.,<font color="black"> S. Sahany, and <spam class="info" style="color:firebrick;"><strong> S. K. Mishra, </strong> <font color="firebrick">2021:</font><font color="#003399"> <font color="#003399"> <b> Impact of Stochastic Entrainment in the NCAR CAM Deep Convection Parameterization on the Simulation of South Asian Summer Monsoon.</b></font> <font color="black"><i>Climate Dynamics,</i>  <b>57, 3365–3384.</b> DOI:10.1007/s00382-021-05870-1. [Impact Factor: 4.9] </font></p>
+                       
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Pathak, R.,<font color="black"> H. P. Dasari, S. El Mhotar, A. Subramanian, S. Sahany,<spam class="info" style="color:firebrick;"><strong> S. K. Mishra, </strong><font color="#003399"> <font color="black"> O. Kino, and I. Hoteit,<font color="firebrick"> 2021:<font color="#003399"> <b> Uncertainty Quantification and Bayesian Inference of Cloud Parameterization in the NCAR Single Column Community Atmosphere Model (SCAM6).</b></font> <font color="black"><i> Frontiers in Climate,</i> <b>  3, 670740.</b></i> DOI:10.3389/fclim.2021.670740. [Impact Factor: NA] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">Tewari, K., <strong> S. K. Mishra, </strong> </font><font color="black">A. Dewan, <font color="firebrick"> A. Anand,<font color="black"> and In-Sik Kang, </font> 2021:<font color="#003399"> <b> Response of the Atmosphere to Orographic Forcings: Insight from Idealised Simulations.</b></font> <font color="black"><i> Journal of the Atmospheric Sciences,</i><b> 78(9), 2691-2708.</b> DOI:10.1175/JAS-D-19-0335.1. [Impact Factor: 3.2] </font></p>
+                       
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> Bhowmick, M., <strong> S. K. Mishra, </strong> </font><font color="black">B. Kravitz,  S. Sahany, and <font color="firebrick">P. Salunke,<font color="black"> </font> 2021:<font color="#003399"> <b> Response of the Indian summer monsoon to global warming, solar geoengineering and its termination.</b></font> <font color="black"><i> Scientific Reports,<b>  11, 9791.</b></i> DOI:10.1038/s41598-021-89249-6. [Impact Factor: 4.9] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> Mohan, S., <strong> S. K. Mishra, </strong> </font><font color="black"> S. Sahany, and S. Behera, </font> <font color="firebrick"> 2021:</font><font color="#003399"> <b> Long-term variability of Sea Surface Temperature in the Tropical Indian Ocean in relation to climate change and variability.</b></font> <font color="black"><i> Global and Planetary Change,</i> <b>199, 103436.</b> DOI:10.1016/j.gloplacha.2021.103436. [Impact Factor: 5.0] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> Tewari, K., <strong> S. K. Mishra, </strong> </font><font color="black"> A. Dewan, <font color="firebrick">G. Dogra, <font color="black">and H. Ozawa, </font> <font color="firebrick"> 2021: </font><font color="#003399"> <b> Influence of the height of Antarctic ice sheet on its climate.</b></font> <font color="black"><i> Polar Science,</i> DOI:10.1016/j.polar.2021.100642. [Impact Factor: 2.4] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> Jain, S.,</font><font color="black"> R. Chhin, R. M. Doherty, </font> <strong> S. K. Mishra, </strong> </font><font color="black"> and S. Yoden, </font> <font color="firebrick"> 2021:</font><font color="#003399"> <b> A New Graphical Method to Diagnose the Impacts of Model Changes on Climate Sensitivity.</b></font> <font color="black"><i> Journal of the Meteorological Society of Japan,</i> <b> 99(2), 437-448.</b> DOI:10.2151/jmsj.2021-021. [Impact Factor: 3.4] </font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;"> Jain, S., <strong>  S. K. Mishra, </strong>A. Anand, P. Salunke  <font color="black"> and J. T.  Fasullo,</font> 2021:<font color="#003399"> <b> Historical and Projected Low-Frequency Variability in the Somali Jet and Indian Summer Monsoon.</b></font> <i> <font color="black"> Climate Dynamics, </i> <b>56, 749-765.</b> DOI:10.1007/s00382-020-05492-z. [Impact Factor: 4.9]</font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> Tewari, K., <strong> S. K. Mishra, </strong> </font><font color="black"> A. Dewan, and H. Ozawa,  <font color="firebrick">2020:</font><font color="#003399"> <b> Effects of the Antarctic Elevation on the Atmospheric Circulation.</b></font> <font color="black"><i> Theoretical and Applied Climatology,</i> <b> 143, 1487-1499.</b> DOI:10.1007/s00704-020-03456-1. [Impact Factor: 3.4] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">  Pathak, R., <font color="black"> S. Sahany,</font> <strong> S. K. Mishra, </strong> <font color="firebrick">2020:</font><font color="#003399"> <b> Uncertainty Quantification Based Cloud Parameterization Sensitivity Analysis in the NCAR Community Atmosphere Model.</b></font> <font color="black"><i> Scientific Reports,</i> <b> 10, 17499.</b> DOI:10.1038/s41598-020-74441-x. [Impact Factor: 5.0] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">  Jain, S.,<font color="black"> A. Scaife, N. Dunstone, D. Smith,</font> <strong>S. K. Mishra</strong><font color="firebrick">, 2020:</font> <font color="#003399"> <b> Current Chance of Unprecedented Monsoon Rainfall over India using Dynamical Ensemble Simulations.</b></font> <font color="black"><i> Environmental Research Letters,</i><b> 15, 9.</b> DOI: 10.1088/1748-9326/ab7b98. [Impact Factor: 6.9] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">  Singh, R., P. K. Bal, V. Kumar,</font> <strong> S. K. Mishra, </strong><font color="black"> S. Sahany,<font color="firebrick"> P. Salunke,<font color="black"> S. Dash, and, <font color="black"> R. C. Dhiman<font color="firebrick">, 2019:</font> <font color="#003399"> <b> Numerical Modeling of the Dynamics of Malaria Transmission in a Highly Endemic Region of India.</b></font> <font color="black"><i> Scientific Reports,<b>  9(1), 11903.</b></i> DOI: 10.1038/s41598-019-47212-6. [Impact Factor: 5.0] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;">  Pathak, R., <font color="black"> S. Sahany,</font> <strong> S. K. Mishra, </strong> and <font color="black"> S. K. Dash,</font> 2019:<font color="#003399"> <b> Precipitation Biases in CMIP5 Models over the South Asian Region.</b></font> <font color="black"><i> Scientific Reports,<b> 9(1), 9589.</b></i> DOI: 10.1038/s41598-019-45907-4. [Impact Factor: 5.0] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> <strong>  Mishra, S. K., </strong>   S. Jain, P. Salunke, and <font color="black"> S. Sahany,</font> 2019:<font color="#003399"> <b> Past and Future Climate Change over the Himalaya-Tibetan Highland — Inferences from APHRODITE and NEX-GDDP Data.</b></font> <font color="black"><i> Climatic Change,<b> 156, 315-322.</b></i> DOI: 10.1007/s10584-019-02473-y. [Impact Factor: 5.2] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> Jain, S., P. Salunke,<strong> S. K. Mishra,</strong> <font color="black">S. Sahany,</font> and N. Choudhary, 2019:<font color="#003399"> <b> Advantage of NEX-GDDP over CMIP5 and CORDEX Data: Indian Summer Monsoon.</b></font> <font color="black"><i> Atmospheric Research,<b> 228, 152-160.</b></i> DOI: 10.1016/j.atmosres.2019.05.026. [Impact Factor: 6.0] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> Sinclaire, Z., S. Jain, P. Salunke, S. Shafiq, and <strong> S. K. Mishra, </strong> 2019:<font color="#003399"> <b> Assessment of CMIP5 multimodel mean for the historical climate of Africa.</b></font> <font color="black"><i>  Atmospheric Science Letters,<b> 20, e926.</b></i> DOI: 10.1002/asl.926. [Impact Factor: 3.0] </font></p>
+                       
+                       <p align= justify class="date" ><spam class="info" style="color:firebrick;"> Bhowmick, M.,  <font color="black">S. Sahany,</font> and <strong>S. K. Mishra, </strong> 2019:</font> <font color="#003399"> <b> Projected Precipitation Changes over the South Asian Region for Every 0.5<sup>o</sup>C Increase in Global Warming.</b></font> <font color="black"><i> Environmental Research Letters,</i> <b> 14(5), 054005. </b> DOI: 10.1088/1748-9326/ab1271. [Impact Factor: 6.9] </font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color:firebrick;"> Anand, A., M. Bhowmick,<strong> S. K. Mishra,</strong> <font color="black">S. Sahany,</font>  and C. V. Reddy Telukuntla, 2019: <font color="#003399"> <b>Response of Indian Monsoon to Increase of Resolution in NCAR-CAM5.</b></font><font color="black"><i> Atmospheric Research,</i> <b> 221, 12-26. </b> DOI:10.1016/j.atmosres.2019.01.015. [Impact Factor: 6.0] </font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color:firebrick;"> Bal, P. K., R. Pathak, <strong> S. K. Mishra, </strong> and <font color="black"> S. Sahany,</font> 2018: <font color="#003399"> <b> Effects of Global Warming and Solar Geoengineering on Precipitation Seasonality.</b></font> <font color="black"><i><font color="black"> Environmental Research Letters, </i> <b> 14(3), 034011. </b> DOI:10.1088/1748-9326/aafc7d. [Impact Factor: 6.9]</font> </p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color:firebrick;"> Jain, S., P. Salunke, <strong> S. K. Mishra, </strong> and  <font color="black">S. Sahany,</font> 2018:<font color="#003399"> <b> Performance of CMIP5 Models for Indian Summer-Monsoon Precipitation and Temperature.</b></font> <i><font color="black"> Theoretical and Applied Climatology, </i> <b> 137, 1429-1447. </b> DOI:10.1007/s00704-018-2674-3. [Impact Factor: 3.4]</font> </p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color:firebrick;"> <strong> Mishra, S. K., </strong><font color="black"> S. Sahany,</font> P. Salunke,<font color="black"> In-Sik Kang,</font> and S. Jain, 2018: <font color="#003399"> <b>Fidelity of CMIP5 Multi Model Mean in Assessing Indian Monsoon Simulations.</b></font> <i> <font color="black"> npj Climate and Atmospheric Sciences, </i> <b> 1(1), 39.</b> DOI:10.1038/s41612-018-0049-1. [Impact Factor: 9.4]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color:firebrick;"> Salunke, P., S. Jain, and <strong>  S. K. Mishra, </strong> 2018:<font color="#003399"> <b> Performance of the CMIP5 models in the simulation of the Himalaya-Tibetan Plateau monsoon.</b></font> <i><font color="black"> Theoretical and Applied Climatology, </i> <b> 137(1-2), 909-928.</b> DOI:10.1007/s00704-018-2644-9. [Impact Factor: 3.4] </font> </p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;"> Dash, Y.,<strong> S. K. Mishra, </strong> and <font color="black"> B. K. Panigrahi,</font> 2018:<font color="#003399"> <b> Predictability Assessment of Northeast Monsoon Rainfall in India Using Sea Surface Temperature Anomaly through Statistical and Machine Learning Techniques.</b></font> <i><font color="black"> Environmetrics, </i> <b> e2533. </b> DOI:10.1002/env.2533. [Impact Factor: 1.5]</font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;"> Jain, S., <strong>  S. K. Mishra, </strong>  P. Salunke and, <font color="black">S. Sahany,</font> 2018:<font color="#003399"> <b> Importance of the Resolution of Surface Topography Vis-a-Vis Atmospheric and Surface Processes in the Simulation of the Boreal Summer Climate of Himalaya-Tibet Highland.</b></font> <i> <font color="black"> Climate Dynamics, </i> <b>52, 4735-4748.</b> DOI:10.1007/s00382-018-4411-0. [Impact Factor: 4.9]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;"> <font color="black">Sahany, S.,</font> <strong>  S. K. Mishra, </strong>  R. Pathak, and, <font color="black">B. Rajagopalan,</font> 2018: <font color="#003399"> <b>Spatio-Temporal Variability of Seasonality of Rainfall over India.</b></font> <i><font color="black"> Geophysical Research Letters, </i> <b> 45(14), 7140-7147. </b> DOI:10.1029/2018GL077932. [Impact Factor: 5.6]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;">  <font color="black"> Sahany, S.,</font> <strong>  S. K. Mishra, </strong> and, P. Salunke, 2018:<font color="#003399"> <b> Historical Simulations and Climate Change Projections over India by NCAR CCSM4: CMIP5 vs. NEX-GDDP.</b></font> <i><font color="black"> Theoretical and Applied Climatology, </i> <b> 135, 1423-1433. </b> DOI:10.1007/s00704-018-2455-z. [Impact Factor: 3.4]</font> </p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;"> <font color="black"> Karri, S., S. K. Dash, S. K. Panda,</font> M. Paliwal, <strong>  S. K. Mishra, </strong> and, <font color="black"> Jai-Ho Oh,</font> 2018: <font color="#003399"> <b> Relative Role of Sea Surface Temperature and Snow on Indian Summer Monsoon Seasonal Simulation using a GCM. </b></font> <i> <font color="black">Arabian Journal of Geosciences, </i><b> 11(116), 1866-7511.</b> DOI:10.1007/s12517-018-3559-6. [Impact Factor: 1.8]</font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color:firebrick;">Dash, Y., <strong>  S. K. Mishra, </strong><font color="black"> B. K. Panigrahi,</font> 2018:<font color="#003399"> <b> Rainfall Prediction for the Kerala State of India Using Artificial Intelligence Approaches.</b></font> <i> <font color="black"> Computers and Electrical Engineering, </i> <b> 70, 66-73.</b> DOI:10.1016/j.compeleceng.2018.06.004. [Impact Factor: 4.2]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color:firebrick;">  Anand, A.,  <strong>  S. K. Mishra, </strong> <font color="black"> S. Sahany, </font>M. Bhowmick, J. S. Rawat, and, <font color="black">S. K. Dash, </font>2018: <font color="#003399"> <b>Indian Summer Monsoon Simulations: Usefulness of Increasing Horizontal Resolution, Manual Tuning, and Semi-Automatic Tuning in Reducing Present-Day Model Biases.</b></font> <i><font color="black"> Scientific Reports, </i><b> 8(1), 3522.</b> DOI:10.1038/s41598-018-21865-1. [Impact Factor: 5.0]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color:firebrick;">  <strong> Mishra, S. K., </strong> A. Anand, <font color="black">J. T. Fasullo </font> and, S. Bhagat, 2018:<font color="#003399"> <b> Importance of the Resolution of Surface Topography in Indian Monsoon Simulation. </b></font> <i><font color="black"> Journal of Climate, </i><b> 31, 4879-4898. </b> DOI:10.1175/JCLI-D-17-0324.1. [Impact Factor: 5.4]</font></p>
+                       
+                         <p align= justify class="date"><spam class="info" style="color:firebrick;"> <strong> Mishra, S. K., </strong> <font color="black"> S. Sahany, </font>and, P. Salunke, 2017: <font color="#003399"> <b> CMIP5 vs. CORDEX over the Indian region: how much do we benefit from dynamical downscaling?</b></font> <i> <font color="black"> Theoretical and Applied Climatology, </i><b> 133(3-4), 1133-1141. </b> DOI:10.1175/JCLI-D-17-0324.1. [Impact Factor: 3.4]</font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color:firebrick;">  <font color="black">Doraiswamy, P., R. K. M. Jayanty, S. T. Rao, M. Mohan, S. Dey, D. Ganguly,</font> <strong> S. K. Mishra,  </strong><font color="black"> R. Jain, M. Azua and, A. Gideon, </font>2017:<font color="#003399"> <b> “Combating Air Pollution in North India: The Path Forward", </b> <font color="black"> EM, The magazine for environmental managers, A&WMA. </font></font> </p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color:firebrick;">  Dash, Y., <strong>  S. K. Mishra, </strong><font color="black"> S. Sahany, and,  B. K. Panigrahi, </font> 2017:<font color="#003399"> <b> Indian Summer Monsoon Rainfall Prediction: A Comparison of Iterative and Non-Iterative Approaches.</b></font> <i><font color="black"> Applied Soft Computing, </i><b> 70, 1122-1134.</b> DOI:10.1016/j.asoc.2017.08.055. [Impact Factor: 8.3]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;">  <font color="black"> Dash, S. K.,</font> <strong>  S. K. Mishra, </strong>  <font color="black">S. Sahany, V. Venugopal, K. Ashok, and, A. Gupta,</font> 2017: <font color="#003399"> <b> Climate Modeling in India: Present Status and Way Forward.</b></font> <i> <font color="black"> Bulletin of the American Meteorological Society, </i><b> 98, ES183-ES188. </b> DOI:10.1175/BAMS-D-16-0322.1. [Impact Factor: 9.1]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;">  <strong> Mishra, S. K., </strong> <font color="black">S. Sahany,</font> and, P. Salunke, 2017:<font color="#003399"> <b> Linkages between MJO and summer monsoon rainfall over India and surrounding region.</b></font> <i><font color="black"> Meteorology and Atmospheric Physics, </i> <b> 129, 283–296. </b> DOI:10.1007/s00703-016-0470-0. [Impact Factor: 2.3]</font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;"> <font color="black">Dash, S. K.,</font> <strong> S. K. Mishra, </strong> <font color="black"> K. C. Pattnayak, A. Mamgain, L. Mariotti, E. Coppola, F. Giorgi, and, G. Giuliani,</font> 2015:<font color="#003399"> <b> Projected Seasonal Mean Summer Monsoon over India and Adjoining Regions for the 21st Century.</b></font> <i><font color="black"> Theoretical and Applied Climatology, </i><b>122(3-4), 581-593. </b> DOI:10.1007/s00704-014-1310-0. [Impact Factor: 3.4]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;"> <font color="black"> Evans, K., P. Lauritzen, </font><strong>  S. K. Mishra, </strong><font color="black"> R. Neale, M. A. Taylor, and, J. J. Tribbia,</font> 2013:<font color="#003399"> <b> AMIP Simulation with the CAM4 Spectral Element Dynamical Core.</b></font> <i><font color="black"> Journal of Climate, </i><b>26, 689–709.</b> DOI:10.1175/JCLI-D-11-00448.1. The author sequence of this paper is in alphabetic order. [Impact Factor: 5.4] </font> </p>
+                       
+                         <p align= justify class="date"><spam class="info" style="color: firebrick;"> <font color="black"> Sahany, S.,</font> and, <strong>  S. K. Mishra, </strong>  2011:<font color="#003399"> <b> Effects of Convective Scale Downdrafts on the Rainfall Simulation in NCAR-CAM3.</b></font> <i><font color="black"> Theoretical and Applied Climatology, </i><b> 107, 547-562. </b> DOI:10.1007/s00704-011-0504-y. [Impact Factor: 3.4]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;">  <strong> Mishra, S. K., </strong>  2011: <font color="#003399"> <b>Influence of Convective Adjustment Time Scale on the Tropical Transient  Activity. </b></font> <i><font color="black">  Meteorology and Atmospheric Physics, </i><b>114, 17-34. </b> DOI:10.1007/s00703-011-0154-8.  [Impact Factor: 2.3]</font> </p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;">  <strong> Mishra, S. K., </strong>  2011:<font color="#003399"> <b> Effects of Convective Adjustment Time Scale on the Simulation of Tropical Climate. </b> </font> <i> <font color="black"> Theoretical and Applied Climatology, </i><b>107(1-2), 211-228.</b> DOI:10.1007/s00704-011-0479-8. [Impact Factor: 3.4] </font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;">  <strong> Mishra, S. K., </strong>  and, <font color="black">S. Sahany,</font> 2011: <font color="#003399"> <b>Sensitivity of Kelvin Waves and Madden-Julian Oscillation to Convective Downdrafts in the NCAR-CAM3.</b></font> <i><font color="black">  Atmospheric Science Letters, </i><b> 12(3), 281-287. </b>  DOI:10.1002/asl.334. [Impact Factor: 3.0] </font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;">  <strong> Mishra, S. K., </strong><font color="black"> M. A. Taylor, R. D. Nair, H. M. Tufo, and, J. J. Tribbia,</font> 2011:<font color="#003399"> <b> Performance of the HOMME Dynamical Core in the Aqua-Planet Configuration of NCAR CAM4: Equatorial Waves.</b></font>  <i><font color="black"> Annales Geophysicae, </i><b> 29, 221-227. </b>  DOI:10.5194/angeo-29-221-2011. [Impact Factor: 1.9]</font></p>
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;">  <strong> Mishra, S. K., </strong>  <font color="black">M. A. Taylor, R. D. Nair, P. H. Lauritzen, H. M. Tufo, and, J. J. Tribbia,</font> 2011: <font color="#003399"> <b> Evaluation of the HOMME Dynamical Core in the Aqua-Planet Configuration of NCAR CAM4: Rainfall. </b></font> <i><font color="black"> Journal of Climate, </i><b> 24, 4037-4055. </b> DOI:10.1175/2011JCLI3860.1. [Impact Factor: 5.1]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;">  <strong> Mishra, S. K., </strong> 2011: <font color="#003399"> <b>Sensitivity of the Indian Summer Monsoon Rainfall and its Interannual Variation to Model Time Step.</b></font> <i> <font color="black"> Atmospheric Research, </i><b> 101, 67-77.  </b> DOI:10.1016/j.atmosres.2011.01.011. [Impact Factor: 6.0]</font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;">  <strong> Mishra, S. K., </strong> and, <font color="black">S. Sahany,</font> 2011:<font color="#003399"> <b> Effects of Time Step Size on the Simulation of Tropical Climate in NCAR-CAM3. </b></font> <i><font color="black"> Climate Dynamics, </i> <b> 37(3-4), 689-704. </b> DOI:10.1007/s00382-011-0994-4.  [Impact Factor: 4.9] </font></p>
+                       
+                        <p align= justify class="date"><spam class="info" style="color: firebrick;"> <strong> Mishra, S. K., </strong>  and, <font color="black">J. Srinivasan,</font> 2010:<font color="#003399"> <b> Sensitivity of the Simulated Precipitation to Changes in Convective Relaxation Time Scale.</b></font> <i> <font color="black"> Annales Geophysicae, </i><b> 28, 1827-1846. </b> DOI:10.5194/angeo-28-1827-2010. [Impact Factor: 2.2] </font> </p>
+                       
+                       
+                       <p align= justify class="date"><spam class="info" style="color: firebrick;"> <strong> Mishra, S. K., </strong> <font color="black">J. Srinivasan, and, R. S. Nanjundiah, </font> 2008:<font color="#003399"> <b>  The Impact of Time Step on the Intensity of ITCZ in Aquaplanet GCM.</b></font> <i> <font color="black"> Monthly Weather Review, </i><b> 136, 4077–4091. </b> DOI:10.1175/2008MWR2478.1. [Impact Factor: 3.7] </font> </p>
+                       
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

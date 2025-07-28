@@ -54,24 +54,51 @@ window.addEventListener("scroll", function () {
   const navbar = document.querySelector("nav");
   navbar.classList.toggle("nav-scrolled", window.scrollY > 180);
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const OFFSET = 70; // Offset in pixels
+  const baseSpeed = 0.5; // milliseconds per pixel
+const DURATION = Math.min(2500, Math.abs(distance) * baseSpeed);
 
-// Smooth scrolling for anchor links with offset
-document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("a[href^='#']").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
-      
-      if (targetElement) {
-        const offset = 70; // Offset value (30px above the target)
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+    anchor.addEventListener("click", event => {
+      const href = anchor.getAttribute("href");
+      const targetId = href && href.length > 1 ? href.substring(1) : null;
 
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth"
-        });
+      if (!targetId) return;
+
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      event.preventDefault();
+
+      const startPosition = window.pageYOffset;
+      const targetPosition =
+        targetElement.getBoundingClientRect().top + startPosition - OFFSET;
+      const distance = targetPosition - startPosition;
+
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+
+        // Ease-in-out cubic function
+        const easeInOutCubic = t =>
+          t < 0.5
+            ? 4 * t * t * t
+            : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+        const progress = Math.min(elapsed / DURATION, 1);
+        const ease = easeInOutCubic(progress);
+
+        window.scrollTo(0, startPosition + distance * ease);
+
+        if (elapsed < DURATION) {
+          requestAnimationFrame(animation);
+        }
       }
+
+      requestAnimationFrame(animation);
     });
   });
 });

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Canonical URL -->
+  <link rel="canonical" href="https://dcecm.iitd.ac.in/">
+
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="css/navbar.css" as="style">
+  <link rel="preload" href="css/footer.css" as="style">
+  <link rel="preload" href="scripts/splide.min.js" as="script">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/dropdown.css"/>
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/splide.min.css">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+    <title>Mind and Meaning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"/>
+    <style>
+      body { font-family: 'Roboto', sans-serif; background-color: #f8f5f2; color: #333; }
+      .title-font { font-family: 'Playfair Display', serif; }
+      .dropdown-container {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 100%;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.9);
+          transform: translateY(-100%);
+          transition: transform 0.3s ease-in-out;
+          z-index: 9999;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding-top: 60px;
+      }
+      nav{
+        background-color: black!important;
+      }
+      .dropdown-container.active {
+          transform: translateY(0);
+      }
+      .close-btn {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          cursor: pointer;
+          color: white;
+          font-size: 24px;
+      }
+      .menu-links {
+          text-align: center;
+      }
+      .menu-links a {
+          display: block;
+          color: white;
+          text-decoration: none;
+          font-size: 20px;
+          padding: 15px 0;
+          transition: opacity 0.3s;
+      }
+      .menu-links a:hover {
+          text-decoration: underline;
+          opacity: 0.8;
+      }
+
+       /* Custom scrollbar for dropdowns */
+       select::-webkit-scrollbar {
+            width: 8px;
+        }
+        select::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        select::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        select::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+      .quote-card { transition: all 0.3s ease; transform-style: preserve-3d; }
+      .quote-card:hover {
+        transform: translateY(-5px) rotateX(5deg);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .floating {
+        animation: floating 6s ease-in-out infinite;
+      }
+      @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .wisdom-path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 5s linear forwards;
+      }
+      @keyframes dash {
+        to { stroke-dashoffset: 0; }
+      }
+      .bg-gold {
+        background-color: #FFD700;
+        background-image: linear-gradient(to right, rgba(255,215,0,0.8), rgba(255,255,255,0.2), rgba(255,215,0,0.8));
+      }
+      .bg-silver {
+        background-color: #C0C0C0;
+        background-image: linear-gradient(to right, rgba(192,192,192,0.8), rgba(255,255,255,0.3), rgba(192,192,192,0.8));
+      }
+      .bg-bronze {
+        background-color: #CD7F32;
+        background-image: linear-gradient(to right, rgba(205,127,50,0.8), rgba(255,255,255,0.2), rgba(205,127,50,0.8));
+      }
+      .bg-platinum {
+        background-color: #E5E4E2;
+        background-image: linear-gradient(to right, rgba(229,228,226,0.8), rgba(255,255,255,0.3), rgba(229,228,226,0.8));
+      }
+      .text-gold { color: #D4AF37; }
+      .text-silver { color: #C0C0C0; }
+      .text-bronze { color: #CD7F32; }
+      .text-platinum { color: #E5E4E2; }
+      .hover-bg-gold:hover { background-color: #FFD700; }
+      .hover-bg-silver:hover { background-color: #C0C0C0; }
+      .hover-bg-bronze:hover { background-color: #CD7F32; }
+      .hover-bg-platinum:hover { background-color: #E5E4E2; }
+    </style>
+</head>
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full shadow-md z-50 ">
+    <div class="w-full py-2 flex items-center justify-center ">
+      <div class="md:w-[79%] w-[90%] relative flex items-center justify-between ">
+        <a href="index.html" class="w-full" target="_blank">
+          <div class="flex flex-col md:flex-row items-center gap-2">
+            <!-- Logo Container -->
+            <div class="logo-animation-wrapper w-full h-full drop-shadow-lg transform-gpu ">
+              <!-- Primary Version -->
+              <h3 class="title-block whitespace-nowrap text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold text-white">
+                DST Centre of Excellence for <span class="whitespace-normal md:whitespace-pre"> Climate Information</span>
+                <span class="college block text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-1 whitespace-nowrap">
+                  Indian Institute Of Technology Delhi
+                </span>
+              </h3>
+              
+              <!-- Ioe Version -->
+              <h3 class="ioe title-block whitespace-nowrap text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold text-white">
+                DST Centre of Excellence for <span class="whitespace-normal md:whitespace-pre"> Climate Information</span>
+                <span class="college block text-sm sm:text-base sm:text-lg lg:text-xl font-semibold mt-1 whitespace-nowrap">
+                  Indian Institute Of Technology Delhi
+                </span>
+              </h3>
+              
+              <!-- Arabic Version -->
+              <h3 class="ar-fontfamily title-block whitespace-nowrap text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold text-white">
+                DST Centre of Excellence for <span class="whitespace-normal md:whitespace-pre"> Climate Information</span>
+                <span class="college block text-sm sm:text-base sm:text-lg lg:text-xl font-semibold mt-1 whitespace-nowrap">
+                  Indian Institute Of Technology Delhi
+                </span>
+              </h3>
+            </div>
+          </div>
+        </a>
+   <!-- Hamburger Menu -->
+    <div class="ham_menu mt-10 md:text-xl z-[9999999] text-2xl cursor-pointer" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars fa-xl text-white"></i>
+    </div>
+</nav>
+
+  <!-- Dropdown Menu -->
+<div id="dropdownMenu" class=" dropdown-container fixed top-0 right-0 w-96 h-screen bg-black bg-opacity-90 transform -translate-y-full transition-transform duration-300 ease-in-out z-[9999] flex justify-content ">
+  <span class="close-btn fixed top-5 right-5 z-[10000] cursor-pointer opacity-90 hover:opacity-100" onclick="toggleMenu()">&times;</span>
+  <div class="menu-links p-5 rounded-lg shadow-lg mr-5">
+      <a href="index.html">Home</a>
+      <a href="index.html?scrollTo=#about">About</a>
+      <a href="index.html?scrollTo=#research">Research</a>
+      <a href="index.html?scrollTo=#publication">Publications</a>
+      <a href="index.html?scrollTo=#leadership">Leadership</a>
+      <a href="index.html?scrollTo=#advisor">Advisors</a>
+      <a href="index.html?scrollTo=#Opportunities">Opportunities</a>
+      <a href="index.html?scrollTo=#contact">Contact Us</a>
+  </div>
+</div>
+   <!-- Background floating circles -->
+  <div class="fixed inset-0 overflow-hidden -z-10">
+    <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-gold opacity-20 floating"></div>
+    <div class="absolute top-1/3 right-20 w-24 h-24 rounded-full bg-silver opacity-20 floating" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-20 left-1/4 w-20 h-20 rounded-full bg-bronze opacity-20 floating" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-12 h-12 rounded-full bg-platinum opacity-20 floating" style="animation-delay: 3s;"></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="container mx-auto px-4 py-12 max-w-6xl">
+    <!-- Header -->
+    <header class="text-center mb-4 mt-32">
+      <h1 class="title-font text-5xl md:text-6xl font-bold mb-4 text-indigo-900">Mind & Meaning</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">An interactive journey through timeless wisdom</p>
+      <div class="mt-8 relative h-2">
+        <svg viewBox="0 0 500 20" class="w-full h-full">
+          <path d="M0,10 Q125,20 250,10 T500,10" stroke="#4f46e5" stroke-width="2" fill="none" class="wisdom-path"/>
+        </svg>
+      </div>
+    </header>
+
+    <!-- Latest Quote -->
+    <section id="latest-quote" class="   rounded-xl px-2 py-2 max-w-xl mx-auto mb-12">
+      <!-- Injected by JS -->
+    </section>
+
+    <!-- Category buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+      <button onclick="filterQuotes('god')" class="category-btn px-4 py-2 rounded-full bg-gold text-gray-900 hover-bg-gold font-medium">God & Spirituality</button>
+      <button onclick="filterQuotes('research')" class="category-btn px-4 py-2 rounded-full bg-silver text-gray-800 hover-bg-silver font-medium">Research & Knowledge</button>
+      <button onclick="filterQuotes('life')" class="category-btn px-4 py-2 rounded-full bg-bronze text-gray-900 hover-bg-bronze font-medium">Life & Time</button>
+      <button onclick="filterQuotes('society')" class="category-btn px-4 py-2 rounded-full bg-platinum text-gray-800 hover-bg-platinum font-medium">Self & Society</button>
+    </div>
+
+    <!-- Quote grid -->
+    <div id="quotes-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <!-- Featured Quote Modal -->
+    <div id="featured-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+      <div class="bg-white rounded-xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div id="featured-content" class="space-y-4"></div>
+      </div>
+    </div>
+
+   
+  </div>
+  <!-- FOOTER -->
+  <footer class="footer" id="contact"></footer>
+  
+  <script src="scripts/dropdown.js" defer></script>
+  <script src="scripts/footer.js"></script>
+  <script src="scripts/publication.js"></script>
+  <script>
+        const quotes = {
+            god: [
+                {
+                    text: "Ramayana: Uphold righteousness and duty; good ultimately conquers evil.",
+                    dateAdded: "2025-06-15T08:30:00Z"
+                },
+                {
+                    text: "Mahabharata: Uphold dharma through difficult choices; true victory lies in righteousness, not mere conquest.",
+                    dateAdded: "2025-06-16T14:45:00Z"
+                },
+                {
+                    text: "Bhagavad Gita: Perform your duty selflessly, with devotion and wisdom, detached from outcomes.",
+                    dateAdded: "2025-06-17T09:15:00Z"
+                },
+                {
+                    text: "Upanishads: Seek self-realization and understand the unity of the soul with ultimate reality.",
+                    dateAdded: "2025-06-18T11:20:00Z"
+                },
+                {
+                    text: "It is not the Naraayani Sena, but Narayan who matters.",
+                    dateAdded: "2025-06-19T16:00:00Z"
+                },
+                {
+                    text: "Greatness is not rushed—Ram waited 14 years, the Pandavas 13. Heroes earn their moment through time.",
+                    dateAdded: "2025-06-20T10:30:00Z"
+                },
+                {
+                    text: "Arjun, the greatest warrior, paused often—not out of fear, but because greatness feels deeply.",
+                    dateAdded: "2025-06-21T13:45:00Z"
+                },
+                {
+                    text: "Forgiveness is divine, but even Krishna stopped at 100—Shishupal learned that too late.",
+                    dateAdded: "2025-06-22T15:10:00Z"
+                },
+                {
+                    text: "Those who walk the path of dharma never walk alone—the cosmos walks with them.",
+                    dateAdded: "2025-06-23T12:00:00Z"
+                },
+                {
+                    text: "Nature sets the stage for everything — we are just actors in its grand play.",
+                    dateAdded: "2025-06-24T17:30:00Z"
+                },
+                {
+                    text: "When all else fails, higher truth prevails.",
+                    dateAdded: "2025-06-25T09:45:00Z"
+                }
+            ],
+            life: [
+                {
+                    text: "You live in your mind every moment — keep it clean and pure.",
+                    dateAdded: "2025-06-15T10:20:00Z"
+                },
+                {
+                    text: "Time is the actual currency; all else are mere tokens.",
+                    dateAdded: "2025-06-16T11:35:00Z"
+                },
+                {
+                    text: "Life grants you limited time; how you use it is your choice.",
+                    dateAdded: "2025-06-17T14:50:00Z"
+                },
+                {
+                    text: "Time listens longer and reveals all truths.",
+                    dateAdded: "2025-06-18T16:25:00Z"
+                },
+                {
+                    text: "When you live with goodness, the universe aligns to support you — even trials turn to gifts.",
+                    dateAdded: "2025-06-19T09:10:00Z"
+                },
+                {
+                    text: "The main role is never easy, but that's where the real story is made.",
+                    dateAdded: "2025-06-20T13:40:00Z"
+                },
+                {
+                    text: "Not everything deserves your time — choose only what serves your path.",
+                    dateAdded: "2025-06-21T15:55:00Z"
+                },
+                {
+                    text: "Truth triumphs—never get perturbed by temporary falsehoods.",
+                    dateAdded: "2025-06-22T11:05:00Z"
+                },
+                {
+                    text: "Focus on the war, not every battle—Pandavas won only 5 out of 18, yet they won the war.",
+                    dateAdded: "2025-06-23T17:15:00Z"
+                },
+                {
+                    text: "Even the unlettered can shine, when touched by grace and guided by perseverance.",
+                    dateAdded: "2025-06-24T10:30:00Z"
+                }
+            ],
+            society: [
+                {
+                    text: "Gazing at the sky is better than many things.",
+                    dateAdded: "2025-06-15T12:40:00Z"
+                },
+                {
+                    text: "Two hands hold only so much — be selective in what you carry.",
+                    dateAdded: "2025-06-16T14:20:00Z"
+                },
+                {
+                    text: "Raise your voice only when your heart speaks.",
+                    dateAdded: "2025-06-17T09:50:00Z"
+                },
+                {
+                    text: "Feel the vibes — they never lie.",
+                    dateAdded: "2025-06-18T16:10:00Z"
+                },
+                {
+                    text: "Start every day as a fresh new beginning.",
+                    dateAdded: "2025-06-19T08:45:00Z"
+                },
+                {
+                    text: "Just as you bathe to cleanse your body, cleanse your mind every day, as often as you can, to wash away the dirt of thoughts.",
+                    dateAdded: "2025-06-20T13:25:00Z"
+                },
+                {
+                    text: "Whatever you say or do, you first create it within yourself—so be mindful of what you nurture inside.",
+                    dateAdded: "2025-06-21T15:40:00Z"
+                },
+                {
+                    text: "It's not enough to grow—what matters is growing up.",
+                    dateAdded: "2025-06-22T11:55:00Z"
+                },
+                {
+                    text: "Everyone tries to keep the ball away from Messi—but when he gets it, magic happens.",
+                    dateAdded: "2025-06-23T17:05:00Z"
+                },
+                {
+                    text: "Champions are made by their attitude, not just their talent.",
+                    dateAdded: "2025-06-24T10:15:00Z"
+                },
+                {
+                    text: "Messi doesn't go around blocking others — he lets his brilliance speak by scoring. That's what true greatness looks like.",
+                    dateAdded: "2025-06-25T14:30:00Z"
+                },
+                {
+                    text: "Champions are made before the match—in quiet hours of preparation.",
+                    dateAdded: "2025-06-26T09:20:00Z"
+                },
+                {
+                    text: "A goal's worth is defined by the opposition you face. If everyone on the field plays for you, it's no longer a goal—it's a handout.",
+                    dateAdded: "2025-06-27T16:45:00Z"
+                },
+                {
+                    text: "Choose whose recognition matters — most don't.",
+                    dateAdded: "2025-06-28T12:10:00Z"
+                },
+                {
+                    text: "Profession shapes both personality and perspective.",
+                    dateAdded: "2025-06-29T15:25:00Z"
+                },
+                {
+                    text: "To be a professor is to think deeply—that's where the real joy lies.",
+                    dateAdded: "2025-06-30T10:40:00Z"
+                },
+                {
+                    text: "Critical thinking and fearless expression define a true professor.",
+                    dateAdded: "2025-07-01T13:55:00Z"
+                },
+                {
+                    text: "Whom you work with shapes not just your career, but your life.",
+                    dateAdded: "2025-07-02T09:05:00Z"
+                },
+                {
+                    text: "We all get 24 hours; watch where someone invests their time — that reveals the truth of their life.",
+                    dateAdded: "2025-07-03T17:20:00Z"
+                },
+                {
+                    text: "Be mindful of the company you keep—for in time, you become like them and live the life they live; ask yourself if that's what you want.",
+                    dateAdded: "2025-07-04T11:35:00Z"
+                },
+                {
+                    text: "Earn your wisdom through action—accomplish before you philosophize.",
+                    dateAdded: "2025-07-05T14:50:00Z"
+                },
+                {
+                    text: "We work to live—not live to work.",
+                    dateAdded: "2025-07-06T10:00:00Z"
+                },
+                {
+                    text: "It's better to be quietly deserving than loudly questioned.",
+                    dateAdded: "2025-07-07T15:15:00Z"
+                },
+                {
+                    text: "Overachievement can cost your soul—underachievement may still keep it whole.",
+                    dateAdded: "2025-07-08T12:30:00Z"
+                },
+                {
+                    text: "You march toward your goal; let them keep marching around you.",
+                    dateAdded: "2025-07-09T09:45:00Z"
+                },
+                {
+                    text: "Degrees show education, not the heart or morals.",
+                    dateAdded: "2025-07-10T16:00:00Z"
+                },
+                {
+                    text: "You don't win battles by numbers—you win them by truth and character.",
+                    dateAdded: "2025-07-11T13:10:00Z"
+                },
+                {
+                    text: "If you need a gang to take on someone, you've already lost the battle of character.",
+                    dateAdded: "2025-07-12T10:25:00Z"
+                },
+                {
+                    text: "Without credentials, having a position becomes a punishment of constant hardship.",
+                    dateAdded: "2025-07-13T17:40:00Z"
+                },
+                {
+                    text: "Show kindness to those who envy you; they are often hurting inside.",
+                    dateAdded: "2025-07-14T14:55:00Z"
+                },
+                {
+                    text: "The crown doesn't make the king; the king gives meaning to the crown.",
+                    dateAdded: "2025-07-15T11:05:00Z"
+                },
+                {
+                    text: "If you have values, they're untouchable. If you lack them, they're unteachable.",
+                    dateAdded: "2025-07-16T09:20:00Z"
+                },
+                {
+                    text: "Sometimes you must lose to truly win—but never win at the cost of what truly matters.",
+                    dateAdded: "2025-07-17T16:35:00Z"
+                },
+                {
+                    text: "Don't be disturbed by lies or waste time proving them; truth reveals itself as falsehoods unfold.",
+                    dateAdded: "2025-07-18T13:50:00Z"
+                },
+                {
+                    text: "Everyone grows, but few truly grow up.",
+                    dateAdded: "2025-07-19T10:00:00Z"
+                },
+                {
+                    text: "What we choose reveals who we truly are.",
+                    dateAdded: "2025-07-20T15:15:00Z"
+                },
+                {
+                    text: "Speak from the heart, not the throat—the former is felt, the latter merely heard.",
+                    dateAdded: "2025-07-21T12:30:00Z"
+                },
+                {
+                    text: "If you truly deserved something and didn't get it, one day you'll understand—it wasn't meant for you, or it wasn't good for you.",
+                    dateAdded: "2025-07-22T09:45:00Z"
+                },
+                {
+                    text: "Be a master of many—this age belongs to the all-rounder.",
+                    dateAdded: "2025-07-23T17:00:00Z"
+                }
+            ],
+            research: [
+                {
+                    text: "Intellectual battles are the most thrilling sports—lasting years and decades, played 24/7.",
+                    dateAdded: "2025-06-15T11:30:00Z"
+                },
+                {
+                    text: "Read more, write less—else it's noise, not knowledge, and a waste of time.",
+                    dateAdded: "2025-06-16T15:45:00Z"
+                },
+                {
+                    text: "At its core, research is pure passion and mental exercise.",
+                    dateAdded: "2025-06-17T10:20:00Z"
+                },
+                {
+                    text: "Do not write so that people will read; write so that truth will be revealed.",
+                    dateAdded: "2025-06-18T17:35:00Z"
+                },
+                {
+                    text: "Don't speak to impress—speak to express what must be said.",
+                    dateAdded: "2025-06-19T12:50:00Z"
+                },
+                {
+                    text: "Better to stand still with purpose than to rush in the wrong direction.",
+                    dateAdded: "2025-06-20T09:05:00Z"
+                },
+                {
+                    text: "Research means searching for the truth, so the most important quality of a researcher is how truthful they are.",
+                    dateAdded: "2025-06-21T16:20:00Z"
+                },
+                {
+                    text: "Your research topic slowly molds your way of thinking.",
+                    dateAdded: "2025-06-22T13:35:00Z"
+                },
+                {
+                    text: "The value lies in the content, not the style of speech.",
+                    dateAdded: "2025-06-23T10:50:00Z"
+                },
+                {
+                    text: "Beauty lies in the eye of the beholder — not everyone can appreciate everything. An ironsmith cannot recognize a diamond.",
+                    dateAdded: "2025-06-24T17:05:00Z"
+                },
+                {
+                    text: "Research is noble only when driven by truth—without it, it's just work.",
+                    dateAdded: "2025-06-25T14:20:00Z"
+                }
+            ]
+        };
+
+    document.addEventListener('DOMContentLoaded', function () {
+    displayQuotes('god');
+    displayLatestQuoteCard();
+    //   container.innerHTML = '<h2 class="text-xl font-semibold mb-4 text-indigo-800">🌟 Latest Quote</h2>';
+
+    document.querySelector('header p').classList.add('animate__animated', 'animate__fadeIn', 'animate__delay-1s');
+    });
+
+    function displayLatestQuoteCard() {
+    const container = document.getElementById('latest-quote');
+    let latestQuote = null;
+    let latestTime = 0;
+    let category = '';
+
+    for (const key in quotes) {
+        quotes[key].forEach(q => {
+        const time = new Date(q.dateAdded).getTime();
+        if (time > latestTime) {
+            latestTime = time;
+            latestQuote = q;
+            category = key;
+        }
+        });
+    }
+
+    if (latestQuote) {
+        // container.innerHTML = '<h2 class="text-xl font-semibold mb-4 text-indigo-800">🌟 Latest Quote</h2>';
+        container.appendChild(createQuoteCard(latestQuote, category));
+    }
+    }
+
+    function displayQuotes(category) {
+    const container = document.getElementById('quotes-container');
+    container.innerHTML = '';
+    const quotesToShow = shuffleArray(quotes[category]);
+    quotesToShow.forEach((quote, index) => {
+        container.appendChild(createQuoteCard(quote, category, index));
+    });
+    }
+
+    function createQuoteCard(quote, category, index = 0) {
+    const card = document.createElement('div');
+    card.className = `quote-card rounded-xl p-6 shadow-md border cursor-pointer transition-all duration-300 hover:shadow-lg animate__animated animate__fadeIn`;
+    card.style.animationDelay = `${index * 0.05}s`;
+    card.onclick = () => showFeaturedQuote(quote);
+
+    const { bgClass, textClass, borderClass, bgImage } = getStyleClasses(category);
+    card.classList.add(bgClass, borderClass);
+    card.style.backgroundImage = `url('${bgImage}')`;
+    card.style.backgroundSize = 'cover';
+    card.style.backgroundPosition = 'center';
+
+    card.innerHTML = `
+        <div class="text-4xl text-white drop-shadow mb-4 opacity-80">“</div>
+        <p class="${textClass} mb-4 line-clamp-4 font-medium drop-shadow">${quote.text}</p>
+    `;
+
+    return card;
+    }
+
+    function getStyleClasses(category) {
+    const styles = {
+        god: {
+        bgClass: 'bg-gold',
+        textClass: 'text-white',
+        borderClass: 'border-amber-200',
+        bgImage: 'images/bg-god.jpg'
+        },
+        research: {
+        bgClass: 'bg-silver',
+        textClass: 'text-white',
+        borderClass: 'border-gray-300',
+        bgImage: 'images/bg-research.jpg'
+        },
+        life: {
+        bgClass: 'bg-bronze',
+        textClass: 'text-white',
+        borderClass: 'border-amber-800',
+        bgImage: 'images/bg-life.jpg'
+        },
+        society: {
+        bgClass: 'bg-platinum',
+        textClass: 'text-white',
+        borderClass: 'border-gray-400',
+        bgImage: 'images/bg-society.jpg'
+        }
+    };
+    return styles[category];
+    }
+
+    function showFeaturedQuote(quote) {
+    const modal = document.getElementById('featured-modal');
+    const content = document.getElementById('featured-content');
+    const category = Object.keys(quotes).find(key => quotes[key].includes(quote));
+    const { bgClass, textClass, bgImage } = getStyleClasses(category);
+
+    content.innerHTML = `
+        <div class="p-6 rounded-lg ${bgClass}" style="background-image:url('${bgImage}'); background-size:cover; background-position:center;">
+        <div class="text-6xl text-white drop-shadow mb-6 text-center opacity-70">“</div>
+        <p class="text-xl ${textClass} mb-6 leading-relaxed font-medium drop-shadow">${quote.text}</p>
+        <div class="text-lg ${textClass} italic text-center opacity-90">— ${quote.source}</div>
+        <div class="text-6xl text-white drop-shadow mt-6 text-center opacity-70">”</div>
+        </div>
+        <div class="text-center mt-6">
+        <button onclick="closeModal()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Reflect & Continue</button>
+        </div>
+    `;
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+    document.getElementById('featured-modal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    }
+
+    function filterQuotes(category) {
+    displayQuotes(category);
+    document.getElementById('quotes-container').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+    }
+    </script>
+</body>
+</html>

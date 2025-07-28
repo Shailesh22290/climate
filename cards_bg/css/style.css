@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root, html, body{
+  font-family: 'Inter';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+#news-container{
+  overflow: hidden;
+}
+.college{
+  font-size: 22px;
+}
+@keyframes newsAnimation {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  .news-item {
+    cursor: pointer;
+  }
+
+  .news-item:hover {
+    color: #196297;
+  }
+
+  .AtoZ_container{
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (max-width: 768px) {
+    .AtoZ_container {
+      grid-template-columns: repeat(8, 1fr);
+    } 
+   
+    
+  }
+
+  @media only screen and (max-width: 768px) {
+    .college {
+      font-size: 10px;
+    }
+  }
+ 
+  /* highlight */
+  .card{
+    background-color: #82c9ffa3;
+   
+  }
+
+  .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.card {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+}
+ 
+  .dropdown_mobile_view_container {
+    transition: top 0.5s ease-in-out;
+  }
+
+/* Dropdown Menu Styles */
+.dropdown_mobile_view_container {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.dropdown_mobile_view_container.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Ensure the dropdown menu is positioned in the top-right corner */
+.dropdown_mobile_view_container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9); /* Example background */
+  transform: translateY(-100%); /* Initially hidden above the viewport */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+  z-index: 9999; /* Ensure it appears above other content */
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+  padding-top: 60px; /* Add padding to account for the nav bar height */
+}
+
+/* Class to show the dropdown menu */
+.dropdown_mobile_view_container.open {
+  transform: translateY(0); /* Move into the viewport */
+}
+
+/* Close button styling */
+.dropdown_mobile_view_container .fa-xmark {
+  position: fixed; /* Fixed positioning to keep it in the top-right corner */
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  cursor: pointer;
+  z-index: 10000; /* Ensure it appears above the dropdown menu */
+  color: white; /* Ensure the icon is visible */
+}
+

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind and Meaning </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .quote-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .quote-card:hover {
+            transform: translateY(-5px) rotateX(5deg);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .wisdom-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear forwards;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    
+    /* Updated metallic styles with floral borders */
+    .bg-gold {
+        background: radial-gradient(circle at center, white 0%, white 60%, rgba(255,215,0,0.1) 100%),
+                    linear-gradient(135deg, rgba(255,215,0,0.8), rgba(255,255,255,0.2), rgba(255,215,0,0.8));
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+    .bg-gold::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="1.5" d="M20,50 Q30,30 50,20 Q70,30 80,50 Q70,70 50,80 Q30,70 20,50 Z M30,50 Q50,40 70,50 Q50,60 30,50 Z"/></svg>');
+        background-size: 80px 80px;
+        background-position: center;
+        background-repeat: repeat;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+    .bg-gold::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 1px solid rgba(212,175,55,0.3);
+        border-radius: 8px;
+        pointer-events: none;
+    }
+
+    .bg-silver {
+        background: radial-gradient(circle at center, white 0%, white 60%, rgba(192,192,192,0.1) 100%),
+                    linear-gradient(135deg, rgba(192,192,192,0.8), rgba(255,255,255,0.3), rgba(192,192,192,0.8));
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+    .bg-silver::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="none" stroke="rgba(160,160,160,0.5)" stroke-width="1.5" d="M20,20 L30,10 L40,20 L50,10 L60,20 L70,10 L80,20 L90,10 L80,30 L90,40 L80,50 L90,60 L80,70 L90,80 L70,80 L60,90 L50,80 L40,90 L30,80 L20,90 L10,80 L20,70 L10,60 L20,50 L10,40 L20,30 L10,20 Z"/></svg>');
+        background-size: 60px 60px;
+        background-position: center;
+        background-repeat: repeat;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    .bg-silver::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 1px solid rgba(160,160,160,0.3);
+        border-radius: 8px;
+        pointer-events: none;
+    }
+
+    .bg-bronze {
+        background: radial-gradient(circle at center, white 0%, white 60%, rgba(205,127,50,0.1) 100%),
+                    linear-gradient(135deg, rgba(205,127,50,0.8), rgba(255,255,255,0.2), rgba(205,127,50,0.8));
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+    .bg-bronze::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="none" stroke="rgba(170,100,50,0.5)" stroke-width="1.5" d="M30,20 C40,10 60,10 70,20 C80,30 80,50 70,60 C60,70 40,70 30,60 C20,50 20,30 30,20 Z M40,30 C50,25 60,25 60,30 C65,40 65,50 60,60 C50,65 40,65 40,60 C35,50 35,40 40,30 Z"/></svg>');
+        background-size: 70px 70px;
+        background-position: center;
+        background-repeat: repeat;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+    .bg-bronze::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 1px solid rgba(170,100,50,0.3);
+        border-radius: 8px;
+        pointer-events: none;
+    }
+
+    .bg-platinum {
+        background: radial-gradient(circle at center, white 0%, white 60%, rgba(229,228,226,0.1) 100%),
+                    linear-gradient(135deg, rgba(229,228,226,0.8), rgba(255,255,255,0.3), rgba(229,228,226,0.8));
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+    .bg-platinum::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="none" stroke="rgba(200,200,200,0.5)" stroke-width="1.5" d="M20,50 Q30,20 50,20 Q70,20 80,50 Q70,80 50,80 Q30,80 20,50 Z M30,50 Q50,30 70,50 Q50,70 30,50 Z M35,50 Q50,40 65,50 Q50,60 35,50 Z"/></svg>');
+        background-size: 90px 90px;
+        background-position: center;
+        background-repeat: repeat;
+        pointer-events: none;
+        opacity: 0.4;
+    }
+    .bg-platinum::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 1px solid rgba(200,200,200,0.3);
+        border-radius: 8px;
+        pointer-events: none;
+    }
+
+    /* Update quote card styles */
+    .quote-card {
+        transition: all 0.3s ease;
+        transform-style: preserve-3d;
+        position: relative;
+        z-index: 1;
+        border-radius: 12px;
+    }
+    .quote-card:hover {
+        transform: translateY(-5px) rotateX(5deg);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .quote-card .quote-content {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+    }
+
+
+
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 overflow-hidden -z-10">
+        <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-gold opacity-20 floating" style="animation-delay: 0s;"></div>
+        <div class="absolute top-1/3 right-20 w-24 h-24 rounded-full bg-silver opacity-20 floating" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-20 h-20 rounded-full bg-bronze opacity-20 floating" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-12 h-12 rounded-full bg-platinum opacity-20 floating" style="animation-delay: 3s;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <h1 class="title-font text-5xl md:text-6xl font-bold mb-4 text-indigo-900">Mind & Meaning</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">An interactive journey through timeless wisdom</p>
+            
+            <div class="mt-8 relative h-2">
+                <svg viewBox="0 0 500 20" class="w-full h-full">
+                    <path d="M0,10 Q125,20 250,10 T500,10" stroke="#4f46e5" stroke-width="2" fill="none" class="wisdom-path"/>
+                </svg>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-6 mb-12 shadow-md border border-gray-100">
+            <p class="text-gray-700 italic mb-4">THESE QUOTES REFLECT SOME OF MY OWN UNDERSTANDINGS AND INTERPRETATIONS, INSPIRED BY TIMELESS WISDOM. SOME MAY BE IMPERFECT MEMORIES OR PARAPHRASES OF WHAT I HAVE READ/HEARD.</p>
+            <p class="text-gray-600">This collection will be updated and expanded periodically.</p>
+        </section>
+
+        <!-- Interactive Navigation -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button onclick="filterQuotes('all')" class="category-btn px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 hover:bg-indigo-200 transition">All</button>
+            <button onclick="filterQuotes('god')" class="category-btn px-4 py-2 rounded-full bg-gold text-gold-800 hover:bg-amber-300 hover-bg-gold transition text-gray-900 font-medium">God & Spirituality</button>
+            <button onclick="filterQuotes('research')" class="category-btn px-4 py-2 rounded-full bg-silver text-gray-800 hover:bg-gray-300 hover-bg-silver transition font-medium">Research & Knowledge</button>
+            <button onclick="filterQuotes('life')" class="category-btn px-4 py-2 rounded-full bg-bronze text-gray-900 hover:bg-amber-700 hover-bg-bronze transition font-medium">Life & Time</button>
+            <button onclick="filterQuotes('society')" class="category-btn px-4 py-2 rounded-full bg-platinum text-gray-800 hover:bg-gray-400 hover-bg-platinum transition font-medium">Self & Society</button>
+        </div>
+
+        <!-- Quotes Container -->
+        <div id="quotes-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Quotes will be dynamically inserted here -->
+        </div>
+
+        <!-- Featured Quote Modal -->
+        <div id="featured-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+            <div class="bg-white rounded-xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div id="featured-content" class="space-y-4"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-500 text-sm">
+            <p>Wisdom is eternal, interpretation is personal.</p>
+            <p class="mt-2">Click on any quote to meditate on its meaning.</p>
+        </footer>
+    </div>
+    <script>
+     
+        // Quote data organized by categories
+        const quotes = {
+            god: [
+                {
+                    text: "Ramayana: Uphold righteousness and duty; good ultimately conquers evil.",
+                    source: "Ancient Wisdom"
+                },
+                {
+                    text: "Mahabharata: Uphold dharma through difficult choices; true victory lies in righteousness, not mere conquest.",
+                    source: "Ancient Wisdom"
+                },
+                {
+                    text: "Bhagavad Gita: Perform your duty selflessly, with devotion and wisdom, detached from outcomes.",
+                    source: "Ancient Wisdom"
+                },
+                {
+                    text: "Upanishads: Seek self-realization and understand the unity of the soul with ultimate reality.",
+                    source: "Ancient Wisdom"
+                },
+                {
+                    text: "It is not the Naraayani Sena, but Narayan who matters.",
+                    source: "Spiritual Insight"
+                },
+                {
+                    text: "Greatness is not rushed—Ram waited 14 years, the Pandavas 13. Heroes earn their moment through time.",
+                    source: "Divine Timing"
+                },
+                {
+                    text: "Arjun, the greatest warrior, paused often—not out of fear, but because greatness feels deeply.",
+                    source: "Spiritual Warrior"
+                },
+                {
+                    text: "Forgiveness is divine, but even Krishna stopped at 100—Shishupala learned that too late.",
+                    source: "Divine Justice"
+                },
+                {
+                    text: "Those who walk the path of dharma never walk alone—the cosmos walks with them.",
+                    source: "Cosmic Support"
+                },
+                {
+                    text: "Nature sets the stage for everything — we are just actors in its grand play.",
+                    source: "Divine Play"
+                },
+                {
+                    text: "When all else fails, higher truth prevails.",
+                    source: "Eternal Truth"
+                }
+            ],
+            life: [
+                {
+                    text: "You live in your mind every moment — keep it clean and pure.",
+                    source: "Mental Hygiene"
+                },
+                {
+                    text: "Time is the actual currency; all else are mere tokens.",
+                    source: "Time's Value"
+                },
+                {
+                    text: "Life grants you limited time; how you use it is your choice.",
+                    source: "Life's Choice"
+                },
+                {
+                    text: "Time listens longer and reveals all truths.",
+                    source: "Time's Wisdom"
+                },
+                {
+                    text: "When you live with goodness, the universe aligns to support you — even trials turn to gifts.",
+                    source: "Cosmic Alignment"
+                },
+                {
+                    text: "The main role is never easy, but that's where the real story is made.",
+                    source: "Life's Challenge"
+                },
+                {
+                    text: "Not everything deserves your time — choose only what serves your path.",
+                    source: "Selective Focus"
+                },
+                {
+                    text: "Truth triumphs—never get perturbed by temporary falsehoods.",
+                    source: "Eternal Truth"
+                },
+                {
+                    text: "Focus on the war, not every battle—Pandavas won only 5 out of 18, yet they won the war.",
+                    source: "Strategic Perspective"
+                },
+                {
+                    text: "Even the unlettered can shine, when touched by grace and guided by perseverance.",
+                    source: "Potential Realized"
+                }
+            ],
+            society: [
+                {
+                    text: "Gazing at the sky is better than many things.",
+                    source: "Simple Pleasures"
+                },
+                {
+                    text: "Two hands hold only so much — be selective in what you carry.",
+                    source: "Selective Burden"
+                },
+                {
+                    text: "Raise your voice only when your heart speaks.",
+                    source: "Authentic Expression"
+                },
+                {
+                    text: "Feel the vibes — they never lie.",
+                    source: "Intuitive Knowing"
+                },
+                {
+                    text: "Start every day as a fresh new beginning.",
+                    source: "Daily Renewal"
+                },
+                {
+                    text: "Just as you bathe to cleanse your body, cleanse your mind every day, as often as you can, to wash away the dirt of thoughts.",
+                    source: "Mental Cleansing"
+                },
+                {
+                    text: "Whatever you say or do, you first create it within yourself—so be mindful of what you nurture inside.",
+                    source: "Internal Creation"
+                },
+                {
+                    text: "It's not enough to grow—what matters is growing up.",
+                    source: "Mature Growth"
+                },
+                {
+                    text: "Everyone tries to keep the ball away from Messi—but when he gets it, magic happens.",
+                    source: "Potential Unleashed"
+                },
+                {
+                    text: "Champions are made by their attitude, not just their talent.",
+                    source: "Winning Mindset"
+                },
+                {
+                    text: "Messi doesn't go around blocking others — he lets his brilliance speak by scoring. That's what true greatness looks like.",
+                    source: "Authentic Greatness"
+                },
+                {
+                    text: "Champions are made before the match—in quiet hours of preparation.",
+                    source: "Preparation Wins"
+                },
+                {
+                    text: "A goal's worth is defined by the opposition you face. If everyone on the field plays for you, it's no longer a goal—it's a handout.",
+                    source: "Challenge Defines Value"
+                },
+                {
+                    text: "Choose whose recognition matters — most don't.",
+                    source: "Selective Validation"
+                },
+                {
+                    text: "Profession shapes both personality and perspective.",
+                    source: "Professional Influence"
+                },
+                {
+                    text: "To be a professor is to think deeply—that's where the real joy lies.",
+                    source: "Academic Joy"
+                },
+                {
+                    text: "Critical thinking and fearless expression define a true professor.",
+                    source: "Academic Integrity"
+                },
+                {
+                    text: "Whom you work with shapes not just your career, but your life.",
+                    source: "Professional Relationships"
+                },
+                {
+                    text: "We all get 24 hours; watch where someone invests their time — that reveals the truth of their life.",
+                    source: "Time Investment"
+                },
+                {
+                    text: "Be mindful of the company you keep—for in time, you become like them and live the life they live; ask yourself if that's what you want.",
+                    source: "Associations Matter"
+                },
+                {
+                    text: "Earn your wisdom through action—accomplish before you philosophize.",
+                    source: "Wisdom Through Action"
+                },
+                {
+                    text: "We work to live—not live to work.",
+                    source: "Work-Life Balance"
+                },
+                {
+                    text: "It's better to be quietly deserving than loudly questioned.",
+                    source: "Quiet Merit"
+                },
+                {
+                    text: "Overachievement can cost your soul—underachievement may still keep it whole.",
+                    source: "Soulful Balance"
+                },
+                {
+                    text: "You march toward your goal; let them keep marching around you.",
+                    source: "Focused Progress"
+                },
+                {
+                    text: "Degrees show education, not the heart or morals.",
+                    source: "Beyond Credentials"
+                },
+                {
+                    text: "You don't win battles by numbers—you win them by truth and character.",
+                    source: "Moral Victory"
+                },
+                {
+                    text: "If you need a gang to take on someone, you've already lost the battle of character.",
+                    source: "Individual Integrity"
+                },
+                {
+                    text: "Without credentials, having a position becomes a punishment of constant hardship.",
+                    source: "Credential Reality"
+                },
+                {
+                    text: "Show kindness to those who envy you; they are often hurting inside.",
+                    source: "Compassion for Envy"
+                },
+                {
+                    text: "The crown doesn't make the king; the king gives meaning to the crown.",
+                    source: "True Leadership"
+                },
+                {
+                    text: "If you have values, they're untouchable. If you lack them, they're unteachable.",
+                    source: "Core Values"
+                },
+                {
+                    text: "Sometimes you must lose to truly win—but never win at the cost of what truly matters.",
+                    source: "Strategic Sacrifice"
+                },
+                {
+                    text: "Don't be disturbed by lies or waste time proving them; truth reveals itself as falsehoods unfold.",
+                    source: "Truth's Victory"
+                },
+                {
+                    text: "Everyone grows, but few truly grow up.",
+                    source: "Mature Development"
+                },
+                {
+                    text: "What we choose reveals who we truly are.",
+                    source: "Choices Define"
+                },
+                {
+                    text: "Speak from the heart, not the throat—the former is felt, the latter merely heard.",
+                    source: "Authentic Communication"
+                },
+                {
+                    text: "If you truly deserved something and didn't get it, one day you'll understand—it wasn't meant for you, or it wasn't good for you.",
+                    source: "Divine Timing"
+                },
+                {
+                    text: "Be a master of many—this age belongs to the all-rounder.",
+                    source: "Versatile Excellence"
+                }
+            ],
+            research: [
+                {
+                    text: "Intellectual battles are the most thrilling sports—lasting years and decades, played 24/7.",
+                    source: "Academic Challenge"
+                },
+                {
+                    text: "Read more, write less—else it's noise, not knowledge, and a waste of time.",
+                    source: "Knowledge Acquisition"
+                },
+                {
+                    text: "At its core, research is pure passion and mental exercise.",
+                    source: "Research Essence"
+                },
+                {
+                    text: "Do not write so that people will read; write so that truth will be revealed.",
+                    source: "Authentic Writing"
+                },
+                {
+                    text: "Don't speak to impress—speak to express what must be said.",
+                    source: "Purposeful Speech"
+                },
+                {
+                    text: "Better to stand still with purpose than to rush in the wrong direction.",
+                    source: "Purposeful Pause"
+                },
+                {
+                    text: "Research means searching for the truth, so the most important quality of a researcher is how truthful they are.",
+                    source: "Research Integrity"
+                },
+                {
+                    text: "Your research topic slowly molds your way of thinking.",
+                    source: "Academic Influence"
+                },
+                {
+                    text: "The value lies in the content, not the style of speech.",
+                    source: "Substance Over Style"
+                },
+                {
+                    text: "Beauty lies in the eye of the beholder — not everyone can appreciate everything. An ironsmith cannot recognize a diamond.",
+                    source: "Subjective Appreciation"
+                },
+                {
+                    text: "Research is noble only when driven by truth—without it, it's just work.",
+                    source: "Noble Pursuit"
+                }
+            ]
+        };
+        
+        // Initialize the page with all quotes
+        document.addEventListener('DOMContentLoaded', function() {
+            displayQuotes('all');
+            
+            // Add animation to the title
+            const title = document.querySelector('h1');
+            title.classList.add('animate__animated', 'animate__fadeInDown');
+            
+            // Add animation to the subtitle
+            const subtitle = document.querySelector('header p');
+            subtitle.classList.add('animate__animated', 'animate__fadeIn', 'animate__delay-1s');
+        });
+
+        // Display quotes based on category
+        function displayQuotes(category) {
+            const container = document.getElementById('quotes-container');
+            container.innerHTML = '';
+            
+            // Reset all category buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('bg-opacity-80');
+            });
+            
+            // Highlight the selected category button
+            if (category !== 'all') {
+                const activeBtn = document.querySelector(`button[onclick="filterQuotes('${category}')"]`);
+                activeBtn.classList.remove('bg-opacity-80');
+                activeBtn.classList.add('bg-indigo-600', 'text-white');
+            } else {
+                document.querySelector(`button[onclick="filterQuotes('all')"]`).classList.add('bg-indigo-600', 'text-white');
+            }
+            
+            let quotesToShow = [];
+            
+            if (category === 'all') {
+                // Combine all quotes from all categories
+                for (const key in quotes) {
+                    quotesToShow = quotesToShow.concat(quotes[key]);
+                }
+            } else {
+                quotesToShow = quotes[category];
+            }
+            
+            // Shuffle the array for variety
+            quotesToShow = shuffleArray(quotesToShow);
+            
+            // Display each quote
+            quotesToShow.forEach((quote, index) => {
+                const card = document.createElement('div');
+                card.className = `quote-card rounded-xl p-6 shadow-md border border-gray-100 cursor-pointer transition-all duration-300 hover:shadow-lg animate__animated animate__fadeIn`;
+                card.style.animationDelay = `${index * 0.05}s`;
+                card.onclick = () => showFeaturedQuote(quote);
+                
+                // Different background colors based on category
+                let bgClass = 'bg-white';
+                let textClass = 'text-gray-700';
+                let borderClass = 'border-gray-200';
+                
+                if (category === 'god' || (category === 'all' && quotes.god.includes(quote))) {
+                    bgClass = 'bg-gold';
+                    textClass = 'text-gray-900';
+                    borderClass = 'border-amber-200';
+                } 
+                else if (category === 'research' || (category === 'all' && quotes.research.includes(quote))) {
+                    bgClass = 'bg-silver';
+                    textClass = 'text-gray-800';
+                    borderClass = 'border-gray-300';
+                }
+                else if (category === 'life' || (category === 'all' && quotes.life.includes(quote))) {
+                    bgClass = 'bg-bronze';
+                    textClass = 'text-gray-900';
+                    borderClass = 'border-amber-800';
+                }
+                else if (category === 'society' || (category === 'all' && quotes.society.includes(quote))) {
+                    bgClass = 'bg-platinum';
+                    textClass = 'text-gray-800';
+                    borderClass = 'border-gray-400';
+                }
+                
+                card.className += ` ${bgClass} ${borderClass}`;
+                
+                card.innerHTML = `
+                    <div class="text-4xl text-gray-600 mb-4 opacity-50">“</div>
+                    <p class="${textClass} mb-4 line-clamp-4 font-medium">${quote.text}</p>
+                    <div class="text-sm ${textClass} italic opacity-80">— ${quote.source}</div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Filter quotes by category
+        function filterQuotes(category) {
+            displayQuotes(category);
+            
+            // Scroll to quotes section smoothly
+            document.getElementById('quotes-container').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Show a random quote
+        function showRandomQuote() {
+            // Combine all quotes
+            let allQuotes = [];
+            for (const key in quotes) {
+                allQuotes = allQuotes.concat(quotes[key]);
+            }
+            
+            // Select a random quote
+            const randomQuote = allQuotes[Math.floor(Math.random() * allQuotes.length)];
+            showFeaturedQuote(randomQuote);
+        }
+
+        // Show featured quote in modal
+        function showFeaturedQuote(quote) {
+            const modal = document.getElementById('featured-modal');
+            const content = document.getElementById('featured-content');
+            
+            // Determine category for styling
+            let bgClass = 'bg-white';
+            let textClass = 'text-gray-800';
+            
+            if (quotes.god.includes(quote)) {
+                bgClass = 'bg-gold';
+                textClass = 'text-gray-900';
+            }
+            else if (quotes.research.includes(quote)) {
+                bgClass = 'bg-silver';
+                textClass = 'text-gray-800';
+            }
+            else if (quotes.life.includes(quote)) {
+                bgClass = 'bg-bronze';
+                textClass = 'text-gray-900';
+            }
+            else if (quotes.society.includes(quote)) {
+                bgClass = 'bg-platinum';
+                textClass = 'text-gray-800';
+            }
+            
+            content.innerHTML = `
+                <div class="p-6 rounded-lg ${bgClass}">
+                    <div class="text-6xl text-gray-600 mb-6 text-center opacity-50">“</div>
+                    <p class="text-xl ${textClass} mb-6 leading-relaxed font-medium">${quote.text}</p>
+                    <div class="text-lg ${textClass} italic text-center opacity-80">— ${quote.source}</div>
+                    <div class="text-6xl text-gray-600 mt-6 text-center opacity-50">”</div>
+                </div>
+                <div class="text-center mt-6">
+                    <button onclick="closeModal()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                        Reflect & Continue
+                    </button>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close the modal
+        function closeModal() {
+            const modal = document.getElementById('featured-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Utility function to shuffle array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+    </script>
+</body>
+</html>

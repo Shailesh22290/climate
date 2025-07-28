@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Saroj Kanta Mishra | IIT Delhi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'iitd-blue': '#00688B',
+                        'iitd-orange': '#E37222',
+                        'maroon': '#800000',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #E37222;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active::after {
+            width: 100%;
+        }
+        .publication-coauthor {
+            color: #800000;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class=" lg:px-24 sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="../../images/logos/Logo_IITD.png" alt="IIT Delhi Logo" class="h-16 mr-4">
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold text-iitd-blue">Prof. Saroj Kanta Mishra</h1>
+                        <p class="text-sm md:text-base text-gray-600">Professor, Centre for Atmospheric Sciences</p>
+                    </div>
+                </div>
+                <nav class="flex space-x-1 md:space-x-6">
+                    <a href="#home" class="nav-link active px-2 py-1 text-sm md:text-base font-medium text-gray-700 hover:text-iitd-orange">Home</a>
+                    <a href="#about" class="nav-link px-2 py-1 text-sm md:text-base font-medium text-gray-700 hover:text-iitd-orange">About</a>
+                    <a href="#research" class="nav-link px-2 py-1 text-sm md:text-base font-medium text-gray-700 hover:text-iitd-orange">Research</a>
+                    <a href="#teaching" class="nav-link px-2 py-1 text-sm md:text-base font-medium text-gray-700 hover:text-iitd-orange">Teaching</a>
+                    <a href="#coe" class="nav-link px-2 py-1 text-sm md:text-base font-medium text-gray-700 hover:text-iitd-orange">CoE</a>
+                    <a href="#contact" class="nav-link px-2 py-1 text-sm md:text-base font-medium text-gray-700 hover:text-iitd-orange">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="p-4 lg:py-12 lg:px-24 bg-gradient-to-r from-iitd-blue to-blue-800 text-white" style="background-image: url(../../images/bg_img/prof_bg.jpg);">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4">Saroj Kanta Mishra</h1>
+                <h2 class="text-2xl md:text-3xl font-serif mb-6">Professor, Centre for Atmospheric Sciences</h2>
+                <p class="text-xl mb-6">Principal Investigator, DST Centre of Excellence for Climate Information</p>
+                <p class="text-lg">Indian Institute of Technology Delhi<br>INDIA</p>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="bg-white p-2 rounded-full shadow-xl">
+                    <img src="../../images/people/saroj.png" alt="Prof. Saroj Kanta Mishra" class="w-64 h-64 rounded-full object-cover border-4 border-iitd-orange">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="p-4 lg:py-12 lg:px-24  bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-serif font-bold text-iitd-blue mb-8 border-b-2 border-iitd-orange pb-2">About</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Education</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-2 mr-4">•</span>
+                            <span><strong>Ph. D. (2008)</strong>, IISc Bangalore, INDIA.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-2 mr-4">•</span>
+                            <span><strong>B. E. (2001)</strong>, University College of Engineering, Burla, INDIA.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Experience</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-2 mr-4">•</span>
+                            <span><strong>Professor</strong>, Centre for Atmospheric Sciences, IIT Delhi, INDIA (2023-present)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-2 mr-4">•</span>
+                            <span><strong>Principal Investigator</strong>, DST CoE in Climate Modeling (2017-present)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-2 mr-4">•</span>
+                            <span><strong>YES Foundation Chair Professor</strong> of Climate Modeling (2021-2024)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-2 mr-4">•</span>
+                            <span><strong>Associate Professor</strong>, Centre for Atmospheric Sciences, IIT Delhi, INDIA (2018-2023)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-2 mr-4">•</span>
+                            <span><strong>Assistant Professor</strong>, Centre for Atmospheric Sciences, IIT Delhi, INDIA (2012-2018)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Research Fundings</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="py-2 px-4 border-b text-left">Duration</th>
+                                <th class="py-2 px-4 border-b text-left">Project Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2024-2029</td>
+                                <td class="py-2 px-4 border-b">PI, DST: DST Centre of Excellence for Climate Information (Phase II) at IIT Delhi</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2017-2024</td>
+                                <td class="py-2 px-4 border-b">PI, DST: DST Centre of Excellence in Climate Modeling at IIT Delhi</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2022-2022</td>
+                                <td class="py-2 px-4 border-b">PI, DST: DST Climate Change programme Experts' Meeting</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2017-2022</td>
+                                <td class="py-2 px-4 border-b">Co-PI, DST: Climate Model Improvement and Climate Projections using Soft Computing, Machine Learning, and Mathematical Optimisation Techniques</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2017-2022</td>
+                                <td class="py-2 px-4 border-b">Co-PI, DST: Towards the Development of an India Centric Climate Model: Convection, Clouds and Gravity Wave Drag Parameterisations</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2018-2021</td>
+                                <td class="py-2 px-4 border-b">Co-PI, CERCA: Assessment and prediction of the air-quality using dynamically downscaled high resolution data from numerical models</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2017-2020</td>
+                                <td class="py-2 px-4 border-b">PI, DST: Observed and Simulated Dependence of Bay of Bengal Rainfall on T & Q</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2014-2019</td>
+                                <td class="py-2 px-4 border-b">Co-PI, DST: For Improvement of S & T Infrastructure in CAS at IIT Delhi</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2015-2018</td>
+                                <td class="py-2 px-4 border-b">Co-PI, DST: Land Surface Atmosphere Feedbacks in Croplands</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2017-2017</td>
+                                <td class="py-2 px-4 border-b">PI, FICCI: Sir C. V. Raman International Fellowship for African Researchers</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2017-2017</td>
+                                <td class="py-2 px-4 border-b">PI, DST: Experts Meeting for DST Climate Change Programme</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2015-2016</td>
+                                <td class="py-2 px-4 border-b">Co-PI, OSPCB: Heat-Island Study in Angul-Talcher Area of Odisha</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2013-2016</td>
+                                <td class="py-2 px-4 border-b">PI, DST: Understanding the Response of Indian Monsoon to Variations in CO2 and Solar Radiation Using Ocean-Atmosphere Modeling in a Geo-engineering Context</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2013-2015</td>
+                                <td class="py-2 px-4 border-b">PI, DST: Potential Linkage on the Monsoon Variability by Impacts of Eurasian Snow, and Pacific & Indian Ocean</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2013-2015</td>
+                                <td class="py-2 px-4 border-b">PI, IIT Delhi: Configuration Dependence of Model Results: an Investigation with CAM</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-4 border-b">2012-2013</td>
+                                <td class="py-2 px-4 border-b">PI, IIT Delhi: Response of the Regional climate to the Geo-engineering of Solar Radiation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="p-4 lg:py-12 lg:px-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-serif font-bold text-iitd-blue mb-8 border-b-2 border-iitd-orange pb-2">Research</h2>
+            
+            <div class="mb-12">
+                <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Expertise: Climate Analysis, Modeling, and Solution</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="mb-4">Professor Mishra's research focuses on climate modeling, analysis, and developing solutions for climate-related challenges. His work spans various aspects of atmospheric sciences with a particular emphasis on the Indian monsoon system and global climate change.</p>
+                    <p>He leads the DST Centre of Excellence for Climate Information at IIT Delhi, which aims to improve climate projections and develop actionable climate information for policymakers and stakeholders.</p>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Spotlight</h3>
+    
+                    <div class="container mx-auto mb-10">
+                       
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+                            <!-- Box 1 -->
+                            <a href="https://iopscience.iop.org/article/10.1088/1748-9326/ac43e2" target="_blank" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 aspect-square">
+                                <div class="h-full flex items-center justify-center ">
+                                    <img src="images/1.jpg" alt="Highlight 1" class="w-full h-full object-contain ">
+                                </div>
+                            </a>
+                            
+                            <!-- Box 2 -->
+                            <a href="https://www.nature.com/articles/s41598-023-44284-3" target="_blank" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 aspect-square">
+                                <div class="h-full flex items-center justify-center ">
+                                    <img src="images/2.png" alt="Highlight 2" class="w-full h-full object-contain ">
+                                </div>
+                            </a>
+                            
+                            <!-- Box 3 -->
+                            <a href="https://www.nature.com/articles/s41558-023-01778-2" target="_blank" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 aspect-square">
+                                <div class="h-full flex items-center justify-center ">
+                                    <img src="images/3.png" alt="Highlight 3" class="w-full h-full object-contain ">
+                                </div>
+                            </a>
+                            
+                            <!-- Box 4 -->
+                            <a href="https://www.nature.com/articles/s41612-018-0049-1" target="_blank" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 aspect-square">
+                                <div class="h-full flex items-center justify-center ">
+                                    <img src="images/4.png" alt="Highlight 4" class="w-full h-full object-contain ">
+                                </div>
+                            </a>
+                            
+                            <!-- Box 5 -->
+                            <a href="https://www.nature.com/articles/s41612-024-00777-0" target="_blank" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 aspect-square">
+                                <div class="h-full flex items-center justify-center ">
+                                    <img src="images/5.png" alt="Highlight 5" class="w-full h-full object-contain ">
+                                </div>
+                            </a>
+                            
+                            <!-- Box 6 -->
+                            <a href="Impact_of_climate_change_on_indian_economy.pdf" target="_blank" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 aspect-square">
+                                <div class="h-full flex items-center justify-center ">
+                                    <img src="images/6.png" alt="Highlight 6" class="w-full h-full object-contain ">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+             
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Publications</h3>
+                <p class="mb-4 text-sm italic">Note: Co-authors denoted by <span class="publication-coauthor">maroon color</span> worked with Dr. S. K. Mishra as students/research-associates at the time of publications.</p>
+                
+                <div class="space-y-6">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <p class="font-medium"><span class="publication-coauthor">Tyagi, S.,</span> S. Sahany,D. Saraswat,  <span class="publication-coauthor">S. K. Mishra,</span> A. Dubey, and D. Niyogi, <span class="publication-coauthor"> 2024</span>: <span class="text-blue-800">Implications of CMIP6 Models‐Based Climate Biases and Runoff Sensitivity on Runoff Projection Uncertainties Over Central India. </span>International Journal of Climatology.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <p class="font-medium"><span class="publication-coauthor">Upadhyaya, P., S. K. Mishra,</span> J. T. Fasullo, and In-Sik Kang,<span class="publication-coauthor">2024:</span>  <span class="text-blue-800">Attributing the Recent Weakening of the South Asian Subtropical Westerlies.</span> npj Climate and Atmospheric Science. [Accepted]</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <p class="font-medium"><span class="publication-coauthor">Namdev, P.,</span> M. Sharan, P. Srivastava, and <span class="publication-coauthor">S. K. Mishra, 2024:</span>  <span class="text-blue-800">An Updated Parameterization of the Unstable Atmospheric Surface Layer in the WRF Modeling System. </span>Geoscientific Model Development.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <p class="font-medium"><span class="publication-coauthor">Mishra, S. K., P. Upadhyaya,</span> J. T. Fasullo, <span class="publication-coauthor">>N. P. Keshri, </span>P. Salunke, A. Ghosh,<span class="publication-coauthor">> A. B. Sainudeen,</span> and In-Sik Kang, <span class="publication-coauthor">2023</span>:  <span class="text-blue-800">A Need for Actionable Climate Projections Across the Global South.</span> Nature Climate Change, 13(9), 883-886. DOI:10.1038/s41558-023-01778-2.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center">
+                <a href="../../research_publications.html">   <button class="bg-iitd-blue text-white px-6 py-2 rounded hover:bg-blue-300 transition-colors">View More Publications</button></a> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching" class="p-4 lg:py-12 lg:px-24  bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-serif font-bold text-iitd-blue mb-8 border-b-2 border-iitd-orange pb-2">Teaching</h2>
+            
+            <div class="bg-gray-50 rounded-lg shadow-md mb-8 overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <!-- Image Section (Left) -->
+                    <div class="md:w-1/3">
+                        <img src="../../skm/images/teaching.jpg" alt="Classroom" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Text Content Section (Right) -->
+                    <div class="p-6 md:w-2/3">
+                        <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Presently Offering:</h3>
+                        <p class="text-lg font-medium mb-2">The Earth's Atmosphere: Physical Principles (ASL360).</p>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 mt-6">
+                            <div>
+                                <h4 class="font-bold text-gray-700">Class Capacity:</h4>
+                                <p>49</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-700">Timing:</h4>
+                                <p>05:00 PM - 06:30 PM (MON & THURS)</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-700">Venue:</h4>
+                                <p>LH 313.2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Course Description</h3>
+                <p class="mb-4">The Earth's Atmosphere: Physical Principles (ASL360). (3-0-0-3): This course is on the physical principles of the Earth's atmosphere. The course will begin with the forces and energy governing the atmospheric flows and regulating the weather and climate of the planet. Physical processes such as atmospheric convection will be discussed in great detail. How the atmospheric flows transport mass, momentum, and energy in space will be described. The general features of the today's atmosphere will be explained. Emphases will be given on the need and art of atmospheric modeling and future projection of the atmosphere for the next century. The course is very conceptual in nature with a strong research flavour, and will introduce undergraduate students to the art of research in context of the subject.</p>
+                
+                <h4 class="font-serif font-bold text-gray-800 mt-6 mb-2">References:</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-16 h-24 bg-gray-200 rounded shadow overflow-hidden">
+                            <img src="../../skm/images/Plumb and marshal_.jpg" alt="Atmosphere, Ocean and Climate Dynamics" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="text-gray-800">Marshall, J., & Plumb, R. A. (2007). <span class="font-medium">Atmosphere, ocean and climate dynamics: an introductory text.</span> Academic Press.</p>
+                        </div>
+                    </li>
+                    
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-16 h-24 bg-gray-200 rounded shadow overflow-hidden">
+                            <img src="../../skm/images/Denish2.jpg" alt="Global Physical Climatology" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="text-gray-800">Hartmann, D. L. (2015). <span class="font-medium">Global physical climatology</span> (Vol. 103). Newnes.</p>
+                        </div>
+                    </li>
+                    
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-16 h-24 bg-gray-200 rounded shadow overflow-hidden">
+                            <img src="../../skm/images/David.jpg" alt="Global Circulation of the Atmosphere" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="text-gray-800">Randall, D. (2015). <span class="font-medium">An introduction to the global circulation of the atmosphere.</span> Princeton University Press.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CoE Section -->
+    <section id="coe" class="p-4 lg:py-12 lg:px-24  bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-serif font-bold text-iitd-blue mb-8 border-b-2 border-iitd-orange pb-2">DST Centre of Excellence for Climate Information</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">About the Center</h3>
+                    <p class="mb-4">The DST Centre of Excellence for Climate Information at IIT Delhi, led by Professor Saroj Kanta Mishra, is dedicated to advancing climate science and providing actionable climate information for decision-making.</p>
+                    <p>The center focuses on improving climate models, developing regional climate projections, and translating scientific knowledge into practical solutions for climate adaptation and mitigation.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Key Objectives</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-1 mr-3 mt-1">•</span>
+                            <span>Develop an India-centric climate model with improved parameterizations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-1 mr-3 mt-1">•</span>
+                            <span>Generate high-resolution climate projections for India and surrounding regions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-1 mr-3 mt-1">•</span>
+                            <span>Develop machine learning approaches for climate model improvement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-iitd-orange text-white rounded-full p-1 mr-3 mt-1">•</span>
+                            <span>Provide actionable climate information for policymakers and stakeholders</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Current Projects</h3>
+                <ul class="space-y-4">
+                    <li class="border-l-4 border-iitd-orange pl-4">
+                        <h4 class="font-bold">DST Centre of Excellence for Climate Information (Phase II)</h4>
+                        <p class="text-sm text-gray-600">2024-2029</p>
+                        <p>This phase focuses on developing decision-relevant climate information products and services for various sectors including agriculture, water resources, and disaster management.</p>
+                    </li>
+                    <li class="border-l-4 border-iitd-orange pl-4">
+                        <h4 class="font-bold">DST Centre of Excellence in Climate Modeling</h4>
+                        <p class="text-sm text-gray-600">2017-2024</p>
+                        <p>This project aims to improve climate model physics with focus on the Indian monsoon system and develop an India-centric climate model.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="p-4 lg:py-12 lg:px-24  bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-serif font-bold text-iitd-blue mb-8 border-b-2 border-iitd-orange pb-2">Contact</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Prof. Saroj Kanta Mishra</h3>
+                        <p class="mb-2">Room No. 414, Block VI</p>
+                        <p class="mb-2">Indian Institute of Technology Delhi</p>
+                        <p class="mb-2">Hauz Khas, New Delhi – 110 016, India</p>
+                        <p class="mb-2"><strong>Phone:</strong> +91 11 2659 1390</p>
+                        <p><strong>Email:</strong> skm@iitd.ac.in</p>
+                    </div>
+                    
+                   
+                </div>
+                
+                <div>
+                    <div class="mt-8 bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-serif font-bold text-gray-800 mb-4">Office Hours</h3>
+                        <p class="mb-2"><strong>Monday - Friday:</strong> 10:00 AM - 5:00 PM</p>
+                        <p><em>Please email for appointment</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-4 lg:py-12 lg:px-24  bg-gray-800 text-white py-8" style="background-image: url(../../images/bg_img/prof_bg.jpg);">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-serif font-bold mb-2">Prof. Saroj Kanta Mishra</h3>
+                    <p class="text-white text-shadow">Centre for Atmospheric Sciences</p>
+                    <p class="text-white text-shadow">Indian Institute of Technology Delhi</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-white hover:gray-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-white hover:gray-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-white hover:gray-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-white text-shadow text-sm">
+                <p>© 2025 Prof. Saroj Kanta Mishra. All rights reserved.</p>
+                <p class="mt-2">Indian Institute of Technology Delhi</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script src="../../skm/skm_spotlight.js"defer></script>
+</body>
+</html>

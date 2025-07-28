@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mind and Meaning</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"/>
+   <!-- Style sheet -->
+   <link rel="stylesheet" href="style.css">
+   <!-- JavaScript -->
+   <script src="main.js"></script>
+  <style>
+    body { font-family: 'Roboto', sans-serif; background-color: #f8f5f2; color: #333; }
+    .title-font { font-family: 'Playfair Display', serif; }
+    .quote-card { transition: all 0.3s ease; transform-style: preserve-3d; }
+    .quote-card:hover {
+      transform: translateY(-5px) rotateX(5deg);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .all{
+    background-color: var(--bg-white);
+    }
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .wisdom-path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: dash 5s linear forwards;
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: 0; }
+    }
+    .bg-gold {
+      background-color: #FFD700;
+      background-image: linear-gradient(to right, rgba(255,215,0,0.8), rgba(255,255,255,0.2), rgba(255,215,0,0.8));
+    }
+    .bg-silver {
+      background-color: #C0C0C0;
+      background-image: linear-gradient(to right, rgba(192,192,192,0.8), rgba(255,255,255,0.3), rgba(192,192,192,0.8));
+    }
+    .bg-bronze {
+      background-color: #CD7F32;
+      background-image: linear-gradient(to right, rgba(205,127,50,0.8), rgba(255,255,255,0.2), rgba(205,127,50,0.8));
+    }
+    .bg-platinum {
+      background-color: #E5E4E2;
+      background-image: linear-gradient(to right, rgba(229,228,226,0.8), rgba(255,255,255,0.3), rgba(229,228,226,0.8));
+    }
+    .text-gold { color: #D4AF37; }
+    .text-silver { color: #C0C0C0; }
+    .text-bronze { color: #CD7F32; }
+    .text-platinum { color: #E5E4E2; }
+    .hover-bg-gold:hover { background-color: #FFD700; }
+    .hover-bg-silver:hover { background-color: #C0C0C0; }
+    .hover-bg-bronze:hover { background-color: #CD7F32; }
+    .hover-bg-platinum:hover { background-color: #E5E4E2; }
+  </style>
+</head>
+<body class="min-h-screen">
+    <header id="masthead" class="fixed top-0 left-0 z-50 w-full bg-white/90 shadow-lg transition-colors duration-300 font-sans" role="banner">
+           
+        <div class="relative flex w-full items-center justify-between py-2.5 px-5 sm:px-6 md:px-8 lg:px-14">
+
+            <div class="flex-shrink-0">
+                <a href="https://home.iitd.ac.in/" rel="home" aria-label="IIT Delhi Home">
+                    <img src="images/Logo_IITD.png" alt="IIT Delhi Logo" class="h-auto max-h-[50px] transition-transform duration-300 hover:scale-105 lg:max-h-[70px]">
+                </a>
+            </div>
+        
+            <div id="main-nav" class="absolute top-full left-0 hidden w-full bg-white/95 p-5 shadow-md lg:block lg:w-auto lg:bg-transparent lg:p-0 lg:shadow-none lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+                <nav role="navigation" aria-label="Main navigation">
+                    <ul class="flex flex-col items-center lg:flex-row lg:space-x-[30px]">
+                        <li class="my-2.5 lg:my-0">
+                            <a href="index.html" class="smoothscroll relative text-xl font-semibold text-[#030303] no-underline transition-colors duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:-translate-x-1/2 after:bg-[var(--secondary-color)] after:transition-all after:duration-300 hover:after:w-full lg:text-[25px] lg:whitespace-nowrap">Home</a>
+                        </li>
+                        <li class="my-2.5 lg:my-0">
+                            <a href="index.html#about" class="smoothscroll relative text-xl font-semibold text-[#030303] no-underline transition-colors duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-[var(--secondary-color)] after:transition-all after:duration-300 hover:after:w-full lg:text-[25px] lg:whitespace-nowrap">About</a>
+                        </li>
+                        <li class="my-2.5 lg:my-0">
+                            <a href="research.html" target="_blank" class="relative text-xl font-semibold text-[#030303] no-underline transition-colors duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-[var(--secondary-color)] after:transition-all after:duration-300 hover:after:w-full lg:text-[25px] lg:whitespace-nowrap">Research</a>
+                        </li>
+                        <li class="my-2.5 lg:my-0">
+                            <a href="teaching.html" target="_blank" class="relative text-xl font-semibold text-[#030303] no-underline transition-colors duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-[var(--secondary-color)] after:transition-all after:duration-300 hover:after:w-full lg:text-[25px] lg:whitespace-nowrap">Teaching</a>
+                        </li>
+                        <li class="my-2.5 lg:my-0">
+                            <a href="mind.html" target="_blank" class="relative text-xl font-semibold text-[#030303] no-underline transition-colors duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-[var(--secondary-color)] after:transition-all after:duration-300 hover:after:w-full lg:text-[25px] lg:whitespace-nowrap">Minds & Meanings</a>
+                        </li>
+                        <li class="my-2.5 lg:my-0">
+                            <a href="http://dcecm.iitd.ac.in/" target="_blank" rel="noopener" class="relative text-xl font-semibold text-[#030303] no-underline transition-colors duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-[var(--secondary-color)] after:transition-all after:duration-300 hover:after:w-full lg:text-[25px] lg:whitespace-nowrap">CoE</a>
+                        </li>
+                        <li class="my-2.5 lg:my-0">
+                            <a href="#contact" class="smoothscroll relative text-xl font-semibold text-[#030303] no-underline transition-colors duration-300 after:absolute after:bottom-[-5px] after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:bg-[var(--secondary-color)] after:transition-all after:duration-300 hover:after:w-full lg:text-[25px] lg:whitespace-nowrap">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        
+            <button id="menu-toggle" class="group z-10 flex cursor-pointer flex-col border-none bg-transparent p-1.5 lg:hidden" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="block h-[3px] w-[25px] bg-[var(--text-dark)] my-[3px] transition-all duration-300 group-hover:bg-[var(--secondary-color)] group-[.active]:[transform:rotate(-45deg)_translate(-5px,6px)]"></span>
+                <span class="block h-[3px] w-[25px] bg-[var(--text-dark)] my-[3px] transition-all duration-300 group-hover:bg-[var(--secondary-color)] group-[.active]:opacity-0"></span>
+                <span class="block h-[3px] w-[25px] bg-[var(--text-dark)] my-[3px] transition-all duration-300 group-hover:bg-[var(--secondary-color)] group-[.active]:[transform:rotate(45deg)_translate(-5px,-6px)]"></span>
+            </button>
+            
+        </div>
+        
+          
+    </header>
+<div class="all">    
+  <!-- Background floating circles -->
+  <div class="fixed inset-0 overflow-hidden -z-10">
+    <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-gold opacity-20 floating "></div>
+    <div class="absolute top-1/3 right-20 w-24 h-24 rounded-full bg-silver opacity-20 floating z-50" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-20 left-1/4 w-20 h-20 rounded-full bg-bronze opacity-20 floating z-50" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-12 h-12 rounded-full bg-platinum opacity-20 floating z-50" style="animation-delay: 3s;"></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="container mx-auto px-4 py-12 max-w-6xl">
+  <!-- Header -->
+<header class="text-center mb-10">
+  <h1 class="title-font text-5xl md:text-6xl font-bold mb-4 text-[#5a4a42] mt-20">Mind & Meaning</h1>
+
+  <div class="mt-8 relative h-2">
+    <svg viewBox="0 0 500 20" class="w-full h-full">
+      <path d="M0,10 Q125,20 250,10 T500,10" stroke="#4f46e5" stroke-width="2" fill="none" class="wisdom-path"/>
+    </svg>
+  </div>
+</header>
+
+<!-- Aligned Description Paragraph (outside header) -->
+<p class="text-center text-base sm:text-lg text-gray-700 max-w-2xl mx-auto bold leading-relaxed opacity-90 mb-16">
+  These quotes reflect an evolving understanding shaped by timeless
+  wisdom—some may be imperfect memories or personal interpretations of
+  what I’ve read, heard, seen, or lived
+  
+</p>
+
+
+  <!-- Comment this div when you uncomment below div  -->
+  <div class="quote-card rounded-xl p-6 relative rounded-xl px-4 py-4 mb-12
+    text-center mx-auto  shadow-md  hover:shadow-lg  
+    cursor-pointer transition-all duration-300 
+    animate__animated animate__fadeIn  min-h-[200px]
+    w-[100%] sm:w-[80%] md:w-[70%] lg:w-[50%] 
+    h-auto overflow-hidden bg-cover bg-center"
+    style="background-image: url('./cards_bg/6.png')  ">
+    <h3 class="text-[30px] font-semibold mb-3 text-gray-700 mt-10">“</h3>
+    <blockquote class="text-gray-700 mb-4  font-medium drop-shadow">
+      Latest quotes will be displayed here!
+    </blockquote>
+  </div>
+
+<!-- uncomment below div -->
+
+  <!-- <section id="latest-quote"
+  class="rounded-xl px-4 py-4 mb-12 text-center mx-auto 
+        w-[100%] sm:w-[80%] md:w-[70%] lg:w-[50%] 
+        h-auto">
+  </section>       -->
+ 
+ 
+
+  
+ 
+
+  
+  
+
+    <!-- Category buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button onclick="filterQuotes('god')" class="category-btn px-4 py-2 rounded-full bg-[#ddae48] text-white hover-bg-gold border-[#f5cc53] border-2 font-medium">God & Godly
+        </button>
+        <button onclick="filterQuotes('life')" class="category-btn px-4 py-2 rounded-full bg-[#b57f4f] text-white hover-bg-bronze font border-[#d9a066] border-2-medium">Life & Living</button>
+        <button onclick="filterQuotes('society')" class="category-btn px-4 py-2 rounded-full bg-[#9eb3bf] text-white hover-bg-silver   border-[#ccd7dd] border-2 font-medium">Profession & Purpose
+        </button>
+        <button onclick="filterQuotes('research')" class="category-btn px-4 py-2 rounded-full bg-[#c8a2c8] text-white hover:bg-purple-300 border-[#ffd5ff] border-2 font-medium">Research & Reflection
+        </button>
+      </div>
+
+
+
+
+    <!-- Quote grid -->
+    <div id="quotes-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <!-- Featured Quote Modal -->
+    <div id="featured-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+      <div class="bg-white rounded-xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div id="featured-content" class="space-y-4"></div>
+      </div>
+    </div>
+</div>  
+</div>  
+     <!-- Contact section -->
+     <section id="contact">
+      <div class="contact-title">
+          <h1>Contact</h1>
+      </div>
+      <div class="contact-info">
+          <strong style="color: rgb(65, 63, 63);">Prof. Saroj Kanta Mishra</strong><br>
+          <span style="color: rgb(65, 63, 63);">Room No. 414, Block VI</span><br>
+          <span style="color: rgb(65, 63, 63);">Indian Institute of Technology Delhi</span><br>
+          <span style="color: rgb(65, 63, 63);">Hauz Khas, New Delhi – 110 016, India</span><br>
+          <span style="color: black;"><strong>Phone:</strong></span> <span class="highlight" style="color: rgb(65, 63, 63);"><strong>+91 11 2659 1390</strong></span><br>
+          <span style="color: black;"><strong>Email:</strong></span> <a href="mailto:skm@iitd.ac.in" class="highlight" style="color: rgb(65, 63, 63);"><strong>skm@iitd.ac.in</strong></a>
+      </div>
+  </section>
+  <footer class="w-full bg-white p-4 text-center footer border-t border-gray-200">
+    <p class="text-lg text-gray-700">
+        SKM &copy; 2025 | Designed and developed by
+        <a href="https://www.linkedin.com/in/sundeep-kumar-baraik-2a3049211/" target="_blank" rel="noopener noreferrer" class="font-medium text-lg text-[#068f93] hover:text-[#08578b] transition-colors duration-300">Sundeep Baraik</a>
+        and
+        <a href="https://www.linkedin.com/in/shailesh-kachhi-681a041a2/" target="_blank" rel="noopener noreferrer" class="font-medium text-lg text-[#068f93] hover:text-[#08578b] transition-colors duration-300">Shailesh Kachhi</a>.
+    </p>
+</footer>
+
+  
+
+  <script>
+      const quotes = {
+        god: [
+              // --- Positive Quotes ---
+        { text: "Dharma protects those who protect it: Ramayana", dateAdded: "2025-10-13T09:00:00+05:30", sentiment: 'positive' },
+        { text: "Uphold righteousness and duty; good ultimately conquers evil: Ramayana ", dateAdded: "2025-10-14T10:15:00+05:30", sentiment: 'positive' },
+        { text: "Dharma, when destroyed, destroys; Dharma, when protected, protects: Mahabharata", dateAdded: "2025-10-15T11:30:00+05:30", sentiment: 'positive' },
+        { text: "When righteousness declines and unrighteousness rises, the Divine manifests to restore balance: Bhagavad Gita", dateAdded: "2025-10-16T12:45:00+05:30", sentiment: 'positive' },
+        { text: "Uphold dharma through difficult choices; true victory lies in righteousness, not mere conquest: Mahabharata", dateAdded: "2025-10-17T14:00:00+05:30", sentiment: 'positive' },
+        { text: "It is not the Naraayani Sena, but Narayan who matters.", dateAdded: "2025-10-20T17:30:00+05:30", sentiment: 'positive' },
+        { text: "Focus on the war, not every battle—Pandavas won only 5 out of 18, yet they won the war.", dateAdded: "2025-10-23T10:25:00+05:30", sentiment: 'positive' },
+        { text: "True warriors remember honor—even in war. Ram paid tribute to Ravana; Arjuna bowed to his teacher Drona: Ramayana and Mahabharata", dateAdded: "2025-10-28T16:45:00+05:30", sentiment: 'positive' },
+        { text: "Truth wins over falsehood – Upanishad", dateAdded: "2025-10-29T18:00:00+05:30", sentiment: 'positive' },
+        { text: "Focus on the action, not the outcome. That is the path of peace: Bhagavad Gita", dateAdded: "2025-10-30T19:20:00+05:30", sentiment: 'positive' },
+        { text: "Nature sets the stage. Think right. Do right.", dateAdded: "2025-10-31T08:30:00+05:30", sentiment: 'positive' },
+        { text: "Those who walk the path of dharma never walk alone—the cosmos walks with them.", dateAdded: "2025-11-01T09:45:00+05:30", sentiment: 'positive' },
+        { text: "When all else fails, higher truth prevails.", dateAdded: "2025-11-02T11:00:00+05:30", sentiment: 'positive' },
+        { text: "To trust in God is to walk with integrity, even when the path is unseen.", dateAdded: "2025-11-03T12:15:00+05:30", sentiment: 'positive' },
+
+            // ----New
+        { text: "Ramayana lives through Ram’s vanvas, not his rajya; Mahabharata endures through the Pandavas’ trials, not their throne. It's hardship that etches history, not ease", dateAdded: "2025-01-23T10:25:00+05:30", sentiment: 'positive' },
+        { text: "It’s the process that truly matters, not the result. Right effort brings true value; wrong means, even if successful, are empty. So focus on the right path and leave the outcome in God’s hands.", dateAdded: "2025-01-13T10:25:00+05:30", sentiment: 'positive' },
+        { text: "Dharma protects those who protect it: Ramayana", dateAdded: "2025-10-13T09:00:00+05:30", sentiment: 'positive' },
+        { text: "When you’ve done your part, let go — and let God do His/Her.", dateAdded: "2025-10-15T11:00:00+05:30", sentiment: 'positive' },
+        { text: "Sita didn’t choose the shortcut — she chose dharma. Because the right path matters more than a quick escape.", dateAdded: "2025-10-18T16:20:00+05:30", sentiment: 'positive' },
+        { text: "Ramayana lives through Ram’s vanvas, not his rajya; Mahabharata endures through the Pandavas’ trials, not their throne. It's hardship that etches history, not ease", dateAdded: "2025-01-23T10:25:00+05:30", sentiment: 'positive' },
+        { text: "It’s the process that truly matters, not the result. Right effort brings true value; wrong means, even if successful, are empty. So focus on the right path and leave the outcome in God’s hands.", dateAdded: "2025-01-13T10:25:00+05:30", sentiment: 'positive' },
+
+        
+        // --- Other/Cautionary Quotes ---
+        { text: "Arjun, the greatest warrior, paused often—not out of fear, but because greatness feels deeply.", dateAdded: "2025-10-18T15:10:00+05:30", sentiment: 'other' },
+        { text: "The Pandavas never ruled the five villages they asked for—yet a war was fought for them. Sometimes, the fight is not for possession, but for principle: Mahabharata", dateAdded: "2025-10-19T16:20:00+05:30", sentiment: 'other' },
+        { text: "Greatness is not rushed—Ram waited 14 years, the Pandavas 13. Heroes earn their moment through time.", dateAdded: "2025-10-21T18:40:00+05:30", sentiment: 'other' },
+        { text: "Even the Mahabharata, the fiercest of wars, was bound by rules—because when dharma is forgotten, victory means nothing: Mahabharata", dateAdded: "2025-10-22T09:05:00+05:30", sentiment: 'other' },
+        { text: "Greed leads to Sin: Mahabharata", dateAdded: "2025-10-24T11:45:00+05:30", sentiment: 'other' },
+        { text: "In Ramayana and Mahabharata alike, the war ends not in celebration, but in reflection—because Dharma always comes with a price: Ramayana and Mahabharata", dateAdded: "2025-10-25T13:00:00+05:30", sentiment: 'other' },
+        { text: "Forgiveness is divine, but even Lord Krishna stopped at 100—Shishupal learned that too late.", dateAdded: "2025-10-27T15:30:00+05:30", sentiment: 'other' }
+    
+        ],
+        life: [
+    // --- Positive Quotes ---
+    { text: "Let go of yesterday—today is a brand new beginning.", dateAdded: "2025-08-21T09:00:00+05:30", sentiment: 'positive' },
+    { text: "Not everything deserves your time — choose only what serves your path.", dateAdded: "2025-08-24T12:30:00+05:30", sentiment: 'positive' },
+    { text: "When you live with goodness, the universe aligns to support you — even trials turn to gift.", dateAdded: "2025-08-27T16:00:00+05:30", sentiment: 'positive' },
+    { text: "Live and let live.", dateAdded: "2025-08-29T18:30:00+05:30", sentiment: 'positive' },
+    { text: "Your life. Your story. Make it unforgettable.", dateAdded: "2025-08-31T08:00:00+05:30", sentiment: 'positive' },
+    { text: "The main role is never easy, but that's where the real story is made.", dateAdded: "2025-09-01T09:10:00+05:30", sentiment: 'positive' },
+    { text: "Truth triumphs—never get perturbed by temporary falsehoods.", dateAdded: "2025-09-02T10:20:00+05:30", sentiment: 'positive' },
+    { text: "You live in your mind every moment — keep it clean and pure.", dateAdded: "2025-09-03T11:30:00+05:30", sentiment: 'positive' },
+    { text: "MJ had ordinary looks, yet became the greatest star. Messi has an ordinary build, yet is the GOAT of football. True greatness comes from within—not from what the world sees.", dateAdded: "2025-09-04T12:40:00+05:30", sentiment: 'positive' },
+    { text: "Life isn’t about proving anything to anyone — it’s about living meaningfully.", dateAdded: "2025-09-05T13:50:00+05:30", sentiment: 'positive' },
+    { text: "In solitude, you meet the one who matters most—yourself.", dateAdded: "2025-09-06T15:00:00+05:30", sentiment: 'positive' },
+   
+    
+    { text: "A genuine friend helps you grow by saying no to what’s wrong.", dateAdded: "2025-09-12T10:40:00+05:30", sentiment: 'positive' },
+    { text: "Love everyone—not to gain anything, but simply because it makes your soul lighter.", dateAdded: "2025-09-15T14:40:00+05:30", sentiment: 'positive' },
+    
+    { text: "Your gifts—be it knowledge, skill, power, or strength—aren’t meant for pride, but for a higher purpose: to serve those who lack them.", dateAdded: "2025-09-18T18:30:00+05:30", sentiment: 'positive' },
+    { text: "Power may not always be in your hands, but integrity is. Never serve what you know is unethical.", dateAdded: "2025-09-22T12:30:00+05:30", sentiment: 'positive' },
+   
+    { text: "Just as you bath to cleanse your body, cleanse your mind every day, as often as you can, to wash away the dirt of thoughts.", dateAdded: "2025-10-03T15:10:00+05:30", sentiment: 'positive' },
+    { text: "What truly matters—love, time, peace—is never sold.", dateAdded: "2025-10-07T09:00:00+05:30", sentiment: 'positive' },
+    { text: "The best things in life are always free.", dateAdded: "2025-10-08T10:30:00+05:30", sentiment: 'positive' },
+    { text: "Burberry shows that greatness isn't in doing more, but in doing one thing—the iconic check—flawlessly.", dateAdded: "2025-10-11T15:00:00+05:30", sentiment: 'positive' },
+    { text: "Gazing at the sky is better than many things—spend your time wisely.", dateAdded: "2025-10-12T16:30:00+05:30", sentiment: 'positive' },
+
+
+    // ----New
+    { text: "Let go of yesterday—today is a brand new beginning.", dateAdded: "2025-08-21T09:00:00+05:30", sentiment: 'positive' },
+        { text: "Time is equal; choices aren’t. Where one’s hours go, their truth flows.", dateAdded: "2025-08-22T10:00:00+05:30", sentiment: 'other' },
+        { text: "Even if your actions don’t change the outcome, they change your karma—and that matters.", dateAdded: "2025-08-24T14:15:00+05:30", sentiment: 'positive' },
+        { text: "In collective work, your actions may not change the outcome — but they shape your karma, and that shapes your life.", dateAdded: "2025-08-25T15:00:00+05:30", sentiment: 'positive' },
+        { text: "Flocks are for the many; the eagle rides the wind alone.", dateAdded: "2025-09-10T08:00:00+05:30", sentiment: 'positive' },
+        { text: "Wear Bulgari with pride, Ferragamo with stride, Chanel with grace — and peace in your mind to complete the look.", dateAdded: "2025-08-28T18:00:00+05:30", sentiment: 'positive' },
+        { text: "Bulgari on your neck, Ferragamo on your feet, Chanel on your sleeve — and the finest thing you wear: a heart that’s true.", dateAdded: "2025-09-11T19:00:00+05:30", sentiment: 'positive' },
+        { text: "It’s not talent alone that makes a champion, but the fire in their attitude.", dateAdded: "2025-09-12T09:15:00+05:30", sentiment: 'positive' },
+        { text: "Everyone tries to keep the ball away from Messi — because he’s Messi. Remember that. The more opposition you face, the more it reveals your worth.", dateAdded: "2025-09-14T21:00:00+05:30", sentiment: 'positive' },
+        { text: "Sledging might shake a moment — grace builds a legacy. Just ask Tendulkar.", dateAdded: "2025-09-15T11:30:00+05:30", sentiment: 'positive' },
+        { text: "If a lion starts chasing a mosquito on its tail — it’s no longer a lion, it’s a monkey.", dateAdded: "2025-09-16T14:00:00+05:30", sentiment: 'other' },
+        { text: "Inner peace is silent strength — and that silence echoes where noise hides insecurity.", dateAdded: "2025-09-18T10:00:00+05:30", sentiment: 'positive' },
+        { text: "Sound fades. Feeling stays. Speak from where it stays.", dateAdded: "2025-09-01T11:45:00+05:30", sentiment: 'positive' },
+        { text: "Messi doesn’t block others — he just plays his game, silently, brilliantly, and lets the ball do the talking.", dateAdded: "2025-09-22T22:00:00+05:30", sentiment: 'positive' },
+        { text: "We change for the ones we love.", dateAdded: "2025-09-03T09:30:00+05:30", sentiment: 'positive' },
+        { text: "Clarity is time’s quiet gift.", dateAdded: "2025-09-05T12:00:00+05:30", sentiment: 'positive' },
+        { text: "Theatrics, rhetoric, and narratives don’t last. Truth, character, and consequence do.", dateAdded: "2025-09-20T12:25:00+05:30", sentiment: 'positive' },
+
+
+    // --- Other/Reflective Quotes ---
+    { text: "Time is the actual currency; all else are mere tokens.", dateAdded: "2025-08-22T10:10:00+05:30", sentiment: 'other' },
+    { text: "Life grants you limited time; how you use it is your choice.", dateAdded: "2025-08-23T11:20:00+05:30", sentiment: 'other' },
+   
+    { text: "Time listens longer and reveals all truths.", dateAdded: "2025-08-26T14:50:00+05:30", sentiment: 'other' },
+    { text: "If you have values, they're untouchable. If you lack them, they're unteachable.", dateAdded: "2025-08-28T17:15:00+05:30", sentiment: 'other' },
+    { text: "Everyone is someone’s world. Don’t be the reason their world suffers.", dateAdded: "2025-08-30T19:45:00+05:30", sentiment: 'other' },
+    { text: "If you move with the crowd, you may never find your own direction.", dateAdded: "2025-09-07T16:15:00+05:30", sentiment: 'other' },
+    { text: "Not every reply needs a voice; some truths are best spoken through action.", dateAdded: "2025-09-10T08:00:00+05:30", sentiment: 'other' },
+    { text: "A fighter’s real power reveals itself inside the ring, not on the streets.", dateAdded: "2025-09-11T09:20:00+05:30", sentiment: 'other' },
+    { text: "If you’re surrounded by people who never disagree, you’re trapped in an echo chamber.", dateAdded: "2025-09-13T12:00:00+05:30", sentiment: 'other' },
+    { text: "Life is a karmic account—every action has a reaction, and the balance is always kept.", dateAdded: "2025-09-17T17:15:00+05:30", sentiment: 'other' },
+    { text: "Growing older is inevitable; growing up is a choice few make.", dateAdded: "2025-09-19T08:45:00+05:30", sentiment: 'other' },
+    { text: "Accomplish first; preach later.", dateAdded: "2025-09-20T10:00:00+05:30", sentiment: 'other' },
+    
+    { text: "Nuisance power is taken; real power arrives uninvited, calm and unquestioned.", dateAdded: "2025-09-23T13:45:00+05:30", sentiment: 'other' },
+    { text: "True strength doesn’t seek flattery—it attracts honesty, not echo chambers.", dateAdded: "2025-09-24T15:00:00+05:30", sentiment: 'other' },
+    { text: "The truly capable surround themselves with honesty, not flattery.", dateAdded: "2025-09-25T16:10:00+05:30", sentiment: 'other' },
+    { text: "Lasting change comes not through revolt, but through quiet evolution.", dateAdded: "2025-09-26T17:20:00+05:30", sentiment: 'other' },
+    { text: "Mean what you say and say what you mean—otherwise, it's just noise dressed as words.", dateAdded: "2025-09-27T18:30:00+05:30", sentiment: 'other' },
+    { text: "Every soul walks its own legend—some as warriors, some as wanderers, each wearing a mask of their own making.", dateAdded: "2025-09-28T09:00:00+05:30", sentiment: 'other' },
+    { text: "What we are today is the result of yesterday’s actions; what we do today shapes tomorrow—so be mindful.", dateAdded: "2025-09-29T10:15:00+05:30", sentiment: 'other' },
+    { text: "Whatever you say or do, you first create it within yourself—so be mindful of what you nurture inside.", dateAdded: "2025-09-30T11:30:00+05:30", sentiment: 'other' },
+    { text: "Two hands hold only so much — be selective in what you carry.", dateAdded: "2025-10-02T14:00:00+05:30", sentiment: 'other' },
+    { text: "The state of today’s world reflects the education we received—our system shapes who we become.", dateAdded: "2025-10-04T16:20:00+05:30", sentiment: 'other' },
+    { text: "Before you criticize the world, ask yourself—are you doing your part?", dateAdded: "2025-10-05T17:30:00+05:30", sentiment: 'other' },
+    { text: "Behind every moment lies a reason—nothing is truly random.", dateAdded: "2025-10-06T18:40:00+05:30", sentiment: 'other' },
+    { text: "Go to either extreme, and you'll find emptiness.", dateAdded: "2025-10-09T12:00:00+05:30", sentiment: 'other' },
+    { text: "What we choose reveals who we truly are.", dateAdded: "2025-10-10T13:30:00+05:30", sentiment: 'other' }
+],
+     
+society: [
+    // --- Positive Quotes ---
+    { text: "Don’t count the crowd—count the independent minds.", dateAdded: "2025-07-09T11:30:00+05:30", sentiment: 'positive' },
+    { text: "Positions may grant nuisance power, but true power comes from inner strength and moral authority.", dateAdded: "2025-07-14T17:30:00+05:30", sentiment: 'positive' },
+    { text: "You can't end all corruption, but you can end your role in it—by not doing it, and not enabling those who do.", dateAdded: "2025-07-15T18:40:00+05:30", sentiment: 'positive' },
+    { text: "Don’t get carried away by bombastic words and stylish accents—focus on content and depth – truth is simple and does not need any decoration.", dateAdded: "2025-07-18T11:45:00+05:30", sentiment: 'positive' },
+    
+    
+    { text: "Strength lies not in harming, but in choosing not to.", dateAdded: "2025-07-21T15:30:00+05:30", sentiment: 'positive' },
+    { text: "True power protects—it doesn’t destroy.", dateAdded: "2025-07-22T16:45:00+05:30", sentiment: 'positive' },
+    { text: "The crown doesn't make the king; the king gives meaning to the crown.", dateAdded: "2025-07-23T18:00:00+05:30", sentiment: 'positive' },
+    
+    { text: "The strongest move in office politics is not to play the game.", dateAdded: "2025-07-26T09:45:00+05:30", sentiment: 'positive' },
+    
+   
+   
+    { text: "To be a professor is to think deeply—that's where the real joy lies.", dateAdded: "2025-08-02T18:20:00+05:30", sentiment: 'positive' },
+    { text: "Critical thinking and fearless expression define a true professor.", dateAdded: "2025-08-03T19:30:00+05:30", sentiment: 'positive' },
+    { text: "Choose whose recognition matters — most don't.", dateAdded: "2025-08-04T08:40:00+05:30", sentiment: 'positive' },
+    { text: "You don't win battles by numbers—you win them by truth and character.", dateAdded: "2025-08-05T09:50:00+05:30", sentiment: 'positive' },
+    { text: "Sometimes you must lose to truly win—but never win at the cost of what truly matters.", dateAdded: "2025-08-07T12:20:00+05:30", sentiment: 'positive' },
+    { text: "While they play their games around you, keep moving forward—your goal isn’t in their circle.", dateAdded: "2025-08-08T13:35:00+05:30", sentiment: 'positive' },
+    { text: "You weren’t born to do a job—you do a job to support a life worth living. Don’t lose sight of the difference.", dateAdded: "2025-08-10T16:05:00+05:30", sentiment: 'positive' },
+    { text: "Don't be disturbed by lies or waste time proving them; truth reveals itself as falsehoods unfold.", dateAdded: "2025-08-11T17:20:00+05:30", sentiment: 'positive' },
+    { text: "If you truly deserved something and didn't get it, one day you'll understand—it wasn't meant for you, or it wasn't good for you.", dateAdded: "2025-08-13T09:00:00+05:30", sentiment: 'positive' },
+    { text: "It's better to be quietly deserving than loudly questioned.", dateAdded: "2025-08-14T10:15:00+05:30", sentiment: 'positive' },
+    { text: "Raise your voice only when your heart speaks.", dateAdded: "2025-08-16T12:45:00+05:30", sentiment: 'positive' },
+
+   
+    { text: "Don’t count the crowd—count the independent minds.", dateAdded: "2025-07-09T11:30:00+05:30", sentiment: 'positive' },
+        { text: "We live politics every day, yet few choose it as a path. Strange — for something so pervasive. If you do it, own it. Master it.", dateAdded: "2025-07-28T10:10:00+05:30", sentiment: 'other' },
+        { text: "Every accent tells a story. Rejecting one means you’re not ready to hear the world.", dateAdded: "2025-07-29T13:00:00+05:30", sentiment: 'positive' },
+        { text: "When you choose to ignore what's right in your job, you're helping build the system your children will one day face.", dateAdded: "2025-07-30T16:45:00+05:30", sentiment: 'other' },
+        { text: "Your children may never sit at your desk, but they’ll live in the world your choices built.", dateAdded: "2025-08-01T17:00:00+05:30", sentiment: 'other' },
+
+    
+
+    // --- Other/Reflective Quotes ---
+    { text: "Nobody likes exams, but they exist to measure how well you perform what you don’t enjoy.", dateAdded: "2025-07-07T09:00:00+05:30", sentiment: 'other' },
+    { text: "Profession shapes both personality and perspective.", dateAdded: "2025-07-08T10:15:00+05:30", sentiment: 'other' },
+    { text: "Nepotism wounds merit, but it quietly destroys those who practice it the most.", dateAdded: "2025-07-10T12:45:00+05:30", sentiment: 'other' },
+    { text: "Nepotism blooms where insecurity takes root—when trust in talent is replaced by fear of being outshined.", dateAdded: "2025-07-11T14:00:00+05:30", sentiment: 'other' },
+    { text: "People resort to abuse when they run out of reasons.", dateAdded: "2025-07-16T09:05:00+05:30", sentiment: 'other' },
+    { text: "Those who truly don’t care stay silent—but the moment someone says 'I don’t care,' they usually do.", dateAdded: "2025-07-17T10:25:00+05:30", sentiment: 'other' },
+    { text: "Ashwatthama is dead—truth twisted becomes the perfect lie: Mahabharata.", dateAdded: "2025-07-25T08:30:00+05:30", sentiment: 'other' },
+    { text: "Every recognition costs something—be mindful of the price.", dateAdded: "2025-07-27T11:00:00+05:30", sentiment: 'other' },
+    { text: "You can fool everyone—even yourself—but not God.", dateAdded: "2025-07-30T14:45:00+05:30", sentiment: 'other' },
+    { text: "If you need a gang to take on someone, you've already lost the battle of character.", dateAdded: "2025-07-31T16:00:00+05:30", sentiment: 'other' },
+    { text: "Whom you work with shapes not just your career, but your life.", dateAdded: "2025-08-06T11:05:00+05:30", sentiment: 'other' },
+    { text: "You become the company you keep, slowly and silently. Choose carefully—your future walks with them.", dateAdded: "2025-08-09T14:50:00+05:30", sentiment: 'other' },
+    { text: "Overachievement can cost your soul—underachievement may still keep it whole.", dateAdded: "2025-08-12T18:35:00+05:30", sentiment: 'other' },
+    { text: "Degrees show education, not the heart or morals.", dateAdded: "2025-08-15T11:30:00+05:30", sentiment: 'other' },
+    { text: "A goal's worth is defined by the opposition you face. If everyone on the field plays for you, it's no longer a goal—it's a handout.", dateAdded: "2025-08-19T16:30:00+05:30", sentiment: 'other' },
+    { text: "Earn your wisdom through action—accomplish before you philosophize.", dateAdded: "2025-08-20T17:45:00+05:30", sentiment: 'other' }
+],
+research: [
+    // --- Positive Quotes ---
+    { text: "Both the Vedas and science teach this: do not trust blindly—verify through knowledge, inquiry, and direct experience.", dateAdded: "2025-06-18T10:00:00+05:30", sentiment: 'positive' },
+    { text: "Research means searching for the truth, so the most important quality of a researcher is how truthful they are.", dateAdded: "2025-06-19T11:30:00+05:30", sentiment: 'positive' },
+    { text: "Research trains the mind like a gym trains the body.", dateAdded: "2025-06-20T09:15:00+05:30", sentiment: 'positive' },
+    { text: "At its core, research is pure passion and mental exercise.", dateAdded: "2025-06-21T12:00:00+05:30", sentiment: 'positive' },
+    { text: "Even the unlettered can shine, when touched by grace and guided by perseverance.", dateAdded: "2025-06-28T11:05:00+05:30", sentiment: 'positive' },
+    { text: "Do not write so that people will read; write so that truth will be revealed.", dateAdded: "2025-07-01T09:55:00+05:30", sentiment: 'positive' },
+    { text: "Don't speak to impress—speak to express what must be said.", dateAdded: "2025-07-02T12:15:00+05:30", sentiment: 'positive' },
+    { text: "Better to stand still with purpose than to rush in the wrong direction.", dateAdded: "2025-07-03T14:40:00+05:30", sentiment: 'positive' },
+
+
+     // ----New
+    
+
+    // --- Other/Reflective Quotes ---
+    { text: "True PhD is earned in silence, struggle, and solitude.", dateAdded: "2025-06-22T15:45:00+05:30", sentiment: 'other' },
+    { text: "PhD is a process that shapes the mind more than the manuscript.", dateAdded: "2025-06-23T18:00:00+05:30", sentiment: 'other' },
+    { text: "Read more, write less—otherwise, it's not knowledge, just noise and recycling.", dateAdded: "2025-06-24T14:20:00+05:30", sentiment: 'other' },
+    { text: "Beauty lies in the eye of the beholder — not everyone can appreciate everything. An ironsmith cannot recognize a diamond.", dateAdded: "2025-06-25T16:10:00+05:30", sentiment: 'other' },
+    { text: "Your research topic, like your profession, quietly reshapes how you think.", dateAdded: "2025-06-26T19:00:00+05:30", sentiment: 'other' },
+  
+    { text: "Research is noble only when driven by truth—without it, it's just work.", dateAdded: "2025-06-29T13:30:00+05:30", sentiment: 'other' },
+    
+    { text: "Intellectual battles are the most thrilling sports—lasting years and decades, played 24/7.", dateAdded: "2025-07-04T18:25:00+05:30", sentiment: 'other' },
+    { text: "The value lies in the content, not the style of speech.", dateAdded: "2025-07-05T20:00:00+05:30", sentiment: 'other' },
+    { text: "Most of what we study fades in time—but what stays is the thought process we build along the way.", dateAdded: "2025-07-06T10:30:00+05:30", sentiment: 'other' }
+]
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      displayQuotes('god');
+      displayLatestQuoteCard();
+    //   container.innerHTML = '<h2 class="text-xl font-semibold mb-4 text-indigo-800">🌟 Latest Quote</h2>';
+
+      document.querySelector('header p').classList.add('animate__animated', 'animate__fadeIn', 'animate__delay-1s');
+    });
+
+    function displayLatestQuoteCard() {
+      const container = document.getElementById('latest-quote');
+      let latestQuote = null;
+      let latestTime = 0;
+      let category = '';
+
+      for (const key in quotes) {
+        quotes[key].forEach(q => {
+          const time = new Date(q.dateAdded).getTime();
+          if (time > latestTime) {
+            latestTime = time;
+            latestQuote = q;
+            category = key;
+          }
+        });
+      }
+
+      if (latestQuote) {
+      
+        container.appendChild(createQuoteCard(latestQuote, category));
+      }
+    }
+    function displayQuotes(categoryClickedFirst) {
+    const container = document.getElementById('quotes-container');
+    container.innerHTML = ''; // Clear previous content
+    container.style.display = 'block';
+
+    const allCategories = ['god', 'life', 'society', 'research'];
+    const categories = [categoryClickedFirst, ...allCategories.filter(c => c !== categoryClickedFirst)];
+
+    categories.forEach((category) => {
+        const sectionWrapper = document.createElement('section');
+        sectionWrapper.className = 'w-full py-12';
+        sectionWrapper.style.display = 'block';
+
+        const categoryTitles = {
+            god: "God and Godly",
+            research: "Research and Reflection",
+            life: "Life and Living",
+            society: "Profession and Purpose",
+        };
+
+        const heading = document.createElement('h2');
+        heading.textContent = categoryTitles[category] || category;
+        heading.className = 'text-2xl font-semibold mb-6 text-center text-[#5a4a42]';
+        sectionWrapper.appendChild(heading);
+
+        const quoteContainer = document.createElement('div');
+        quoteContainer.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6';
+
+        // --- MODIFICATION START ---
+        
+        const allQuotesForCategory = quotes[category] || []; // Get all quotes for the category
+
+        // 1. Filter quotes into two separate arrays
+        const positiveQuotes = allQuotesForCategory.filter(q => q.sentiment === 'positive');
+        const otherQuotes = allQuotesForCategory.filter(q => q.sentiment !== 'positive');
+
+        // 2. Combine them, with positive quotes appearing first
+        const sortedQuotes = [...positiveQuotes, ...otherQuotes];
+        
+        // NOTE: We are no longer calling shuffleArray() to maintain our sorted order.
+
+        // 3. Loop through the newly sorted array to create the cards
+        sortedQuotes.forEach((quote, index) => {
+            const card = createQuoteCard(quote, category, index);
+            card.classList.add('h-full');
+            quoteContainer.appendChild(card);
+        });
+        
+        // --- MODIFICATION END ---
+
+        sectionWrapper.appendChild(quoteContainer);
+        container.appendChild(sectionWrapper);
+    });
+}
+
+
+
+function createQuoteCard(quote, category, index = 0) {
+    const card = document.createElement('div');
+
+    // MODIFIED: Added flex properties to center content and removed fixed heights.
+    // The min-h-[200px] ensures a consistent minimum size.
+    card.className = `quote-card rounded-xl p-4 shadow-md border cursor-pointer 
+                    transition-all duration-300 hover:shadow-lg animate__animated 
+                    animate__fadeIn min-h-[200px] flex flex-col justify-center 
+                    items-center text-center`; // Added flex and text-center
+
+    card.style.animationDelay = `${index * 0.05}s`;
+    card.onclick = () => showFeaturedQuote(quote);
+
+    const { bgClass, textClass, borderClass, bgImage } = getStyleClasses(category);
+    card.classList.add(bgClass, borderClass);
+
+    // REMOVED: The lines that added fixed heights like 'h-[200px]' are gone.
+    // The card can now grow as needed.
+
+    card.style.backgroundImage = `url('${bgImage}')`;
+    card.style.backgroundSize = 'cover';
+    card.style.backgroundPosition = 'center';
+
+    // MODIFIED: Removed 'line-clamp-4' from the <p> tag to allow full text display.
+    card.innerHTML = `
+        <div class="text-4xl text-gray-700 drop-shadow mb-2 opacity-80">“</div>
+        <p class="${textClass} mb-4 font-medium drop-shadow">${quote.text}</p>
+    `;
+
+    return card;
+}
+
+    function getStyleClasses(category) {
+      const styles = {
+        god: {
+          bgClass: 'bg-gold',
+          textClass: 'text-gray-700  p-2 rounded-xl  mx-4 text-center justify-center ',
+          borderClass: 'border-amber-200',
+          bgImage: 'cards_bg/1.png'
+        },
+        research: {
+          bgClass: 'bg-silver',
+          textClass: 'text-gray-700  p-2 rounded-xl  mx-4 text-center justify-center',
+          borderClass: 'border-gray-300',
+          bgImage: 'cards_bg/6.png'
+        },
+        life: {
+          bgClass: 'bg-bronze',
+          textClass: 'text-gray-700 p-2 rounded-xl  mx-4 text-center justify-center',
+          borderClass: 'border-amber-200',
+          bgImage: 'cards_bg/3.png'
+        },
+        society: {
+          bgClass: 'bg-platinum',
+          textClass: 'text-white',
+          textClass: 'text-gray-700 p-2 rounded-xl  mx-4  text-center justify-center',
+          bgImage: 'cards_bg/4.png'
+        }
+      };
+      return styles[category];
+    }
+
+    function closeModal() {
+      document.getElementById('featured-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function filterQuotes(category) {
+      displayQuotes(category);
+    //   document.getElementById('quotes-container').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+  </script>
+</body>
+</html>
