@@ -1,5 +1,11 @@
 const publications = [
-
+    {
+        title: "Implementation of various non-linear similarity functions for stable atmospheric surface layer in the WRF modeling system: An evaluation for three contrasting nights in CASES-99 dataset.",
+        authors: "Namdev, P., M. Sharan, S. K. Mishra",
+        year: "2025",
+        journal: " Atmospheric Research ",
+        link: "https://doi.org/10.1016/j.atmosres.2024.107825"
+    },
 
     {
         title: "Optimizing WRF-Hydro Calibration in the Himalayan Basin: Precipitation Influence and Parameter Sensitivity Analysis",
