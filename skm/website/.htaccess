@@ -1,0 +1,79 @@
+# Apache 2.4+ syntax (recommended for modern servers)
+<IfModule mod_authz_core.c>
+    <Files "mind.html">
+        <RequireAll>
+            Require ip 10.0.0.0/8
+        </RequireAll>
+    </Files>
+</IfModule>
+
+# Apache 2.2 fallback (for older servers)
+<IfModule !mod_authz_core.c>
+    <Files "mind.html">
+        Order Deny,Allow
+        Deny from all
+        Allow from 10.0.0.0/8
+    </Files>
+</IfModule>
+
+# Custom error page for denied access
+ErrorDocument 403 /403.html
+
+# Prevent direct access to .htaccess file itself
+<Files ".htaccess">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>
+
+# Security headers (if mod_headers is available)
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # XSS protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Only apply security headers to HTML files
+    <FilesMatch "\.(html|htm)$">
+        Header always set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://fonts.googleapis.com https://fonts.gstatic.com data:; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com;"
+    </FilesMatch>
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Disable server signature
+ServerSignature Off
+
+# Additional protection: Block access if user agent is empty (basic bot protection)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+    RewriteCond %{HTTP_USER_AGENT} ^(-|\.|') [OR]
+    RewriteCond %{HTTP_USER_AGENT} ^(.*)(<|>|%3C|%3E)(.*) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} ^(java|curl|wget|python|libwww-perl|nikto|scan|zmeu|morpheus) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (bot|spider|crawl|scraper) [NC]
+    RewriteCond %{REQUEST_URI} mind\.html$ [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Enable RewriteEngine (if needed for other purposes)
+RewriteEngine On
+
+# Prevent directory browsing
+Options -Indexes
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
